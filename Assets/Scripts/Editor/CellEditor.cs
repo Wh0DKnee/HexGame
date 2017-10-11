@@ -34,5 +34,8 @@ public class CellEditor : Editor {
                 HexGrid.Instance.AddCell(HexMath.HexNeighbor(cell.coordinates, i));
             }
         }
+        if (GUILayout.Button("Remove")) {
+            HexGrid.Instance.RemoveCell(cell.coordinates);
+        }
     }
 }

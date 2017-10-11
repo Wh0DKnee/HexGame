@@ -12,7 +12,7 @@ public class HexGridEditor : Editor {
         HexGrid grid = (HexGrid) target;
 
         if (GUILayout.Button("Start grid")) {
-            grid.AddCell(new HexCoordinates(0, 0));
+            grid.AddCell(HexCoordinates.CreateInstance(0, 0));
         }
         if(GUILayout.Button("Delete grid")) {
             grid.cells.Clear();

@@ -83,11 +83,16 @@
     <Compile Include="Assets\Scripts\HexCoordinates.cs" />
     <Compile Include="Assets\Scripts\HexGrid.cs" />
     <Compile Include="Assets\Scripts\HexMath.cs" />
+    <Compile Include="Assets\Scripts\IHighlightable.cs" />
     <Compile Include="Assets\Scripts\Networking\MyClient.cs" />
     <Compile Include="Assets\Scripts\Networking\MyServer.cs" />
     <Compile Include="Assets\Scripts\Networking\Old\Client.cs" />
     <Compile Include="Assets\Scripts\Networking\Old\Server.cs" />
     <Compile Include="Assets\Scripts\Networking\Old\ServerThread.cs" />
+    <Compile Include="Assets\Scripts\Pawn.cs" />
+    <Compile Include="Assets\Scripts\Piece.cs" />
+    <Compile Include="Assets\Scripts\PieceSpawner.cs" />
+    <Compile Include="Assets\Scripts\Utility\Map.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

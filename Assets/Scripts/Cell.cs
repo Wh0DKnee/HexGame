@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cell : MonoBehaviour {
+public class Cell : MonoBehaviour, IHighlightable {
 
     public HexCoordinates coordinates;
 
     public Sprite defaultSprite;
     public Sprite highlightSprite;
+
+    public Piece piece = null;
 
     public override string ToString() {
         return coordinates.ToString();
@@ -18,7 +20,7 @@ public class Cell : MonoBehaviour {
         Highlight();
     }
 
-    private void Highlight() {
+    public void Highlight() {
         GetComponent<SpriteRenderer>().sprite = highlightSprite;
     }
 
@@ -26,12 +28,13 @@ public class Cell : MonoBehaviour {
         UnHighlight();
     }
 
-    private void UnHighlight() {
+    public void UnHighlight() {
         GetComponent<SpriteRenderer>().sprite = defaultSprite;
 
     }
 
     private void OnMouseDown() {
         print(ToString());
+        Piece.selectedPiece.Move(coordinates);
     }
 }

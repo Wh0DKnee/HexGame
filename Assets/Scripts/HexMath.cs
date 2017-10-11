@@ -4,19 +4,19 @@ using UnityEngine;
 
 public static class HexMath {
 
-    public static readonly HexCoordinates[] directions = {   new HexCoordinates(1,-1,0), new HexCoordinates(1,0,-1), new HexCoordinates(0,1,-1),
-                                    new HexCoordinates(-1,1,0), new HexCoordinates(-1,0,1), new HexCoordinates(0,-1,1)};
+    public static readonly HexCoordinates[] directions = {   HexCoordinates.CreateInstance(1,-1,0), HexCoordinates.CreateInstance(1,0,-1), HexCoordinates.CreateInstance(0,1,-1),
+                                    HexCoordinates.CreateInstance(-1,1,0), HexCoordinates.CreateInstance(-1,0,1), HexCoordinates.CreateInstance(0,-1,1)};
 
     public static HexCoordinates HexAdd(HexCoordinates a, HexCoordinates b) {
-        return new HexCoordinates(a.x + b.x, a.y + b.y, a.z + b.z);
+        return HexCoordinates.CreateInstance(a.x + b.x, a.y + b.y, a.z + b.z);
     }
 
     public static HexCoordinates HexSubtract(HexCoordinates a, HexCoordinates b) {
-        return new HexCoordinates(a.x - b.x, a.y - b.y, a.z - b.z);
+        return HexCoordinates.CreateInstance(a.x - b.x, a.y - b.y, a.z - b.z);
     }
 
     public static HexCoordinates HexMultiply(HexCoordinates a, int k) {
-        return new HexCoordinates(a.x * k, a.y * k, a.z * k);
+        return HexCoordinates.CreateInstance(a.x * k, a.y * k, a.z * k);
     }
 
     public static int HexLength(HexCoordinates hex) {
