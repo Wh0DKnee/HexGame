@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\HexCoordinates.cs" />
     <Compile Include="Assets\Scripts\HexGrid.cs" />
     <Compile Include="Assets\Scripts\HexMath.cs" />
+    <Compile Include="Assets\Scripts\HighlightSelectionState.cs" />
     <Compile Include="Assets\Scripts\HighlightState.cs" />
     <Compile Include="Assets\Scripts\HighlightStateController.cs" />
     <Compile Include="Assets\Scripts\MouseEvents.cs" />

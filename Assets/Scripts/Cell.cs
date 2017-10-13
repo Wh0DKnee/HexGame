@@ -22,7 +22,7 @@ public class Cell : MonoBehaviour, MouseEvents<Cell> {
     }
 
     private void OnMouseEnter() {
-        mouseEnter(this);
+        if (mouseEnter != null) mouseEnter(this);
         //Highlight();
         /*Piece select = Piece.selectedPiece;
         if(select != null) {
@@ -36,7 +36,7 @@ public class Cell : MonoBehaviour, MouseEvents<Cell> {
     }
 
     private void OnMouseExit() {
-        mouseExit(this);
+        if (mouseExit != null) mouseExit(this);
         /*
         Piece select = Piece.selectedPiece;
         if (select != null) {
@@ -51,7 +51,7 @@ public class Cell : MonoBehaviour, MouseEvents<Cell> {
     }
 
     private void OnMouseDown() {
-        mouseDown(this);
+        if (mouseDown != null) mouseDown(this);
         print(ToString());
         //refactor this
         Piece.selectedPiece.Move(coordinates);

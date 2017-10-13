@@ -5,6 +5,7 @@ using System;
 
 public abstract class Piece : MonoBehaviour, MouseEvents<Piece> {
 
+    //TODO: create a static event that fires when the slected piece changes
     public static Piece selectedPiece;
     public bool isEnemyPiece;
 
@@ -17,19 +18,19 @@ public abstract class Piece : MonoBehaviour, MouseEvents<Piece> {
     public event Action<Piece> mouseOver;
 
     private void OnMouseEnter() {
-        mouseEnter(this);
+        if(mouseEnter != null) mouseEnter(this);
     }
 
     private void OnMouseExit() {
-        mouseExit(this);
+        if (mouseExit != null) mouseExit(this);
     }
 
     private void OnMouseDown() {
-        mouseDown(this);
+        if (mouseDown != null) mouseDown(this);
     }
 
     private void OnMouseOver() {
-        mouseOver(this);
+        if (mouseOver != null) mouseOver(this);
     }
 
     public Cell GetCell() {

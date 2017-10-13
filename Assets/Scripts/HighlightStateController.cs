@@ -5,6 +5,7 @@ using UnityEngine;
 public class HighlightStateController : MonoBehaviour {
 
     public GameStateController gameStateController;
+    public CellHighlighter highlighter;
 
     private HighlightState currentState;
 
@@ -20,6 +21,7 @@ public class HighlightStateController : MonoBehaviour {
     }
 
     private void Start() {
+        SetState(new HighlightSelectionState(highlighter));
         gameStateController.StateChanged += OnGameStateChanged;
     }
 

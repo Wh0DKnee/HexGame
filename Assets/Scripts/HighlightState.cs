@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class HighlightState {
 
-    CellHighlighter highlighter;
+    public CellHighlighter highlighter;
 
     public abstract void Tick();
 

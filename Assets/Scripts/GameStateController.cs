@@ -18,7 +18,9 @@ public class GameStateController : MonoBehaviour {
         }
         currentState = state;
         currentState.OnStateEnter();
-        StateChanged(currentState);
+        if (StateChanged != null) {
+            StateChanged(currentState);
+        }
     }
 
 	void Start () {

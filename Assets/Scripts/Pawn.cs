@@ -17,14 +17,8 @@ public class Pawn : Piece {
         return moves;
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            HighlightMoves();
-        }
-    }
-
     //this should not be in this class
-    public void HighlightMoves() {
+    /*public void HighlightMoves() {
         Cell cell = GetCell();
         HexCoordinates target;
         for (int i = 0; i < moves.Length; i++) {
@@ -33,7 +27,7 @@ public class Pawn : Piece {
                 CellHighlighter.instance.Highlight(HexGrid.Instance.GetCell(target));
             }
         }
-    }
+    }*/
 
     public override void Move(HexCoordinates coords) {
         this.gameObject.transform.position = coords.ToWorldPosition();

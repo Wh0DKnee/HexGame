@@ -6,14 +6,18 @@ using UnityEngine;
 public class SelectionState : GameState {
 
     public override void Tick() {
-        throw new NotImplementedException();
+        
     }
 
     public override void OnStateEnter() {
         base.OnStateEnter();
         foreach (Cell cell in HexGrid.Instance.cells) {
             Piece piece = cell.piece;
+            if(piece == null) {
+                continue;
+            }
             if (!piece.isEnemyPiece) {
+                Debug.Log("listening to: " + piece.name);
                 piece.mouseDown += PieceMouseDown;
             }
         }
@@ -31,9 +35,11 @@ public class SelectionState : GameState {
 
     private void PieceMouseDown(Piece piece) {
         if(Piece.selectedPiece == piece) {
+            Debug.Log("unselected piece");
             Piece.selectedPiece = null;
             return;
         }
+        Debug.Log("selected piece");
         Piece.selectedPiece = piece;
     }
 }
