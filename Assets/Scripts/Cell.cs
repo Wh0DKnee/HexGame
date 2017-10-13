@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cell : MonoBehaviour, IHighlightable {
+public class Cell : MonoBehaviour, MouseEvents<Cell> {
 
     public HexCoordinates coordinates;
 
@@ -12,29 +12,48 @@ public class Cell : MonoBehaviour, IHighlightable {
 
     public Piece piece = null;
 
+    public event Action<Cell> mouseEnter;
+    public event Action<Cell> mouseExit;
+    public event Action<Cell> mouseDown;
+    public event Action<Cell> mouseOver; 
+
     public override string ToString() {
         return coordinates.ToString();
     }
 
     private void OnMouseEnter() {
-        Highlight();
-    }
-
-    public void Highlight() {
-        GetComponent<SpriteRenderer>().sprite = highlightSprite;
+        mouseEnter(this);
+        //Highlight();
+        /*Piece select = Piece.selectedPiece;
+        if(select != null) {
+            List<HexCoordinates> path = HexMath.DrawLine(select.GetCell().coordinates, coordinates);
+            foreach (HexCoordinates coords in path) {
+                HexGrid.Instance.GetCell(coords).Highlight();
+            }
+        } else {
+            Highlight();
+        }*/
     }
 
     private void OnMouseExit() {
-        UnHighlight();
-    }
-
-    public void UnHighlight() {
-        GetComponent<SpriteRenderer>().sprite = defaultSprite;
-
+        mouseExit(this);
+        /*
+        Piece select = Piece.selectedPiece;
+        if (select != null) {
+            List<HexCoordinates> path = HexMath.DrawLine(select.GetCell().coordinates, coordinates);
+            foreach (HexCoordinates coords in path) {
+                HexGrid.Instance.GetCell(coords).UnHighlight();
+            }
+        } else {
+            UnHighlight();
+        }*/
+        //UnHighlight();
     }
 
     private void OnMouseDown() {
+        mouseDown(this);
         print(ToString());
+        //refactor this
         Piece.selectedPiece.Move(coordinates);
     }
 }
