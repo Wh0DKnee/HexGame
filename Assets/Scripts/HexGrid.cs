@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Map;
 
 public class HexGrid : MonoBehaviour {
 
@@ -66,6 +65,7 @@ public class HexGrid : MonoBehaviour {
             return;
         }
         cell.piece = piece;
+        piece.transform.position = cell.coordinates.ToWorldPosition();
     }
 
     public bool Contains(HexCoordinates coordinates) {

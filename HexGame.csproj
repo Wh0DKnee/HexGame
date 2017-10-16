@@ -80,15 +80,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Cell.cs" />
-    <Compile Include="Assets\Scripts\CellHighlighter.cs" />
-    <Compile Include="Assets\Scripts\GameState.cs" />
-    <Compile Include="Assets\Scripts\GameStateController.cs" />
+    <Compile Include="Assets\Scripts\GameStates\AttackState.cs" />
+    <Compile Include="Assets\Scripts\GameStates\EnemyTurnState.cs" />
+    <Compile Include="Assets\Scripts\GameStates\GameState.cs" />
+    <Compile Include="Assets\Scripts\GameStates\GameStateController.cs" />
+    <Compile Include="Assets\Scripts\GameStates\SelectAndMoveState.cs" />
     <Compile Include="Assets\Scripts\HexCoordinates.cs" />
     <Compile Include="Assets\Scripts\HexGrid.cs" />
     <Compile Include="Assets\Scripts\HexMath.cs" />
-    <Compile Include="Assets\Scripts\HighlightSelectionState.cs" />
-    <Compile Include="Assets\Scripts\HighlightState.cs" />
-    <Compile Include="Assets\Scripts\HighlightStateController.cs" />
+    <Compile Include="Assets\Scripts\Highlighting\CellHighlighter.cs" />
+    <Compile Include="Assets\Scripts\Highlighting\ChampionHighlighter.cs" />
+    <Compile Include="Assets\Scripts\Highlighting\HighlightSelectionState.cs" />
+    <Compile Include="Assets\Scripts\Highlighting\HighlightState.cs" />
+    <Compile Include="Assets\Scripts\Highlighting\HighlightStateController.cs" />
     <Compile Include="Assets\Scripts\MouseEvents.cs" />
     <Compile Include="Assets\Scripts\Networking\MyClient.cs" />
     <Compile Include="Assets\Scripts\Networking\MyServer.cs" />
@@ -98,8 +102,6 @@
     <Compile Include="Assets\Scripts\Pawn.cs" />
     <Compile Include="Assets\Scripts\Piece.cs" />
     <Compile Include="Assets\Scripts\PieceSpawner.cs" />
-    <Compile Include="Assets\Scripts\SelectionState.cs" />
-    <Compile Include="Assets\Scripts\Utility\Map.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

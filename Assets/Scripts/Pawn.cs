@@ -28,9 +28,4 @@ public class Pawn : Piece {
             }
         }
     }*/
-
-    public override void Move(HexCoordinates coords) {
-        this.gameObject.transform.position = coords.ToWorldPosition();
-        HexGrid.Instance.MovePiece(this, coords);
-    }
 }

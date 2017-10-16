@@ -9,9 +9,21 @@ public class PieceSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        GameObject p = (GameObject)Instantiate(pawn, pieceContainer);
-        HexGrid.Instance.AddPiece(p.GetComponent<Piece>(), HexCoordinates.CreateInstance(0, 0, 0));
+        InstantiateAlly(pawn, 0, 0, 0);
+        InstantiateAlly(pawn, 0, 1, -1);
+        InstantiateEnemy(pawn, 2, -2, 0);
 	}
+
+    void InstantiateAlly(GameObject piece, int x, int y, int z) {
+        GameObject p = (GameObject)Instantiate(pawn, pieceContainer);
+        HexGrid.Instance.AddPiece(p.GetComponent<Piece>(), HexCoordinates.CreateInstance(x, y, z));
+    }
+
+    void InstantiateEnemy(GameObject piece, int x, int y, int z) {
+        GameObject p = (GameObject)Instantiate(pawn, pieceContainer);
+        p.GetComponent<Piece>().isEnemyPiece = true;
+        HexGrid.Instance.AddPiece(p.GetComponent<Piece>(), HexCoordinates.CreateInstance(x, y, z));
+    }
 	
 	
 }

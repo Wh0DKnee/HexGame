@@ -52,8 +52,5 @@ public class Cell : MonoBehaviour, MouseEvents<Cell> {
 
     private void OnMouseDown() {
         if (mouseDown != null) mouseDown(this);
-        print(ToString());
-        //refactor this
-        Piece.selectedPiece.Move(coordinates);
     }
 }

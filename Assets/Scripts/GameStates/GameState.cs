@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class GameState {
 
+    protected GameStateController gameStateController;
+
     public abstract void Tick();
 
     public virtual void OnStateEnter() {
@@ -14,5 +16,7 @@ public abstract class GameState {
 
     }
 
-    public GameState() {}
+    public GameState(GameStateController gsc) {
+        gameStateController = gsc;
+    }
 }

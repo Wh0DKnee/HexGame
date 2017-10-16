@@ -14,9 +14,11 @@ public class GameStateController : MonoBehaviour {
             return;
         }
         if(currentState != null) {
+            print("exiting " + currentState.GetType().ToString());
             currentState.OnStateExit();
         }
         currentState = state;
+        print("entering " + currentState.GetType().ToString());
         currentState.OnStateEnter();
         if (StateChanged != null) {
             StateChanged(currentState);
@@ -24,10 +26,9 @@ public class GameStateController : MonoBehaviour {
     }
 
 	void Start () {
-        SetState(new SelectionState());
+        SetState(new SelectAndMoveState(this));
 	}
 	
-	// Update is called once per frame
 	void Update () {
         currentState.Tick();
 	}
