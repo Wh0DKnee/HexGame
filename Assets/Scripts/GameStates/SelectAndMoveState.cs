@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SelectAndMoveState : GameState {
 
-    private Piece selectedPiece;
+    private Champion selectedChamp;
 
     public SelectAndMoveState(GameStateController gsc) : base(gsc) { }
 
@@ -17,13 +17,13 @@ public class SelectAndMoveState : GameState {
         base.OnStateEnter();
         foreach (Cell cell in HexGrid.Instance.cells) {
             cell.mouseDown += CellMouseDown;
-            Piece piece = cell.piece;
-            if(piece == null) {
+            Champion champ = cell.champion;
+            if(champ == null) {
                 continue;
             }
-            if (!piece.isEnemyPiece) {
-                Debug.Log("listening to: " + piece.name);
-                piece.mouseDown += PieceMouseDown;
+            if (!champ.isEnemyChamp) {
+                Debug.Log("listening to: " + champ.name);
+                champ.mouseDown += PieceMouseDown;
             }
         }
     }
@@ -32,38 +32,38 @@ public class SelectAndMoveState : GameState {
         base.OnStateExit();
         foreach (Cell cell in HexGrid.Instance.cells) {
             cell.mouseDown -= CellMouseDown;
-            Piece piece = cell.piece;
-            if (piece == null) {
+            Champion champ = cell.champion;
+            if (champ == null) {
                 continue;
             }
-            if (!piece.isEnemyPiece) {
-                piece.mouseDown -= PieceMouseDown;
+            if (!champ.isEnemyChamp) {
+                champ.mouseDown -= PieceMouseDown;
             }
         }
     }
 
-    private void PieceMouseDown(Piece piece) {
-        if(piece.FinishedTurn) { return; } //can't select a piece whose turn is finished
+    private void PieceMouseDown(Champion champ) {
+        if(champ.FinishedTurn || champ.isEnemyChamp) { return; }
 
-        if(selectedPiece == piece) {
+        if(selectedChamp == champ) {
             Debug.Log("unselected piece");
-            selectedPiece.Unselected();
-            selectedPiece = null;
+            selectedChamp.Unselected();
+            selectedChamp = null;
             return;
         }
 
-        if (piece.hasMoved) {
-            gameStateController.SetState(new AttackState(gameStateController, piece));
+        if (champ.hasMoved) {
+            gameStateController.SetState(new AttackState(gameStateController, champ));
         }
         Debug.Log("selected piece");
-        selectedPiece = piece;
-        selectedPiece.Selected();
+        selectedChamp = champ;
+        selectedChamp.Selected();
     }
 
     private void CellMouseDown(Cell cell) {
-        if(selectedPiece != null) {
-            selectedPiece.Move(cell.coordinates);
-            gameStateController.SetState(new AttackState(gameStateController, selectedPiece));
+        if(selectedChamp != null) {
+            selectedChamp.Move(cell.coordinates);
+            gameStateController.SetState(new AttackState(gameStateController, selectedChamp));
         }
     }
 }

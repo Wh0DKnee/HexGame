@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class HexGrid : MonoBehaviour {
 
@@ -54,18 +55,18 @@ public class HexGrid : MonoBehaviour {
         DestroyImmediate(cellToRemove.gameObject);
     }
 
-    public void AddPiece(Piece piece, HexCoordinates coordinates) {
+    public void AddPiece(Champion champ, HexCoordinates coordinates) {
         Cell cell = GetCell(coordinates);
         if (cell == null) {
             Debug.LogWarning("cant add a piece to a cell that doesnt exist");
             return;
         }
-        if (cell.piece != null) {
+        if (cell.champion != null) {
             Debug.LogWarning("this cell already has a piece");
             return;
         }
-        cell.piece = piece;
-        piece.transform.position = cell.coordinates.ToWorldPosition();
+        cell.champion = champ;
+        champ.transform.position = cell.coordinates.ToWorldPosition();
     }
 
     public bool Contains(HexCoordinates coordinates) {
@@ -86,18 +87,18 @@ public class HexGrid : MonoBehaviour {
     }
 
     //not sure if this method should exist in a well designed program
-    public Cell PieceToCell(Piece piece) {
+    public Cell ChampionToCell(Champion champ) {
 
-        if(piece == null) {
+        if(champ == null) {
             Debug.LogError("null is not a piece");
             return null;
         }
 
         foreach (Cell cell in cells) {
-            if(cell.piece == null) {
+            if(cell.champion == null) {
                 continue;
             }
-            if(cell.piece.GetInstanceID() == piece.GetInstanceID()) {
+            if(cell.champion.GetInstanceID() == champ.GetInstanceID()) {
                 return cell;
             }
         }
@@ -105,16 +106,30 @@ public class HexGrid : MonoBehaviour {
         return null;
     }
 
-    public Piece GetPiece(HexCoordinates coordinates) {
-        return GetCell(coordinates).piece;
+    public Champion GetChamp(HexCoordinates coordinates) {
+        return GetCell(coordinates).champion;
     }
 
-    public void MovePiece(Piece piece, HexCoordinates coords) {
-        Cell startCell = PieceToCell(piece);
+    public void MoveChamp(Champion champ, HexCoordinates coords) {
+        Cell startCell = ChampionToCell(champ);
         if (startCell != null) {
-            startCell.piece = null;
+            startCell.champion = null;
         }
 
-        GetCell(coords).piece = piece;
+        GetCell(coords).champion = champ;
+    }
+
+    public List<Champion> GetChamps() {
+        List<Champion> champs = new List<Champion>();
+        foreach (Cell c in cells) {
+            if(c.champion != null) {
+                champs.Add(c.champion);
+            }
+        }
+        return champs;
+    }
+
+    public List<Champion> GetAllyChamps() {
+        return GetChamps().Where(x => !x.isEnemyChamp).ToList();
     }
 }

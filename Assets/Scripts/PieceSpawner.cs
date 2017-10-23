@@ -16,13 +16,13 @@ public class PieceSpawner : MonoBehaviour {
 
     void InstantiateAlly(GameObject piece, int x, int y, int z) {
         GameObject p = (GameObject)Instantiate(pawn, pieceContainer);
-        HexGrid.Instance.AddPiece(p.GetComponent<Piece>(), HexCoordinates.CreateInstance(x, y, z));
+        HexGrid.Instance.AddPiece(p.GetComponent<Champion>(), HexCoordinates.CreateInstance(x, y, z));
     }
 
     void InstantiateEnemy(GameObject piece, int x, int y, int z) {
         GameObject p = (GameObject)Instantiate(pawn, pieceContainer);
-        p.GetComponent<Piece>().isEnemyPiece = true;
-        HexGrid.Instance.AddPiece(p.GetComponent<Piece>(), HexCoordinates.CreateInstance(x, y, z));
+        p.GetComponent<Champion>().isEnemyChamp = true;
+        HexGrid.Instance.AddPiece(p.GetComponent<Champion>(), HexCoordinates.CreateInstance(x, y, z));
     }
 	
 	

@@ -10,7 +10,7 @@ public class Cell : MonoBehaviour, MouseEvents<Cell> {
     public Sprite defaultSprite;
     public Sprite highlightSprite;
 
-    public Piece piece = null;
+    public Champion champion = null;
 
     public event Action<Cell> mouseEnter;
     public event Action<Cell> mouseExit;

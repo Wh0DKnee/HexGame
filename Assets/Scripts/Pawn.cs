@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pawn : Piece {
+public class Pawn : Champion {
 
     private HexCoordinates[] moves;
 
