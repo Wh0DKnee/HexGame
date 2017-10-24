@@ -8,7 +8,7 @@ public class PieceSpawner : MonoBehaviour {
     public Transform pieceContainer;
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
         InstantiateAlly(pawn, 0, 0, 0);
         InstantiateAlly(pawn, 0, 1, -1);
         InstantiateEnemy(pawn, 2, -2, 0);

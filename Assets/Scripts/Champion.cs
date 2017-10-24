@@ -15,15 +15,18 @@ public abstract class Champion : MonoBehaviour{
     }
 
     public abstract HexCoordinates[] GetMoves();
+    public abstract bool TryAttack(Cell target);
     
     public event Action<Champion> selected;
     public event Action<Champion> unselected;
 
     public void Selected() {
+        print("selected!");
         if (selected != null) selected(this);
     }
 
     public void Unselected() {
+        print("unselected!");
         if (unselected != null) unselected(this);
     }
 

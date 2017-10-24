@@ -26,7 +26,7 @@ public class GameStateController : MonoBehaviour {
     }
 
 	void Start () {
-        SetState(new SelectAndMoveState(this));
+        SetState(new SelectionState(this));
 	}
 	
 	void Update () {

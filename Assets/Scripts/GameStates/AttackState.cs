@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class AttackState : GameState {
+public class AttackState : CellListenerGameState {
 
     private Champion selectedChamp;
 
-    public AttackState(GameStateController gsc, Champion champ) : base(gsc) {
-        selectedChamp = champ;
+    public AttackState(GameStateController gsc, Champion selectedChamp) : base(gsc) {
+        this.selectedChamp = selectedChamp;
     }
 
     public override void Tick() {
@@ -18,44 +18,16 @@ public class AttackState : GameState {
 
     private void ReturnToSelectMoveStateOnEscape() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            gameStateController.SetState(new SelectAndMoveState(gameStateController));
+            gameStateController.SetState(new SelectionState(gameStateController));
         }
     }
 
-    public override void OnStateEnter() {
-        base.OnStateEnter();
-        foreach (Cell cell in HexGrid.Instance.cells) {
-            Champion champ = cell.champion;
-            if (champ == null || champ == selectedChamp) {
-                continue;
-            }
-            champ.mouseDown += PieceMouseDown;
-        }
-    }
-
-    public override void OnStateExit() {
-        base.OnStateExit();
-        foreach (Cell cell in HexGrid.Instance.cells) {
-            Champion champ = cell.champion;
-            if (champ == null || champ == selectedChamp) {
-                continue;
-            }
-            champ.mouseDown -= PieceMouseDown;
-        }
-    }
-
-    //TODO: also listen to cell mouse down events, check if it has a champ, then proceed as follows
-    private void PieceMouseDown(Champion p) {
-        if (p == selectedChamp) return;
-
-        if (p.isEnemyChamp /*&& isInRange*/) {
-            Debug.Log("Attacking");
-            Debug.Log(selectedChamp.name);
-            selectedChamp.hasAttacked = true; //TODO: just call selectedChamp.TryAttack(p) here, the flag should be set there instead
+    public override void CellMouseDown(Cell clickedCell) {
+        if (selectedChamp.TryAttack(clickedCell)) {
             if (HaveAllAttacked()) {
                 gameStateController.SetState(new EnemyTurnState(gameStateController));
             } else {
-                gameStateController.SetState(new SelectAndMoveState(gameStateController));
+                gameStateController.SetState(new SelectionState(gameStateController));
             }
         }
     }

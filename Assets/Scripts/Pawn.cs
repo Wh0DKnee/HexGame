@@ -17,15 +17,9 @@ public class Pawn : Champion {
         return moves;
     }
 
-    //this should not be in this class
-    /*public void HighlightMoves() {
-        Cell cell = GetCell();
-        HexCoordinates target;
-        for (int i = 0; i < moves.Length; i++) {
-            target = cell.coordinates + moves[i];
-            if (HexGrid.Instance.Contains(target)) {
-                CellHighlighter.instance.Highlight(HexGrid.Instance.GetCell(target));
-            }
-        }
-    }*/
+    public override bool TryAttack(Cell target) {
+        print("trying to attack");
+        hasAttacked = true;
+        return true;
+    }
 }

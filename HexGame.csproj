@@ -82,10 +82,12 @@
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\Champion.cs" />
     <Compile Include="Assets\Scripts\GameStates\AttackState.cs" />
+    <Compile Include="Assets\Scripts\GameStates\CellListenerGameState.cs" />
     <Compile Include="Assets\Scripts\GameStates\EnemyTurnState.cs" />
     <Compile Include="Assets\Scripts\GameStates\GameState.cs" />
     <Compile Include="Assets\Scripts\GameStates\GameStateController.cs" />
-    <Compile Include="Assets\Scripts\GameStates\SelectAndMoveState.cs" />
+    <Compile Include="Assets\Scripts\GameStates\MoveState.cs" />
+    <Compile Include="Assets\Scripts\GameStates\SelectionState.cs" />
     <Compile Include="Assets\Scripts\HexCoordinates.cs" />
     <Compile Include="Assets\Scripts\HexGrid.cs" />
     <Compile Include="Assets\Scripts\HexMath.cs" />

@@ -6,7 +6,7 @@ public abstract class GameState {
 
     protected GameStateController gameStateController;
 
-    public abstract void Tick();
+    public virtual void Tick() {}
 
     public virtual void OnStateEnter() {
 

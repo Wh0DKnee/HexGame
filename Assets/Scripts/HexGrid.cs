@@ -86,11 +86,10 @@ public class HexGrid : MonoBehaviour {
         return null;
     }
 
-    //not sure if this method should exist in a well designed program
     public Cell ChampionToCell(Champion champ) {
 
         if(champ == null) {
-            Debug.LogError("null is not a piece");
+            Debug.LogError("null is not a champ");
             return null;
         }
 
