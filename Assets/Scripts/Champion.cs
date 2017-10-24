@@ -4,7 +4,15 @@ using UnityEngine;
 using System;
 
 public abstract class Champion : MonoBehaviour{
-   
+
+    public int health;
+    public int mana;
+    public Skill Q;
+    public Skill W;
+    public Skill E;
+    public Skill R;
+    public Skill selectedSkill;
+
     public bool isEnemyChamp;
     public bool hasMoved = false;
     public bool hasAttacked = false;

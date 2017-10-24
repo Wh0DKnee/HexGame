@@ -79,6 +79,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BasicChampion.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\Champion.cs" />
     <Compile Include="Assets\Scripts\GameStates\AttackState.cs" />
@@ -96,13 +97,13 @@
     <Compile Include="Assets\Scripts\Highlighting\HighlightSelectionState.cs" />
     <Compile Include="Assets\Scripts\Highlighting\HighlightState.cs" />
     <Compile Include="Assets\Scripts\Highlighting\HighlightStateController.cs" />
+    <Compile Include="Assets\Scripts\Initializer.cs" />
     <Compile Include="Assets\Scripts\MouseEvents.cs" />
     <Compile Include="Assets\Scripts\Networking\MyClient.cs" />
     <Compile Include="Assets\Scripts\Networking\MyServer.cs" />
     <Compile Include="Assets\Scripts\Networking\Old\Client.cs" />
     <Compile Include="Assets\Scripts\Networking\Old\Server.cs" />
     <Compile Include="Assets\Scripts\Networking\Old\ServerThread.cs" />
-    <Compile Include="Assets\Scripts\Pawn.cs" />
     <Compile Include="Assets\Scripts\PieceSpawner.cs" />
     <Compile Include="Assets\Scripts\Skill.cs" />
   </ItemGroup>

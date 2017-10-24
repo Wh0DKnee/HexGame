@@ -6,18 +6,12 @@ using UnityEngine;
 //highlighting FSM
 public class ChampionHighlighter : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-        foreach (Cell cell in HexGrid.Instance.cells) {
-            Champion champ = cell.champion;
-            if (champ == null) {
-                continue;
-            }
-            if (!champ.isEnemyChamp) {
-                Debug.Log("listening to: " + champ.name);
-                champ.selected += ChampSelected;
-                champ.unselected += ChampUnselected;
-            }
+	public void SubscribeToChamps () {
+        List<Champion> alliedChamps = HexGrid.Instance.GetAllyChamps();
+        foreach (Champion champ in alliedChamps) {
+            print(champ.ToString());
+            champ.selected += ChampSelected;
+            champ.unselected += ChampUnselected;
         }
 	}
 

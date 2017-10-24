@@ -29,6 +29,7 @@ public class MoveState : CellListenerGameState {
         gameStateController.SetState(new AttackState(gameStateController, selectedChamp));
     }
 
+    //TODO: decide if this logic belongs in the champion class instead
     private bool TargetReachable(Cell target) {
         if (target.HasChamp()) { return false; }
 

@@ -138,9 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1373436369}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &12510273
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -252,9 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 483691845}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &21802828
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -394,9 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1653834104}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &44538465
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -508,9 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1376054778}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &60349369
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -622,9 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 489648166}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &76694934
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -804,9 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 625466150}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &164552290
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -904,9 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 742819009}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &171998121
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1004,9 +990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 377678983}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &183016437
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1104,9 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 469158189}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &195863857
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1246,9 +1228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 618494188}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &246886388
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1414,9 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 42169627}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &314324225
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1514,9 +1492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 215551638}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &337780796
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1614,9 +1590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 28584328}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &348773563
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1728,9 +1702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1991220854}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &364106653
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1856,9 +1828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1263427632}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &466268639
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2026,9 +1996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1751018481}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &492274671
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2168,9 +2136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1246106104}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &567760688
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2282,9 +2248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 939852410}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &612490584
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2495,9 +2459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 252108029}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &660529783
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2637,9 +2599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1575315443}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &789964180
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2737,9 +2697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 154081583}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &809680498
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2837,9 +2795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 632899767}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &827627424
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2937,9 +2893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1999196117}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &829364894
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3037,9 +2991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 214077346}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &832218279
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3137,9 +3089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 2054071779}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &832827000
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3237,9 +3187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 2086831864}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &849632517
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3351,9 +3299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 2096897953}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &863947879
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3451,9 +3397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 75600463}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &864480941
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3579,9 +3523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 940801752}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &935633318
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3707,9 +3649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 432660916}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &943922955
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3821,9 +3761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 2113641799}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1034729077
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4089,9 +4027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 543921559}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1053845946
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4189,9 +4125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 878393572}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1057869150
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4289,9 +4223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1434338639}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1060459969
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4389,9 +4321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 203363495}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1091116531
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4489,9 +4419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 2141377194}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1139074932
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4643,9 +4571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1911045649}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1163075814
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4727,6 +4653,48 @@ MonoBehaviour:
   x: 5
   y: -2
   z: -3
+--- !u!1 &1193847841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1193847843}
+  - component: {fileID: 1193847842}
+  m_Layer: 0
+  m_Name: Initializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1193847842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193847841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68cede22a90ae3c49a782e521acc5f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 2141222981}
+  highlighter: {fileID: 1162146759}
+--- !u!4 &1193847843
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193847841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2931249, y: -2.8683476, z: -0.23961537}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1246106104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4785,9 +4753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 770288623}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1281688549
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4885,9 +4851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1676980089}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1289666301
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4999,9 +4963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 850119660}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1312059982
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5099,9 +5061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 489237659}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1360080668
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5227,9 +5187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1480810792}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1380347621
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5327,9 +5285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1290266920}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1433352627
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5441,9 +5397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1145530387}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1454318085
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5541,9 +5495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 480930056}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1474344803
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5669,9 +5621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 511726361}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1515464557
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5819,9 +5769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 595620023}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1539521146
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5947,9 +5895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1729443084}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1655997391
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6047,9 +5993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 294491330}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1657307261
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6292,9 +6236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 352383399}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1707069225
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6392,9 +6334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1193608590}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1718187662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6492,9 +6432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1511358938}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1718968102
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6620,9 +6558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 715929012}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1777628392
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6720,9 +6656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 55699834}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1878494202
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6820,9 +6754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 133319121}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1882764368
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6948,9 +6880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 31315848}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1948042476
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7048,9 +6978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 2109603246}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &1977862367
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7176,9 +7104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 159174579}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &2007268741
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7276,9 +7202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 917577648}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &2008395561
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7418,9 +7342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 1941757860}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &2035800367
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7532,9 +7454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 971715904}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &2062856341
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7660,9 +7580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 539401719}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &2097158543
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7760,9 +7678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {fileID: 21236667}
-  defaultSprite: {fileID: 21300000, guid: 2dafb61ea904a6d49a8c62fe6d46c169, type: 3}
-  highlightSprite: {fileID: 21300000, guid: 98d0560cfb361b54a9a974a7f26aa695, type: 3}
-  piece: {fileID: 0}
+  champion: {fileID: 0}
 --- !u!135 &2100297708
 SphereCollider:
   m_ObjectHideFlags: 0
