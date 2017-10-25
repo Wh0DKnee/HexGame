@@ -21,7 +21,7 @@ public class PieceSpawner : MonoBehaviour {
 
     void InstantiateEnemy(GameObject piece, int x, int y, int z) {
         GameObject p = (GameObject)Instantiate(pawn, pieceContainer);
-        p.GetComponent<Champion>().isEnemyChamp = true;
+        p.GetComponent<Champion>().IsEnemyChamp = true;
         HexGrid.Instance.AddPiece(p.GetComponent<Champion>(), HexCoordinates.CreateInstance(x, y, z));
     }
 	

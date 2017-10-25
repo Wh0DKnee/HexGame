@@ -36,11 +36,11 @@ public class Cell : MonoBehaviour, MouseEvents<Cell> {
 
     public bool HasEnemyChamp() {
         if (!HasChamp()) { return false; }
-        return champion.isEnemyChamp;
+        return champion.IsEnemyChamp;
     }
 
     public bool HasAlliedChamp() {
         if(!HasChamp()) { return false; }
-        return !champion.isEnemyChamp;
+        return !champion.IsEnemyChamp;
     }
 }

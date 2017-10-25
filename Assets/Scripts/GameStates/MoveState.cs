@@ -9,7 +9,7 @@ public class MoveState : CellListenerGameState {
 
     public MoveState(GameStateController gsc, Champion selectedChamp) : base(gsc) {
         this.selectedChamp = selectedChamp;
-        if (selectedChamp.hasMoved) {
+        if (selectedChamp.HasMoved) {
             SkipMoveState();
         }
     }

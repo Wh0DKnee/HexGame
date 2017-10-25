@@ -129,6 +129,6 @@ public class HexGrid : MonoBehaviour {
     }
 
     public List<Champion> GetAllyChamps() {
-        return GetChamps().Where(x => !x.isEnemyChamp).ToList();
+        return GetChamps().Where(x => !x.IsEnemyChamp).ToList();
     }
 }

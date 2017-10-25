@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23685154690862994}
   - component: {fileID: 114538456113797140}
   m_Layer: 0
-  m_Name: Pawn
+  m_Name: BasicChampion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,9 +93,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 647f965bed6a11443b86cbba5fbdd4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemyPiece: 0
-  hasMoved: 0
-  hasAttacked: 0
 --- !u!136 &136370215904649592
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -104,7 +101,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1280385305775276}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 5.3656864
   m_Direction: 1

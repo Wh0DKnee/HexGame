@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1858
     height: 1037
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 711, y: 471}
   m_MaxSize: {x: 18006, y: 14021}
   vertical: 0
-  controlID: 121
+  controlID: 9
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -515,10 +515,10 @@ MonoBehaviour:
     width: 371
     height: 492
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 18fcffff00000000
+    scrollPos: {x: 0, y: 757}
+    m_SelectedIDs: 661dffff
+    m_LastClickedID: -58010
+    m_ExpandedIDs: 1afcffff0000000038280000dc290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -578,7 +578,8 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders: []
+    m_Folders:
+    - Assets/Prefabs/Champions
   m_ViewMode: 0
   m_StartGridSize: 65
   m_LastFolders: []
@@ -589,7 +590,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 222c0000
     m_LastClickedID: 11298
-    m_ExpandedIDs: 00000000542600005c26000068260000782600007a260000862600002a2a00002c2a00002e2a0000302a0000322a0000342a0000362a0000382a00003a2a00003c2a00003e2a0000402a0000422a0000442a0000462a0000482a00004a2a00004c2a00004e2a0000502a0000522a0000542a0000562a0000582a00005a2a00005c2a00005e2a0000602a0000622a0000642a0000662a0000
+    m_ExpandedIDs: 000000004e26000056260000802600002e2a0000302a0000322a0000342a0000362a0000382a00003a2a00003c2a00003e2a0000402a0000422a0000442a0000462a0000482a00004a2a00004c2a00004e2a0000502a0000522a0000542a0000562a0000582a00005a2a00005c2a00005e2a0000602a0000622a0000642a0000662a0000682a00006a2a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -617,18 +618,18 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000542600005c260000862600002a2a00002c2a00002e2a0000302a0000322a0000342a0000362a0000382a00003a2a00003c2a00003e2a0000402a0000422a0000442a0000462a0000482a00004a2a00004c2a00004e2a0000502a0000522a0000542a0000562a0000582a00005a2a00005c2a00005e2a0000602a0000622a0000642a0000662a0000
+    m_ExpandedIDs: 000000004e2600005626000058260000802600002e2a0000302a0000322a0000342a0000362a0000382a00003a2a00003c2a00003e2a0000402a0000422a0000442a0000462a0000482a00004a2a00004c2a00004e2a0000502a0000522a0000542a0000562a0000582a00005a2a00005c2a00005e2a0000602a0000622a0000642a0000662a0000682a00006a2a0000922a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Initializer
-      m_OriginalName: Initializer
+      m_Name: HPCost
+      m_OriginalName: HPCost
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 12618
+      m_UserData: 16182
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0

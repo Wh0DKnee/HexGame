@@ -14,6 +14,10 @@ public class AttackState : CellListenerGameState {
 
     public override void Tick() {
         ReturnToSelectMoveStateOnEscape();
+        if (Input.GetKeyDown(KeyCode.Q)) { selectedChamp.SelectedSkill = selectedChamp.Q; }
+        if (Input.GetKeyDown(KeyCode.W)) { selectedChamp.SelectedSkill = selectedChamp.W; }
+        if (Input.GetKeyDown(KeyCode.E)) { selectedChamp.SelectedSkill = selectedChamp.E; }
+        if (Input.GetKeyDown(KeyCode.R)) { selectedChamp.SelectedSkill = selectedChamp.R; }
     }
 
     private void ReturnToSelectMoveStateOnEscape() {
@@ -23,7 +27,7 @@ public class AttackState : CellListenerGameState {
     }
 
     public override void CellMouseDown(Cell clickedCell) {
-        if (selectedChamp.TryAttack(clickedCell)) {
+        if (selectedChamp.TryUseSkill(clickedCell)) {
             if (HaveAllAttacked()) {
                 gameStateController.SetState(new EnemyTurnState(gameStateController));
             } else {
@@ -35,7 +39,7 @@ public class AttackState : CellListenerGameState {
     private bool HaveAllAttacked() {
         List<Champion> allies = HexGrid.Instance.GetAllyChamps();
         foreach (Champion champ in allies) {
-            if (!champ.hasAttacked) return false;
+            if (!champ.HasAttacked) return false;
         }
         return true;
     }

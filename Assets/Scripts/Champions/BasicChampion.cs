@@ -17,9 +17,10 @@ public class BasicChampion : Champion {
         return moves;
     }
 
-    public override bool TryAttack(Cell target) {
-        print("trying to attack");
-        hasAttacked = true;
-        return true;
+    public override void InitializeSkills() {
+        Q = new MeleeAttack(this);
+        W = new MeleeAttack(this);
+        E = new MeleeAttack(this);
+        R = new MeleeAttack(this);
     }
 }
