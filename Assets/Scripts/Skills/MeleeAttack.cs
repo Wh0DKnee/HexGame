@@ -7,18 +7,10 @@ public class MeleeAttack : Skill {
 
     private int damage = 10;
 
-    public MeleeAttack(Champion champ) : base(champ) { Debug.Log("Initializing melee attack for " + champ); }
+    public MeleeAttack(Cost skillCost, TargetType targetType) : base(skillCost, targetType) {}
 
-    public override void InitializeCost() {
-        SkillCost = new ManaCost(5, champion);
-    }
-
-    public override void InitializeTargetType() {
-        targetType = TargetType.enemy;
-    }
-
-    public override void Use(Cell target) {
-        base.Use(target);
+    public override void Use(Champion user, Cell target) {
+        base.Use(user, target);
         target.champion.HP -= damage;
     }
 }

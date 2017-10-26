@@ -43,9 +43,11 @@ public abstract class Champion : MonoBehaviour{
 
     public abstract HexCoordinates[] GetMoves();
     public abstract void InitializeSkills();
+    public abstract void InitializeStats();
 
     private void Start() {
         InitializeSkills();
+        InitializeStats();
     }
 
     //TODO: maybe put events in their own class like ChampionEvents and make this class have a member of that type
@@ -56,12 +58,10 @@ public abstract class Champion : MonoBehaviour{
     public event Action<Champion> manaChanged;
 
     public void Selected() {
-        print("selected!");
         if (selected != null) selected(this);
     }
 
     public void Unselected() {
-        print("unselected!");
         if (unselected != null) unselected(this);
     }
 
@@ -76,8 +76,16 @@ public abstract class Champion : MonoBehaviour{
     }
 
     public bool TryUseSkill(Cell target) {
-        if(SelectedSkill == null) { print("no skill selected"); return false; }
+        if (!CanUseSkill(target)) {
+            return false;
+        }
 
-        return SelectedSkill.TryUse(target);
+        SelectedSkill.Use(this, target);
+        HasAttacked = true;
+        return true;
+    }
+
+    private bool CanUseSkill(Cell target) {
+        return SkillValidation.ChampTryUseSkill(this, SelectedSkill, target);
     }
 }

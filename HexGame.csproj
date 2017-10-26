@@ -110,6 +110,9 @@
     <Compile Include="Assets\Scripts\Skills\ManaCost.cs" />
     <Compile Include="Assets\Scripts\Skills\MeleeAttack.cs" />
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
+    <Compile Include="Assets\Scripts\Skills\SkillFactory.cs" />
+    <Compile Include="Assets\Scripts\Skills\SkillValidation.cs" />
+    <Compile Include="Assets\Scripts\Skills\TargetEnum.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

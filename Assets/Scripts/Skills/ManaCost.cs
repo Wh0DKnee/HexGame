@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class ManaCost : Cost {
 
-    public ManaCost(int amount, Champion champion) : base(amount, champion) {
+    public ManaCost(int amount) : base(amount) {
     }
 
-    public override void ApplyCost() {
-        champion.Mana -= amount;
+    public override void ApplyCost(Champion user) {
+        user.Mana -= amount;
+    }
+
+    public override bool HasUserEnoughResources(Champion user) {
+        return user.Mana >= amount;
     }
 }

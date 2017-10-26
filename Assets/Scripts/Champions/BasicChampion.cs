@@ -18,9 +18,14 @@ public class BasicChampion : Champion {
     }
 
     public override void InitializeSkills() {
-        Q = new MeleeAttack(this);
-        W = new MeleeAttack(this);
-        E = new MeleeAttack(this);
-        R = new MeleeAttack(this);
+        Q = SkillFactory.CreateMeleeAttackInstance();
+        W = SkillFactory.CreateMeleeAttackInstance();
+        E = SkillFactory.CreateMeleeAttackInstance();
+        R = SkillFactory.CreateMeleeAttackInstance();
+    }
+
+    public override void InitializeStats() {
+        HP = 20;
+        Mana = 6;
     }
 }
