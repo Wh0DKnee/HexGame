@@ -6,8 +6,9 @@ using Hik.Communication.Scs.Communication.Messages;
 using Hik.Communication.Scs.Server;
 using Hik.Collections;
 using System;
+using NetworkingCommonLib;
 
-public class MyServer : MonoBehaviour {
+public class Server : MonoBehaviour, IServerService {
 
     IScsServer server;
 
@@ -62,5 +63,17 @@ public class MyServer : MonoBehaviour {
         foreach (IScsServerClient client in server.Clients.GetAllItems()) {
             client.SendMessage(msg);
         }
+    }
+
+    public void GetEnemyChampions() {
+        
+    }
+
+    public void RequestMove(int championID, HexCoordinates coordinates) {
+        throw new NotImplementedException();
+    }
+
+    public void RequestAbility(int championID, HexCoordinates target) {
+        throw new NotImplementedException();
     }
 }

@@ -13,7 +13,7 @@ public static class SkillValidation{
     }
 
     private static bool IsValidTarget(Champion champ, Skill skill, Cell target) {
-        return skill.targetType.IsValidTarget(target, champ);
+        return skill.TargetType.IsValidTarget(target, champ);
     }
 
     private static bool HasEnoughResources(Champion champ, Skill skill) {

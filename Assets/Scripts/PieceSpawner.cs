@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class PieceSpawner : MonoBehaviour {
 
-    public GameObject pawn;
+    public GameObject basicChamp;
     public Transform pieceContainer;
+    private int idCounter = 0;
 
 	// Use this for initialization
 	public void Spawn () {
-        InstantiateAlly(pawn, 0, 0, 0);
-        InstantiateAlly(pawn, 0, 1, -1);
-        InstantiateEnemy(pawn, 2, -2, 0);
+        InstantiateChampion(basicChamp, 0, 0, 0, false);
+        InstantiateChampion(basicChamp, 0, 1, -1, false);
+        InstantiateChampion(basicChamp, 2, -2, 0, false);
 	}
 
-    void InstantiateAlly(GameObject piece, int x, int y, int z) {
-        GameObject p = (GameObject)Instantiate(pawn, pieceContainer);
-        HexGrid.Instance.AddPiece(p.GetComponent<Champion>(), HexCoordinates.CreateInstance(x, y, z));
-    }
-
-    void InstantiateEnemy(GameObject piece, int x, int y, int z) {
-        GameObject p = (GameObject)Instantiate(pawn, pieceContainer);
-        p.GetComponent<Champion>().IsEnemyChamp = true;
-        HexGrid.Instance.AddPiece(p.GetComponent<Champion>(), HexCoordinates.CreateInstance(x, y, z));
+    void InstantiateChampion(GameObject piece, int x, int y, int z, bool isEnemy) {
+        GameObject go = (GameObject)Instantiate(basicChamp, pieceContainer);
+        Champion champ = go.GetComponent<Champion>();
+        champ.IsEnemyChamp = isEnemy;
+        champ.ID = idCounter;
+        idCounter++;
+        HexGrid.Instance.AddPiece(champ, HexCoordinates.CreateInstance(x, y, z));
     }
 	
 	

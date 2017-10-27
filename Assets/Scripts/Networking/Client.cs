@@ -7,7 +7,7 @@ using Hik.Communication.Scs.Communication.Messages;
 using Hik.Communication.ScsServices.Client;
 using System;
 
-public class MyClient : MonoBehaviour {
+public class Client : MonoBehaviour {
 
     IScsClient client;
 

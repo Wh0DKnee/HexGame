@@ -99,11 +99,9 @@
     <Compile Include="Assets\Scripts\Highlighting\HighlightStateController.cs" />
     <Compile Include="Assets\Scripts\Initializer.cs" />
     <Compile Include="Assets\Scripts\MouseEvents.cs" />
-    <Compile Include="Assets\Scripts\Networking\MyClient.cs" />
-    <Compile Include="Assets\Scripts\Networking\MyServer.cs" />
-    <Compile Include="Assets\Scripts\Networking\Old\Client.cs" />
-    <Compile Include="Assets\Scripts\Networking\Old\Server.cs" />
-    <Compile Include="Assets\Scripts\Networking\Old\ServerThread.cs" />
+    <Compile Include="Assets\Scripts\Networking\Client.cs" />
+    <Compile Include="Assets\Scripts\Networking\IServerService.cs" />
+    <Compile Include="Assets\Scripts\Networking\Server.cs" />
     <Compile Include="Assets\Scripts\PieceSpawner.cs" />
     <Compile Include="Assets\Scripts\Skills\Cost.cs" />
     <Compile Include="Assets\Scripts\Skills\HPCost.cs" />

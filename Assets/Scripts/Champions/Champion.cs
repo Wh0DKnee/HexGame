@@ -5,6 +5,9 @@ using System;
 
 public abstract class Champion : MonoBehaviour{
 
+    public int ID { get; set; } //ID, consistent and unique across clients
+
+    //refactor to ChampionStats class
     private int hp;
     public int HP {
         get { return hp; }
@@ -26,6 +29,7 @@ public abstract class Champion : MonoBehaviour{
             if (manaChanged != null) manaChanged(this);
         }
     }
+
     public Skill Q { get; set; }
     public Skill W { get; set; }
     public Skill E { get; set; }
