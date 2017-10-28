@@ -6,13 +6,15 @@ using Hik.Communication.ScsServices.Service;
 namespace NetworkingCommonLib {
 
     [ScsService]
-    public interface IServerService {
+    public interface IServerProxy {
 
         void GetEnemyChampions();
 
         void RequestMove(int championID, HexCoordinates coordinates);
 
         void RequestAbility(int championID, HexCoordinates target);
+
+        void RegisterPlayer(PlayerInfo info);
 
     }
 

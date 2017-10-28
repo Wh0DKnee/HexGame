@@ -100,8 +100,12 @@
     <Compile Include="Assets\Scripts\Initializer.cs" />
     <Compile Include="Assets\Scripts\MouseEvents.cs" />
     <Compile Include="Assets\Scripts\Networking\Client.cs" />
-    <Compile Include="Assets\Scripts\Networking\IServerService.cs" />
+    <Compile Include="Assets\Scripts\Networking\ClientController.cs" />
+    <Compile Include="Assets\Scripts\Networking\IClientProxy.cs" />
+    <Compile Include="Assets\Scripts\Networking\IServerProxy.cs" />
+    <Compile Include="Assets\Scripts\Networking\PlayerInfo.cs" />
     <Compile Include="Assets\Scripts\Networking\Server.cs" />
+    <Compile Include="Assets\Scripts\Networking\Service.cs" />
     <Compile Include="Assets\Scripts\PieceSpawner.cs" />
     <Compile Include="Assets\Scripts\Skills\Cost.cs" />
     <Compile Include="Assets\Scripts\Skills\HPCost.cs" />
