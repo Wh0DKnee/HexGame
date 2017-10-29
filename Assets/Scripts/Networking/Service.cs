@@ -9,7 +9,7 @@ using Hik.Communication.ScsServices.Service;
 using System;
 using NetworkingCommonLib;
 
-public class Service : ScsService, IServerProxy {
+public class Service : ScsService, IServiceProxy {
 
     private ThreadSafeSortedList<long, ServiceClient> clients;
 

@@ -14,10 +14,10 @@ public class Server : MonoBehaviour {
     readonly int port = 100;
 
 	// Use this for initialization
-	void Start () {
+	public void StartServer () {
         server = ScsServiceBuilder.CreateService(new ScsTcpEndPoint(port));
         service = new Service();
-        server.AddService<IServerProxy, Service>(service);
+        server.AddService<IServiceProxy, Service>(service);
 
         server.ClientConnected += ClientConnected;
         server.ClientDisconnected += ClientDisconnected;
@@ -25,12 +25,12 @@ public class Server : MonoBehaviour {
         server.Start();
 	}
 
-    private void ClientDisconnected(object sender, ServiceClientEventArgs e) {
-        Debug.Log("client disconnected: " + e.Client.ClientId);
-    }
-
     private void ClientConnected(object sender, ServiceClientEventArgs e) {
         Debug.Log("client connected: " + e.Client.ClientId);
+    }
+
+    private void ClientDisconnected(object sender, ServiceClientEventArgs e) {
+        Debug.Log("client disconnected: " + e.Client.ClientId);
     }
 
     private void OnApplicationQuit() {

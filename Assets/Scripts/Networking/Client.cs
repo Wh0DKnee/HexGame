@@ -6,20 +6,39 @@ using Hik.Communication.ScsServices.Client;
 using System;
 using NetworkingCommonLib;
 
-public class Client : IClientProxy {
+public class Client {
 
-    public PlayerInfo PlayerInfo { get; private set; }
+    IScsServiceClient<IServiceProxy> scsClient;
 
-    public Client(PlayerInfo info) {
-        PlayerInfo = info;
+    public void Initialize(string IPAdress, int port, string nickname) {
+
+        ClientProxyImpl clientProxyImpl = new ClientProxyImpl(new PlayerInfo(nickname));
+
+        scsClient = ScsServiceClientBuilder.CreateClient<IServiceProxy>(new ScsTcpEndPoint(IPAdress, port), clientProxyImpl);
+        scsClient.Connected += OnConnected;
+        scsClient.Disconnected += OnDisconnected;
+
+        if (TryConnect()) {
+            scsClient.ServiceProxy.RegisterPlayer(clientProxyImpl.PlayerInfo);
+        }
     }
 
-    public void MoveChampion(int championID, HexCoordinates coordinates) {
-        Debug.Log("server called MoveChampion");
+    private bool TryConnect() {
+        try {
+            scsClient.Connect();
+        } catch (NullReferenceException) {
+            Debug.LogError("Could not connect to the specified server. Make sure the IP address and port match the host's.");
+            return false;
+        }
+        return true;
     }
 
-    public void UseAbility(int championID, HexCoordinates targetCellCoordinates) {
-        Debug.Log("server called UseAbility");
+    void OnConnected(object sender, EventArgs e) {
+        Debug.Log("I connected to server");
+    }
+
+    void OnDisconnected(object sender, EventArgs e) {
+        Debug.Log("I disconnected from server");
     }
 
 }

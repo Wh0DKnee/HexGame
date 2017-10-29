@@ -6,7 +6,7 @@ using Hik.Communication.ScsServices.Service;
 namespace NetworkingCommonLib {
 
     [ScsService]
-    public interface IServerProxy {
+    public interface IServiceProxy {
 
         void GetEnemyChampions();
 
