@@ -106,7 +106,7 @@
     <Compile Include="Assets\Scripts\Networking\ClientProxyImpl.cs" />
     <Compile Include="Assets\Scripts\Networking\IClientProxy.cs" />
     <Compile Include="Assets\Scripts\Networking\IServiceProxy.cs" />
-    <Compile Include="Assets\Scripts\Networking\LobbyController.cs" />
+    <Compile Include="Assets\Scripts\Networking\NetworkSessionController.cs" />
     <Compile Include="Assets\Scripts\Networking\PlayerInfo.cs" />
     <Compile Include="Assets\Scripts\Networking\Server.cs" />
     <Compile Include="Assets\Scripts\Networking\Service.cs" />

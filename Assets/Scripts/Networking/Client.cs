@@ -9,21 +9,18 @@ using NetworkingCommonLib;
 public class Client {
 
     IScsServiceClient<IServiceProxy> scsClient;
+    ClientProxyImpl clientProxyImpl;
 
-    public void Initialize(string IPAdress, int port, string nickname) {
+    public Client(string IPAdress, int port, string nickname) {
 
-        ClientProxyImpl clientProxyImpl = new ClientProxyImpl(new PlayerInfo(nickname));
+        clientProxyImpl = new ClientProxyImpl(new PlayerInfo(nickname));
 
         scsClient = ScsServiceClientBuilder.CreateClient<IServiceProxy>(new ScsTcpEndPoint(IPAdress, port), clientProxyImpl);
         scsClient.Connected += OnConnected;
         scsClient.Disconnected += OnDisconnected;
-
-        if (TryConnect()) {
-            scsClient.ServiceProxy.RegisterPlayer(clientProxyImpl.PlayerInfo);
-        }
     }
 
-    private bool TryConnect() {
+    public bool TryConnect() {
         try {
             scsClient.Connect();
         } catch (NullReferenceException) {
@@ -31,6 +28,10 @@ public class Client {
             return false;
         }
         return true;
+    }
+
+    public void Register() {
+        scsClient.ServiceProxy.RegisterPlayer(clientProxyImpl.PlayerInfo);
     }
 
     void OnConnected(object sender, EventArgs e) {

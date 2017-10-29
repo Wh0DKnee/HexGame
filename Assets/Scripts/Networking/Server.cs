@@ -7,22 +7,19 @@ using Hik.Communication.Scs.Communication.EndPoints.Tcp;
 using Hik.Communication.Scs.Server;
 using NetworkingCommonLib;
 
-public class Server : MonoBehaviour {
+public class Server{
 
-    IScsServiceApplication server;
+    IScsServiceApplication serviceApplication;
     Service service;
-    readonly int port = 100;
 
 	// Use this for initialization
-	public void StartServer () {
-        server = ScsServiceBuilder.CreateService(new ScsTcpEndPoint(port));
+	public Server(int port) {
+        serviceApplication = ScsServiceBuilder.CreateService(new ScsTcpEndPoint(port));
         service = new Service();
-        server.AddService<IServiceProxy, Service>(service);
+        serviceApplication.AddService<IServiceProxy, Service>(service);
 
-        server.ClientConnected += ClientConnected;
-        server.ClientDisconnected += ClientDisconnected;
-
-        server.Start();
+        serviceApplication.ClientConnected += ClientConnected;
+        serviceApplication.ClientDisconnected += ClientDisconnected;
 	}
 
     private void ClientConnected(object sender, ServiceClientEventArgs e) {
@@ -33,8 +30,12 @@ public class Server : MonoBehaviour {
         Debug.Log("client disconnected: " + e.Client.ClientId);
     }
 
-    private void OnApplicationQuit() {
-        server.Stop();
+    public void Start() {
+        serviceApplication.Start();
+    }
+
+    public void Stop() {
+        serviceApplication.Stop();
     }
 
 }
