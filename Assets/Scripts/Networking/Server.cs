@@ -17,16 +17,13 @@ public class Server{
         service = new Service();
         serviceApplication.AddService<IServiceProxy, Service>(service);
 
-        serviceApplication.ClientConnected += ClientConnected;
+        service.clientRegistered += ClientRegistered;
         serviceApplication.ClientDisconnected += ClientDisconnected;
 	}
 
-    private void ClientConnected(object sender, ServiceClientEventArgs e) {
-        Debug.Log("client connected: " + e.Client.ClientId);
-        if (e.Client.ClientId == 2) {    //this is shit code. What it's supposed to do is start the game when two players are connected
-                                        //however, we should not rely on the clientId.
-                                        //TODO: use the Service.GetClientCount() method. The problem right now is that the ClientConnected event
-                                        //is fired before the client calls the register method, and therefore here, the client count is not correct
+    private void ClientRegistered(IScsServiceClient client) {
+        Debug.Log("client connected: " + client.ClientId);
+        if (service.GetClientCount() == 2) {
             service.ChangeScene("gameScene");
         }
     }

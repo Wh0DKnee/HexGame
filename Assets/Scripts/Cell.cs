@@ -12,7 +12,7 @@ public class Cell : MonoBehaviour, MouseEvents<Cell> {
     public event Action<Cell> mouseEnter;
     public event Action<Cell> mouseExit;
     public event Action<Cell> mouseDown;
-    public event Action<Cell> mouseOver; 
+    public event Action<Cell> mouseOver;
 
     public override string ToString() {
         return coordinates.ToString();

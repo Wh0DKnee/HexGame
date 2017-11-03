@@ -24,6 +24,10 @@ public class ClientProxyImpl : IClientProxy {
     }
 
     public void ChangeScene(string sceneName) {
-        SceneManager.LoadScene("gameScene");
+        UnityMainThreadDispatcher.Instance().Enqueue(() => SceneManager.LoadScene("gameScene"));
+    }
+
+    public PlayerInfo GetClientInfo() {
+        return PlayerInfo;
     }
 }

@@ -31,7 +31,7 @@ public class Client {
     }
 
     public void Register() {
-        scsClient.ServiceProxy.RegisterPlayer(clientProxyImpl.PlayerInfo);
+        scsClient.ServiceProxy.RegisterPlayer();
     }
 
     void OnConnected(object sender, EventArgs e) {

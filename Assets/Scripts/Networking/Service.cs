@@ -13,6 +13,8 @@ public class Service : ScsService, IServiceProxy {
 
     private ThreadSafeSortedList<long, ServiceClient> clients;
 
+    public event Action<IScsServiceClient> clientRegistered;
+
     public Service() {
         clients = new ThreadSafeSortedList<long, ServiceClient>();
     }
@@ -27,13 +29,15 @@ public class Service : ScsService, IServiceProxy {
         throw new NotImplementedException();
     }
 
-    public void RequestAbility(int championID, HexCoordinates target) {
+    public void RequestAbilityUse(int championID, HexCoordinates target) {
         throw new NotImplementedException();
     }
 
-    public void RegisterPlayer(PlayerInfo info) {
-        Debug.Log("Registering " + info.nickname);
+    //No parameter necessary, we can access the callee via the CurrentClient property
+    public void RegisterPlayer() {
+        Debug.Log("Registering " + CurrentClient.GetClientProxy<IClientProxy>().GetClientInfo().nickname);
         clients[CurrentClient.ClientId] = new ServiceClient(CurrentClient, CurrentClient.GetClientProxy<IClientProxy>());
+        if(clientRegistered != null) { clientRegistered(CurrentClient); }
     }
 
     public int GetClientCount() {

@@ -12,9 +12,9 @@ namespace NetworkingCommonLib {
 
         void RequestMove(int championID, HexCoordinates coordinates);
 
-        void RequestAbility(int championID, HexCoordinates target);
+        void RequestAbilityUse(int championID, HexCoordinates target);
 
-        void RegisterPlayer(PlayerInfo info);
+        void RegisterPlayer();
     }
 
 }

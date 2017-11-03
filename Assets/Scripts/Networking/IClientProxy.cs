@@ -7,6 +7,8 @@ namespace NetworkingCommonLib {
 
     public interface IClientProxy {
 
+        PlayerInfo GetClientInfo();
+
         void MoveChampion(int championID, HexCoordinates coordinates);
 
         void UseAbility(int championID, HexCoordinates targetCellCoordinates);
