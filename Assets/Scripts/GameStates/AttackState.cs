@@ -27,6 +27,7 @@ public class AttackState : CellListenerGameState {
     }
 
     public override void CellMouseDown(Cell clickedCell) {
+        Debug.Log("trying to use skill");
         if (selectedChamp.TryUseSkill(clickedCell)) {
             if (HaveAllAttacked()) {
                 gameStateController.SetState(new EnemyTurnState(gameStateController));

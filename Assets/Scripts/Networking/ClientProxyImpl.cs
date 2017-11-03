@@ -5,6 +5,7 @@ using Hik.Communication.Scs.Communication.EndPoints.Tcp;
 using Hik.Communication.ScsServices.Client;
 using System;
 using NetworkingCommonLib;
+using UnityEngine.SceneManagement;
 
 public class ClientProxyImpl : IClientProxy {
 
@@ -22,4 +23,7 @@ public class ClientProxyImpl : IClientProxy {
         Debug.Log("server called UseAbility");
     }
 
+    public void ChangeScene(string sceneName) {
+        SceneManager.LoadScene("gameScene");
+    }
 }

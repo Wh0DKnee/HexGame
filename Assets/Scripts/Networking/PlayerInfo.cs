@@ -7,7 +7,8 @@ namespace NetworkingCommonLib {
     [System.Serializable]
     public class PlayerInfo {
         public string nickname;
-        //champion list or smth
+        //TODO: DONT HARDCODE
+        public string[] championNames = new string[]{"BasicChampion", "BasicChampion", "BasicChampion"};
 
         public PlayerInfo(string nickname) {
             this.nickname = nickname;

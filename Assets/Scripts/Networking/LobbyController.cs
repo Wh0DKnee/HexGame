@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Hik.Communication.ScsServices.Service;
 
-public class NetworkSessionController : MonoBehaviour {
+public class LobbyController : MonoBehaviour {
+
+    public NetworkSession networkSession;
 
     public InputField hostNick;
     public InputField connectorNick;
     public InputField IP;
     public InputField connectorPort;
-
-    Server server;
-    Client client;
-
-    private void Awake() {
-        DontDestroyOnLoad(this.gameObject);
-    }
 
     public void HostLocal() {
         StartServer();
@@ -24,35 +21,27 @@ public class NetworkSessionController : MonoBehaviour {
     }
 
 	private void StartServer() {
-        server = new Server(100);
-        server.Start();
+        networkSession.Server = new Server(100);
+        networkSession.StartServer();
     }
 
     private void CreateLocalClient() {
-        client = new Client("127.0.0.1", 100, hostNick.text);
-        
+        networkSession.Client = new Client("127.0.0.1", 100, hostNick.text);
     }
 
     public void OnConnectButtonPressed() {
-        server = null;
+        networkSession.Server = null;
         CreateRemoteClient();
         ConnectClient();
     }
 
     private void CreateRemoteClient() {
-        client = new Client(IP.text, int.Parse(connectorPort.text), connectorNick.text);
+        networkSession.Client = new Client(IP.text, int.Parse(connectorPort.text), connectorNick.text);
     }
 
     private void ConnectClient() {
-        if (client.TryConnect()) {
-            client.Register();
-            //changescene
-        }
-    }
-
-    private void OnApplicationQuit() {
-        if(server != null) {
-            server.Stop();
+        if (networkSession.Client.TryConnect()) {
+            networkSession.Client.Register();
         }
     }
 }

@@ -12,7 +12,7 @@ public class PieceSpawner : MonoBehaviour {
 	public void Spawn () {
         InstantiateChampion(basicChamp, 0, 0, 0, false);
         InstantiateChampion(basicChamp, 0, 1, -1, false);
-        InstantiateChampion(basicChamp, 2, -2, 0, false);
+        InstantiateChampion(basicChamp, 2, -2, 0, true);
 	}
 
     void InstantiateChampion(GameObject piece, int x, int y, int z, bool isEnemy) {

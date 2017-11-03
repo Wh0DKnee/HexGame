@@ -10,6 +10,8 @@ namespace NetworkingCommonLib {
         void MoveChampion(int championID, HexCoordinates coordinates);
 
         void UseAbility(int championID, HexCoordinates targetCellCoordinates);
-        
+
+        void ChangeScene(string sceneName);
+
     }
 }

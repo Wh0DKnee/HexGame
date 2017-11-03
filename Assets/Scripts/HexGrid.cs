@@ -24,14 +24,6 @@ public class HexGrid : MonoBehaviour {
         }
     }
     
-	void Awake () {
-        if(instance == null) {
-            instance = this;
-        } else {
-            Debug.LogError("more than one hexgrid");
-        }
-	}
-    
     public void AddCell(HexCoordinates coordinates) {
         if (Contains(coordinates)) {
             Debug.LogWarning("this hex already exists");

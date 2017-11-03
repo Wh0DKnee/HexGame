@@ -15,6 +15,7 @@ public abstract class Champion : MonoBehaviour{
             if (value <= 0) {
                 hp = 0;
                 if (died != null) died(this);
+                Destroy(this.gameObject);
             } else {
                 hp = value;
             }
@@ -54,6 +55,7 @@ public abstract class Champion : MonoBehaviour{
         InitializeStats();
     }
 
+    #region events
     //TODO: maybe put events in their own class like ChampionEvents and make this class have a member of that type
     public event Action<Champion> selected;
     public event Action<Champion> unselected;
@@ -68,6 +70,7 @@ public abstract class Champion : MonoBehaviour{
     public void Unselected() {
         if (unselected != null) unselected(this);
     }
+    #endregion
 
     public Cell GetCell() {
         return HexGrid.Instance.ChampionToCell(this);

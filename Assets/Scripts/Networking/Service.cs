@@ -36,6 +36,17 @@ public class Service : ScsService, IServiceProxy {
         clients[CurrentClient.ClientId] = new ServiceClient(CurrentClient, CurrentClient.GetClientProxy<IClientProxy>());
     }
 
+    public int GetClientCount() {
+        Debug.Log("client count: " + clients.GetAllItems().Count);
+        return clients.GetAllItems().Count;
+    }
+
+    public void ChangeScene(string sceneName) {
+        foreach (ServiceClient client in clients.GetAllItems()) {
+            client.ClientProxy.ChangeScene(sceneName);
+        }
+    }
+
     private sealed class ServiceClient {
 
         public IScsServiceClient Client { get; private set; }
