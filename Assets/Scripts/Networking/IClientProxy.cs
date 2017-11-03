@@ -15,6 +15,6 @@ namespace NetworkingCommonLib {
 
         void ChangeScene(string sceneName);
 
-        void SpawnPieces(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions, bool leftSide);
+        void SpawnChampions(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions, bool leftSide);
     }
 }

@@ -34,6 +34,10 @@ public class Client {
         scsClient.ServiceProxy.RegisterPlayer();
     }
 
+    public void TellServerReady() {
+        scsClient.ServiceProxy.GameSceneLoaded();
+    }
+
     void OnConnected(object sender, EventArgs e) {
         Debug.Log("I connected to server");
     }

@@ -37,7 +37,6 @@ public class Service : ScsService, IServiceProxy {
 
     //No parameter necessary, we can access the callee via the CurrentClient property
     public void RegisterPlayer() {
-        Debug.Log("Registering " + CurrentClient.GetClientProxy<IClientProxy>().GetClientInfo().nickname);
         clients[CurrentClient.ClientId] = new ServiceClient(CurrentClient, CurrentClient.GetClientProxy<IClientProxy>());
         if(clientRegistered != null) { clientRegistered(CurrentClient); }
     }
@@ -56,8 +55,9 @@ public class Service : ScsService, IServiceProxy {
     public void GameSceneLoaded() {
         readyCount++;
         if (readyCount == 2) {
-            clients[1].ClientProxy.SpawnPieces(GetChampionPositions(1), GetChampionPositions(2), false);
-            clients[2].ClientProxy.SpawnPieces(GetChampionPositions(2), GetChampionPositions(1), true);
+
+            clients[1].ClientProxy.SpawnChampions(GetChampionPositions(1), GetChampionPositions(2), false);
+            clients[2].ClientProxy.SpawnChampions(GetChampionPositions(2), GetChampionPositions(1), true);
         }
     }
 

@@ -31,7 +31,7 @@ public class ClientProxyImpl : IClientProxy {
         return PlayerInfo;
     }
 
-    public void SpawnPieces(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions, bool leftSide) {
-        PieceSpawner.instance.InstantiateAllChampions(allyChampionPositions, enemyChampionPositions, leftSide);
+    public void SpawnChampions(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions, bool leftSide) {
+        UnityMainThreadDispatcher.Instance().Enqueue(() => PieceSpawner.instance.InstantiateAllChampions(allyChampionPositions, enemyChampionPositions, leftSide));
     }
 }

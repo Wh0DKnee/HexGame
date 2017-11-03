@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NetworkingCommonLib;
+using System;
 
 public class PieceSpawner : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class PieceSpawner : MonoBehaviour {
 
     public Transform pieceContainer;
     private int idCounter = 0;
+
+    public event Action championsLoaded;
 
     private void Awake() {
         if(instance != null) {
@@ -24,19 +27,21 @@ public class PieceSpawner : MonoBehaviour {
     public void InstantiateAllChampions(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions, bool leftSide) {
         if (leftSide) {
             for (int i = 0; i < allyChampionPositions.Length; i++) {
-                InstantiateChampion(allyChampionPositions[i].ChampionName, allyChampionPositions[i].Coordinates, false);
+                InstantiateChampion(allyChampionPositions[i].ChampionName, ExtractHexCoordsFromChampionPosition(allyChampionPositions[i]), false);
             }
             for (int i = 0; i < enemyChampionPositions.Length; i++) {
-                InstantiateChampion(enemyChampionPositions[i].ChampionName, enemyChampionPositions[i].Coordinates, true);
+                InstantiateChampion(enemyChampionPositions[i].ChampionName, HexMath.HexMirrorAtOrigin(ExtractHexCoordsFromChampionPosition(enemyChampionPositions[i])), true);
             }
         } else {
             for (int i = 0; i < enemyChampionPositions.Length; i++) {
-                InstantiateChampion(enemyChampionPositions[i].ChampionName, enemyChampionPositions[i].Coordinates, true);
+                InstantiateChampion(enemyChampionPositions[i].ChampionName, ExtractHexCoordsFromChampionPosition(enemyChampionPositions[i]), true);
             }
             for (int i = 0; i < allyChampionPositions.Length; i++) {
-                InstantiateChampion(allyChampionPositions[i].ChampionName, allyChampionPositions[i].Coordinates, false);
+                InstantiateChampion(allyChampionPositions[i].ChampionName, HexMath.HexMirrorAtOrigin(ExtractHexCoordsFromChampionPosition(allyChampionPositions[i])), false);
             }
         }
+        
+        if(championsLoaded != null) { championsLoaded(); }
     }
 
     public void InstantiateChampion(string championName, HexCoordinates coordinates, bool isEnemy) {
@@ -58,6 +63,10 @@ public class PieceSpawner : MonoBehaviour {
             default:
                 return null;
         }
+    }
+
+    private HexCoordinates ExtractHexCoordsFromChampionPosition(ChampionPosition championPosition) {
+        return HexCoordinates.CreateInstance(championPosition.X, championPosition.Y, championPosition.Z);
     }
 		
 }

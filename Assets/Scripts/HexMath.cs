@@ -19,6 +19,10 @@ public static class HexMath {
         return HexCoordinates.CreateInstance(a.x * k, a.y * k, a.z * k);
     }
 
+    public static HexCoordinates HexMirrorAtOrigin(HexCoordinates h) {
+        return HexCoordinates.CreateInstance(-h.x, -h.y, -h.z);
+    }
+
     public static int HexLength(HexCoordinates hex) {
         return (int)((Mathf.Abs(hex.x) + Mathf.Abs(hex.y) + Mathf.Abs(hex.z)) / 2);
     }
