@@ -14,6 +14,8 @@ public class Service : ScsService, IServiceProxy {
     private ThreadSafeSortedList<long, ServiceClient> clients;
 
     public event Action<IScsServiceClient> clientRegistered;
+    
+    private int readyCount;
 
     public Service() {
         clients = new ThreadSafeSortedList<long, ServiceClient>();
@@ -49,6 +51,18 @@ public class Service : ScsService, IServiceProxy {
         foreach (ServiceClient client in clients.GetAllItems()) {
             client.ClientProxy.ChangeScene(sceneName);
         }
+    }
+
+    public void GameSceneLoaded() {
+        readyCount++;
+        if (readyCount == 2) {
+            clients[1].ClientProxy.SpawnPieces(GetChampionPositions(1), GetChampionPositions(2), false);
+            clients[2].ClientProxy.SpawnPieces(GetChampionPositions(2), GetChampionPositions(1), true);
+        }
+    }
+
+    private ChampionPosition[] GetChampionPositions(int clientID) {
+        return clients[clientID].ClientProxy.GetClientInfo().championPositions;
     }
 
     private sealed class ServiceClient {

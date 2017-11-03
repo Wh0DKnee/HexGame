@@ -8,10 +8,10 @@ namespace NetworkingCommonLib {
     public class PlayerInfo {
         public string nickname;
         //TODO: DONT HARDCODE
-        public ChampionPosition[] championNames = new ChampionPosition[]{
-            new ChampionPosition("BasicChampion", HexCoordinates.CreateInstance(2, -2, 0)),
-            new ChampionPosition("BasicChampion", HexCoordinates.CreateInstance(2, -1, -1)),
-            new ChampionPosition("BasicChampion", HexCoordinates.CreateInstance(1, -2, 1))
+        public ChampionPosition[] championPositions = new ChampionPosition[]{
+            new ChampionPosition("BasicChampion", HexCoordinates.CreateInstance(-2, 2, 0)),
+            new ChampionPosition("BasicChampion", HexCoordinates.CreateInstance(-2, 1, 1)),
+            new ChampionPosition("BasicChampion", HexCoordinates.CreateInstance(-1, 2, -1))
         };
 
         public PlayerInfo(string nickname) {

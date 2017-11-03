@@ -15,6 +15,8 @@ namespace NetworkingCommonLib {
         void RequestAbilityUse(int championID, HexCoordinates target);
 
         void RegisterPlayer();
+
+        void GameSceneLoaded();
     }
 
 }

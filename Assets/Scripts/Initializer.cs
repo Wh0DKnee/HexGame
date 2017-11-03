@@ -9,7 +9,6 @@ public class Initializer : MonoBehaviour {
     public ChampionHighlighter highlighter;
 
     private void Start() {
-        spawner.Spawn();
         highlighter.SubscribeToChamps();
     }
 }

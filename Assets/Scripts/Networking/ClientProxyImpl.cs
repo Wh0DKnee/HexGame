@@ -30,4 +30,8 @@ public class ClientProxyImpl : IClientProxy {
     public PlayerInfo GetClientInfo() {
         return PlayerInfo;
     }
+
+    public void SpawnPieces(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions, bool leftSide) {
+        PieceSpawner.instance.InstantiateAllChampions(allyChampionPositions, enemyChampionPositions, leftSide);
+    }
 }
