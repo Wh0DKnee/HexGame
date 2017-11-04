@@ -9,13 +9,13 @@ using NetworkingCommonLib;
 public class Client {
 
     IScsServiceClient<IServiceProxy> scsClient;
-    ClientProxyImpl clientProxyImpl;
+    public IClientProxy ClientProxy { get; private set; }
 
     public Client(string IPAdress, int port, string nickname) {
 
-        clientProxyImpl = new ClientProxyImpl(new PlayerInfo(nickname));
+        ClientProxy = new ClientProxyImpl(new PlayerInfo(nickname));
 
-        scsClient = ScsServiceClientBuilder.CreateClient<IServiceProxy>(new ScsTcpEndPoint(IPAdress, port), clientProxyImpl);
+        scsClient = ScsServiceClientBuilder.CreateClient<IServiceProxy>(new ScsTcpEndPoint(IPAdress, port), ClientProxy);
         scsClient.Connected += OnConnected;
         scsClient.Disconnected += OnDisconnected;
     }
@@ -36,6 +36,14 @@ public class Client {
 
     public void TellServerReady() {
         scsClient.ServiceProxy.GameSceneLoaded();
+    }
+
+    public void TellServerTurnDone() {
+        scsClient.ServiceProxy.TurnDone();
+    }
+
+    public void TellServerMove(int championID, HexCoordinates coordinates) {
+        scsClient.ServiceProxy.RequestMove(championID, coordinates); //make serializable
     }
 
     void OnConnected(object sender, EventArgs e) {

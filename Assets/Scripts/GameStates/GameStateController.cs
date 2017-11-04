@@ -6,6 +6,8 @@ using System;
 public class GameStateController : MonoBehaviour {
 
     private GameState currentState;
+    public IMoveHandler MoveHandler { get; set; }
+    public ISkillHandler SkillHandler { get; set; }
 
     public event Action<GameState> StateChanged;
 
@@ -25,11 +27,19 @@ public class GameStateController : MonoBehaviour {
         }
     }
 
-	void Start () {
-        SetState(new SelectionState(this));
+	public void Initialize() {
+        MoveHandler = new NetworkMoveHandler(); //TODO: dont hardcode this
+
+        if (GameInfo.isLeftSide) {
+            SetState(new SelectionState(this));
+        } else {
+            SetState(new EnemyTurnState(this));
+        }
 	}
 	
 	void Update () {
-        currentState.Tick();
+        if (currentState != null) {
+            currentState.Tick();
+        }
 	}
 }

@@ -9,6 +9,10 @@ public class MoveState : CellListenerGameState {
 
     public MoveState(GameStateController gsc, Champion selectedChamp) : base(gsc) {
         this.selectedChamp = selectedChamp;
+    }
+
+    public override void OnStateEnter() {
+        base.OnStateEnter();
         if (selectedChamp.HasMoved) {
             SkipMoveState();
         }
@@ -20,13 +24,18 @@ public class MoveState : CellListenerGameState {
         } else {
             if (TargetReachable(cell)) {
                 selectedChamp.Move(cell.coordinates);
-                gameStateController.SetState(new AttackState(gameStateController, selectedChamp));
+                //TODO: use the following line instead. To make it work, we need to refactor the HexCoordinates class
+                //so that it is serializable. This means not inheriting from ScriptableObject. This, in turn, means that
+                //or editor scripts will no longer work. We should instead just store the maps in an XML file and load them as we open
+                //the game scene.
+                //gameStateController.MoveHandler.HandleMove(selectedChamp, cell.coordinates);
+                gameStateController.SetState(new UseSkillState(gameStateController, selectedChamp));
             }
         }
     }
 
     private void SkipMoveState() {
-        gameStateController.SetState(new AttackState(gameStateController, selectedChamp));
+        gameStateController.SetState(new UseSkillState(gameStateController, selectedChamp));
     }
 
     //TODO: decide if this logic belongs in the champion class instead

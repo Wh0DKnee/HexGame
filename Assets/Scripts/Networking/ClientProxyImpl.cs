@@ -15,8 +15,10 @@ public class ClientProxyImpl : IClientProxy {
         PlayerInfo = info;
     }
 
+    public event Action EnemyTurnEnd;
+
     public void MoveChampion(int championID, HexCoordinates coordinates) {
-        Debug.Log("server called MoveChampion");
+        HexGrid.Instance.GetChamp(championID).Move(coordinates);
     }
 
     public void UseAbility(int championID, HexCoordinates targetCellCoordinates) {
@@ -24,6 +26,8 @@ public class ClientProxyImpl : IClientProxy {
     }
 
     public void ChangeScene(string sceneName) {
+        //TODO: maybe refactor this into some command pattern, so that we only have one place where we have to know
+        // how to invoke methods thread safe in unity
         UnityMainThreadDispatcher.Instance().Enqueue(() => SceneManager.LoadScene("gameScene"));
     }
 
@@ -31,7 +35,21 @@ public class ClientProxyImpl : IClientProxy {
         return PlayerInfo;
     }
 
-    public void SpawnChampions(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions, bool leftSide) {
-        UnityMainThreadDispatcher.Instance().Enqueue(() => PieceSpawner.instance.InstantiateAllChampions(allyChampionPositions, enemyChampionPositions, leftSide));
+    public void SpawnChampions(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions) {
+        UnityMainThreadDispatcher.Instance().Enqueue(() => PieceSpawner.instance.InstantiateAllChampions(allyChampionPositions, enemyChampionPositions));
+    }
+
+    public void SendGameInfo(string opponentName, bool leftSide) {
+        GameInfo.opponentName = opponentName;
+        GameInfo.isLeftSide = leftSide;
+    }
+
+    public void InitializeGameState() {
+        UnityMainThreadDispatcher.Instance().Enqueue(() => GameStateControllerInitializer.instance.InitializeGameStateController());
+    }
+
+    public void EnemyTurnDone() {
+        Debug.Log("Enemy turn done");
+        if(EnemyTurnEnd != null) { EnemyTurnEnd(); }
     }
 }

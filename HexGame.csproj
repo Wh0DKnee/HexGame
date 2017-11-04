@@ -82,13 +82,17 @@
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\Champions\BasicChampion.cs" />
     <Compile Include="Assets\Scripts\Champions\Champion.cs" />
-    <Compile Include="Assets\Scripts\GameStates\AttackState.cs" />
+    <Compile Include="Assets\Scripts\GameInfo.cs" />
     <Compile Include="Assets\Scripts\GameStates\CellListenerGameState.cs" />
     <Compile Include="Assets\Scripts\GameStates\EnemyTurnState.cs" />
     <Compile Include="Assets\Scripts\GameStates\GameState.cs" />
     <Compile Include="Assets\Scripts\GameStates\GameStateController.cs" />
+    <Compile Include="Assets\Scripts\GameStates\IMoveHandler.cs" />
+    <Compile Include="Assets\Scripts\GameStates\ISkillHandler.cs" />
     <Compile Include="Assets\Scripts\GameStates\MoveState.cs" />
+    <Compile Include="Assets\Scripts\GameStates\NetworkMoveHandler.cs" />
     <Compile Include="Assets\Scripts\GameStates\SelectionState.cs" />
+    <Compile Include="Assets\Scripts\GameStates\UseSkillState.cs" />
     <Compile Include="Assets\Scripts\HexCoordinates.cs" />
     <Compile Include="Assets\Scripts\HexGrid.cs" />
     <Compile Include="Assets\Scripts\HexMath.cs" />
@@ -116,6 +120,7 @@
     <Compile Include="Assets\Scripts\Skills\SkillFactory.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillValidation.cs" />
     <Compile Include="Assets\Scripts\Skills\TargetEnum.cs" />
+    <Compile Include="Assets\Scripts\Utility\GameStateControllerInitializer.cs" />
     <Compile Include="Assets\Scripts\Utility\MouseEvents.cs" />
     <Compile Include="Assets\Scripts\Utility\UnityMainThreadDispatcher.cs" />
   </ItemGroup>

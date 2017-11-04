@@ -28,7 +28,9 @@ public class Service : ScsService, IServiceProxy {
     }
 
     public void RequestMove(int championID, HexCoordinates coordinates) {
-        throw new NotImplementedException();
+        foreach (ServiceClient client in clients.GetAllItems()) {
+            client.ClientProxy.MoveChampion(championID, coordinates);
+        }
     }
 
     public void RequestAbilityUse(int championID, HexCoordinates target) {
@@ -55,14 +57,42 @@ public class Service : ScsService, IServiceProxy {
     public void GameSceneLoaded() {
         readyCount++;
         if (readyCount == 2) {
-
-            clients[1].ClientProxy.SpawnChampions(GetChampionPositions(1), GetChampionPositions(2), false);
-            clients[2].ClientProxy.SpawnChampions(GetChampionPositions(2), GetChampionPositions(1), true);
+            StartGame();
         }
+    }
+
+    private void StartGame() {
+        SendClientsInfo();
+        SpawnChampions();
+        InitializeGameState();
     }
 
     private ChampionPosition[] GetChampionPositions(int clientID) {
         return clients[clientID].ClientProxy.GetClientInfo().championPositions;
+    }
+
+    private void SendClientsInfo() {
+        clients[1].ClientProxy.SendGameInfo(clients[2].ClientProxy.GetClientInfo().nickname, true);
+        clients[2].ClientProxy.SendGameInfo(clients[1].ClientProxy.GetClientInfo().nickname, false);
+    }
+
+    private void SpawnChampions() {
+        clients[1].ClientProxy.SpawnChampions(GetChampionPositions(1), GetChampionPositions(2));
+        clients[2].ClientProxy.SpawnChampions(GetChampionPositions(2), GetChampionPositions(1));
+    }
+
+    private void InitializeGameState() {
+        foreach (ServiceClient client in clients.GetAllItems()) {
+            client.ClientProxy.InitializeGameState();
+        }
+    }
+
+    public void TurnDone() {
+        if (CurrentClient.ClientId == 1) {
+            clients[2].ClientProxy.EnemyTurnDone();
+        } else {
+            clients[1].ClientProxy.EnemyTurnDone();
+        }
     }
 
     private sealed class ServiceClient {

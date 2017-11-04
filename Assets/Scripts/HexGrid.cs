@@ -101,6 +101,12 @@ public class HexGrid : MonoBehaviour {
         return GetCell(coordinates).champion;
     }
 
+    public Champion GetChamp(int championID) {
+        Champion result = GetChamps().Where(x => x.ID == championID).ToList()[0];
+        if(result == null) { Debug.LogError("champ with that ID could not be found"); }
+        return result;
+    }
+
     public void MoveChamp(Champion champ, HexCoordinates coords) {
         Cell startCell = ChampionToCell(champ);
         if (startCell != null) {

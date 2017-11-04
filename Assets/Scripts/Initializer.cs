@@ -2,20 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//rename or refactor this
+//TODO: remove this
 public class Initializer : MonoBehaviour {
 
-    public PieceSpawner spawner;
-    public ChampionHighlighter highlighter;
-
-    private void Start() {
-        spawner.championsLoaded += OnChampionsLoaded;
-    }
-
-    private void OnChampionsLoaded() {
-        highlighter.SubscribeToChamps();
-    }
-
+    //TODO automatically call TellServerReady() when scene is finished loading
     public void ReadyButtonPressed() {
         NetworkSession networkSession = FindObjectOfType<NetworkSession>();
         if (networkSession == null) {

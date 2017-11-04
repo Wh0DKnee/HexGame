@@ -13,6 +13,11 @@ public class EnemyTurnState : GameState {
 
     public override void OnStateEnter() {
         base.OnStateEnter();
-        //TODO: send message via server to signal that its the enemy's turn and he can act
+        NetworkSession.instance.Client.TellServerTurnDone();
+        NetworkSession.instance.Client.ClientProxy.EnemyTurnEnd += OnEnemyTurnEnd;
+    }
+
+    private void OnEnemyTurnEnd() {
+        gameStateController.SetState(new SelectionState(gameStateController));
     }
 }

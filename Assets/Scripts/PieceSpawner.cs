@@ -24,8 +24,8 @@ public class PieceSpawner : MonoBehaviour {
     }
 
     //TODO: refactor this piece of shit
-    public void InstantiateAllChampions(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions, bool leftSide) {
-        if (leftSide) {
+    public void InstantiateAllChampions(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions) {
+        if (GameInfo.isLeftSide) {
             for (int i = 0; i < allyChampionPositions.Length; i++) {
                 InstantiateChampion(allyChampionPositions[i].ChampionName, ExtractHexCoordsFromChampionPosition(allyChampionPositions[i]), false);
             }

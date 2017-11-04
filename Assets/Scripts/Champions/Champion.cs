@@ -39,10 +39,10 @@ public abstract class Champion : MonoBehaviour{
 
     public bool IsEnemyChamp { get; set; }
     public bool HasMoved { get; set; } = false;
-    public bool HasAttacked { get; set; } = false;
+    public bool HasUsedSkill { get; set; } = false;
     public bool FinishedTurn {
         get {
-            return HasMoved && HasAttacked;
+            return HasMoved && HasUsedSkill;
         }
     }
 
@@ -88,7 +88,7 @@ public abstract class Champion : MonoBehaviour{
         }
 
         SelectedSkill.Use(this, target);
-        HasAttacked = true;
+        HasUsedSkill = true;
         return true;
     }
 

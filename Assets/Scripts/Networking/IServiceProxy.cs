@@ -17,6 +17,8 @@ namespace NetworkingCommonLib {
         void RegisterPlayer();
 
         void GameSceneLoaded();
+
+        void TurnDone();
     }
 
 }

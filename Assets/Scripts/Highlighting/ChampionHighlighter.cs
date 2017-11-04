@@ -6,7 +6,15 @@ using UnityEngine;
 //highlighting FSM
 public class ChampionHighlighter : MonoBehaviour {
 
-	public void SubscribeToChamps () {
+    private void Start() {
+        PieceSpawner.instance.championsLoaded += OnChampionsLoaded;
+    }
+
+    private void OnChampionsLoaded() {
+        SubscribeToChamps();
+    }
+
+    public void SubscribeToChamps () {
         List<Champion> alliedChamps = HexGrid.Instance.GetAllyChamps();
         foreach (Champion champ in alliedChamps) {
             print(champ.ToString());
