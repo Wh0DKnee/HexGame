@@ -77,6 +77,12 @@
     <Reference Include="Scs">
       <HintPath>Assets\Scs.dll</HintPath>
     </Reference>
+    <Reference Include="Scs">
+      <HintPath>Assets\Packages\Scs.1.1.1\lib\net40-client\Scs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Newtonsoft.Json">
+      <HintPath>Assets\Packages\Unity.Newtonsoft.Json.7.0.0.0\lib\net35-Client\Unity.Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Cell.cs" />
@@ -123,6 +129,11 @@
     <Compile Include="Assets\Scripts\Utility\GameStateControllerInitializer.cs" />
     <Compile Include="Assets\Scripts\Utility\MouseEvents.cs" />
     <Compile Include="Assets\Scripts\Utility\UnityMainThreadDispatcher.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Packages\Scs.1.1.1\content\Changes.txt" />
+    <None Include="Assets\Packages\Scs.1.1.1\lib\net40-client\Scs.XML" />
+    <None Include="Assets\Packages\Unity.Newtonsoft.Json.7.0.0.0\lib\net35-Client\Unity.Newtonsoft.Json.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
