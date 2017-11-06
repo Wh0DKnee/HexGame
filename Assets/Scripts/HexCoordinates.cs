@@ -2,39 +2,32 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Newtonsoft.Json;
 
-public class HexCoordinates : ScriptableObject {
+[Serializable]
+public class HexCoordinates{
 
-    public int x, y, z;
+    public int X { get; private set; }
+    public int Y { get; private set; }
+    public int Z { get; private set; }
     private float size = 1; //height is size * 2, width is sqrt(3)/2 * height
 
-    public void Init(int q, int r, int s) {
-        this.x = q;
-        this.y = r;
-        this.z = s;
-        Debug.Assert(q + r + s == 0, "Invalid coordinates");
+    [JsonConstructor]
+    public HexCoordinates(int x, int y, int z) {
+        X = x;
+        Y = y;
+        Z = z;
+        Debug.Assert(x + y + z == 0, "Invalid coordinates");
     }
 
-    public void Init(int q, int r) {
-        this.x = q;
-        this.y = r;
-        this.z = -q - r;
-    }
-
-    public static HexCoordinates CreateInstance(int _x, int _y, int _z) {
-        HexCoordinates coords = ScriptableObject.CreateInstance<HexCoordinates>();
-        coords.Init(_x, _y, _z);
-        return coords;
-    }
-
-    public static HexCoordinates CreateInstance(int _x, int _y) {
-        HexCoordinates coords = ScriptableObject.CreateInstance<HexCoordinates>();
-        coords.Init(_x, _y);
-        return coords;
+    public HexCoordinates(int x, int y) {
+        X = x;
+        Y = y;
+        Z = -x - y;
     }
 
     public static bool operator ==(HexCoordinates a, HexCoordinates b) {
-        return a.x == b.x && a.y == b.y && a.z == b.z;
+        return a.X == b.X && a.Y == b.Y && a.Z == b.Z;
     }
 
     public static bool operator !=(HexCoordinates a, HexCoordinates b) {
@@ -54,8 +47,8 @@ public class HexCoordinates : ScriptableObject {
     }
 
     public Vector3 ToWorldPosition() {
-        float _x = size * Mathf.Sqrt(3) * (x + z/2f);
-        float _z = -size * 3/2f * z;
+        float _x = size * Mathf.Sqrt(3) * (X + Z/2f);
+        float _z = -size * 3/2f * Z;
         return new Vector3(_x, 0, _z);
     }
 
@@ -64,6 +57,6 @@ public class HexCoordinates : ScriptableObject {
     }
 
     public override string ToString() {
-        return ("x: " + x + ", y: " + y + ", z: " + z);
+        return ("x: " + X + ", y: " + Y + ", z: " + Z);
     }
 }

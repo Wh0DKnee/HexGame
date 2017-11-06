@@ -27,17 +27,17 @@ public class PieceSpawner : MonoBehaviour {
     public void InstantiateAllChampions(ChampionPosition[] allyChampionPositions, ChampionPosition[] enemyChampionPositions) {
         if (GameInfo.isLeftSide) {
             for (int i = 0; i < allyChampionPositions.Length; i++) {
-                InstantiateChampion(allyChampionPositions[i].ChampionName, ExtractHexCoordsFromChampionPosition(allyChampionPositions[i]), false);
+                InstantiateChampion(allyChampionPositions[i].ChampionName, allyChampionPositions[i].HexCoordinates, false);
             }
             for (int i = 0; i < enemyChampionPositions.Length; i++) {
-                InstantiateChampion(enemyChampionPositions[i].ChampionName, HexMath.HexMirrorAtOrigin(ExtractHexCoordsFromChampionPosition(enemyChampionPositions[i])), true);
+                InstantiateChampion(enemyChampionPositions[i].ChampionName, HexMath.HexMirrorAtOrigin(enemyChampionPositions[i].HexCoordinates), true);
             }
         } else {
             for (int i = 0; i < enemyChampionPositions.Length; i++) {
-                InstantiateChampion(enemyChampionPositions[i].ChampionName, ExtractHexCoordsFromChampionPosition(enemyChampionPositions[i]), true);
+                InstantiateChampion(enemyChampionPositions[i].ChampionName, enemyChampionPositions[i].HexCoordinates, true);
             }
             for (int i = 0; i < allyChampionPositions.Length; i++) {
-                InstantiateChampion(allyChampionPositions[i].ChampionName, HexMath.HexMirrorAtOrigin(ExtractHexCoordsFromChampionPosition(allyChampionPositions[i])), false);
+                InstantiateChampion(allyChampionPositions[i].ChampionName, HexMath.HexMirrorAtOrigin(allyChampionPositions[i].HexCoordinates), false);
             }
         }
         
@@ -63,10 +63,6 @@ public class PieceSpawner : MonoBehaviour {
             default:
                 return null;
         }
-    }
-
-    private HexCoordinates ExtractHexCoordsFromChampionPosition(ChampionPosition championPosition) {
-        return HexCoordinates.CreateInstance(championPosition.X, championPosition.Y, championPosition.Z);
     }
 		
 }

@@ -75,9 +75,6 @@
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="Scs">
-      <HintPath>Assets\Scs.dll</HintPath>
-    </Reference>
-    <Reference Include="Scs">
       <HintPath>Assets\Packages\Scs.1.1.1\lib\net40-client\Scs.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Newtonsoft.Json">
@@ -88,6 +85,7 @@
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\Champions\BasicChampion.cs" />
     <Compile Include="Assets\Scripts\Champions\Champion.cs" />
+    <Compile Include="Assets\Scripts\GameBoardLoader.cs" />
     <Compile Include="Assets\Scripts\GameInfo.cs" />
     <Compile Include="Assets\Scripts\GameStates\CellListenerGameState.cs" />
     <Compile Include="Assets\Scripts\GameStates\EnemyTurnState.cs" />

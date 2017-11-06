@@ -23,7 +23,13 @@ public class HexGrid : MonoBehaviour {
             return instance;
         }
     }
-    
+
+    public void AddCells(List<HexCoordinates> coordinates) {
+        foreach (HexCoordinates coord in coordinates) {
+            AddCell(coord);
+        }
+    }
+
     public void AddCell(HexCoordinates coordinates) {
         if (Contains(coordinates)) {
             Debug.LogWarning("this hex already exists");

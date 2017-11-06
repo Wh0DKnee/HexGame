@@ -18,7 +18,7 @@ public class ClientProxyImpl : IClientProxy {
     public event Action EnemyTurnEnd;
 
     public void MoveChampion(int championID, HexCoordinates coordinates) {
-        HexGrid.Instance.GetChamp(championID).Move(coordinates);
+        UnityMainThreadDispatcher.Instance().Enqueue(() => HexGrid.Instance.GetChamp(championID).Move(coordinates));
     }
 
     public void UseAbility(int championID, HexCoordinates targetCellCoordinates) {

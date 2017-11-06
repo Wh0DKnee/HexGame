@@ -4,27 +4,27 @@ using UnityEngine;
 
 public static class HexMath {
 
-    public static readonly HexCoordinates[] directions = {   HexCoordinates.CreateInstance(1,-1,0), HexCoordinates.CreateInstance(1,0,-1), HexCoordinates.CreateInstance(0,1,-1),
-                                    HexCoordinates.CreateInstance(-1,1,0), HexCoordinates.CreateInstance(-1,0,1), HexCoordinates.CreateInstance(0,-1,1)};
+    public static readonly HexCoordinates[] directions = {   new HexCoordinates(1,-1,0), new HexCoordinates(1,0,-1), new HexCoordinates(0,1,-1),
+                                    new HexCoordinates(-1,1,0), new HexCoordinates(-1,0,1), new HexCoordinates(0,-1,1)};
 
     public static HexCoordinates HexAdd(HexCoordinates a, HexCoordinates b) {
-        return HexCoordinates.CreateInstance(a.x + b.x, a.y + b.y, a.z + b.z);
+        return new HexCoordinates(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
     }
 
     public static HexCoordinates HexSubtract(HexCoordinates a, HexCoordinates b) {
-        return HexCoordinates.CreateInstance(a.x - b.x, a.y - b.y, a.z - b.z);
+        return new HexCoordinates(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
     }
 
     public static HexCoordinates HexMultiply(HexCoordinates a, int k) {
-        return HexCoordinates.CreateInstance(a.x * k, a.y * k, a.z * k);
+        return new HexCoordinates(a.X * k, a.Y * k, a.Z * k);
     }
 
     public static HexCoordinates HexMirrorAtOrigin(HexCoordinates h) {
-        return HexCoordinates.CreateInstance(-h.x, -h.y, -h.z);
+        return new HexCoordinates(-h.X, -h.Y, -h.Z);
     }
 
     public static int HexLength(HexCoordinates hex) {
-        return (int)((Mathf.Abs(hex.x) + Mathf.Abs(hex.y) + Mathf.Abs(hex.z)) / 2);
+        return (int)((Mathf.Abs(hex.X) + Mathf.Abs(hex.Y) + Mathf.Abs(hex.Z)) / 2);
     }
 
     public static int HexDistance(HexCoordinates a, HexCoordinates b) {
@@ -41,7 +41,7 @@ public static class HexMath {
     }
 
     public static int Distance(HexCoordinates a, HexCoordinates b){
-        return (Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z)) / 2;
+        return (Mathf.Abs(a.X - b.X) + Mathf.Abs(a.Y - b.Y) + Mathf.Abs(a.Z - b.Z)) / 2;
     }
 
     // return HexCoordinates closest to the input coordinates
@@ -61,7 +61,7 @@ public static class HexMath {
         } else {
             z = -x-y;
         }
-        return HexCoordinates.CreateInstance(x, y, z);
+        return new HexCoordinates(x, y, z);
     }
 
     public static List<HexCoordinates> DrawLine(HexCoordinates a, HexCoordinates b) {
@@ -71,7 +71,7 @@ public static class HexMath {
             return result;
         }
         for (int i = 0; i <= distance; i++) {
-            result.Add(CubeRound(Vector3.Lerp(new Vector3(a.x, a.y, a.z), new Vector3(b.x, b.y, b.z), 1.0f/distance*i)));
+            result.Add(CubeRound(Vector3.Lerp(new Vector3(a.X, a.Y, a.Z), new Vector3(b.X, b.Y, b.Z), 1.0f/distance*i)));
         }
         return result;
     }
