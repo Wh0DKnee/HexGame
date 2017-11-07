@@ -16,7 +16,7 @@ namespace NetworkingCommonLib {
 
         void MoveChampion(int championID, HexCoordinates coordinates);
 
-        void UseAbility(int championID, HexCoordinates targetCellCoordinates);
+        void UseSkill(int championID, HexCoordinates targetCellCoordinates);
 
         void EnemyTurnDone();
 

@@ -21,7 +21,7 @@ public class ClientProxyImpl : IClientProxy {
         UnityMainThreadDispatcher.Instance().Enqueue(() => HexGrid.Instance.GetChamp(championID).Move(coordinates));
     }
 
-    public void UseAbility(int championID, HexCoordinates targetCellCoordinates) {
+    public void UseSkill(int championID, HexCoordinates targetCellCoordinates) {
         Debug.Log("server called UseAbility");
     }
 

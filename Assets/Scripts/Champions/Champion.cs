@@ -82,17 +82,28 @@ public abstract class Champion : MonoBehaviour{
         HexGrid.Instance.MoveChamp(this, coords);
     }
 
-    public bool TryUseSkill(Cell target) {
-        if (!CanUseSkill(target)) {
-            return false;
-        }
-
+    public void UseSkill(Cell target) {
         SelectedSkill.Use(this, target);
         HasUsedSkill = true;
-        return true;
     }
 
-    private bool CanUseSkill(Cell target) {
-        return SkillValidation.ChampTryUseSkill(this, SelectedSkill, target);
+    public bool CanUseSkill(Cell target) {
+        return SkillValidation.CanChampUseSkill(this, SelectedSkill, target);
     }
+
+    public void SkipUseSkill() {
+        HasUsedSkill = true;
+    }
+
+    public void NewTurnReset() {
+        HasMoved = false;
+        HasUsedSkill = false;
+    }
+}
+
+public enum SkillEnum {
+    Q = 0,
+    W,
+    E,
+    R
 }

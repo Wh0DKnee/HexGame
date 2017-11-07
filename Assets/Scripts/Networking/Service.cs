@@ -33,7 +33,7 @@ public class Service : ScsService, IServiceProxy {
         }
     }
 
-    public void RequestAbilityUse(int championID, HexCoordinates target) {
+    public void RequestSkillUse(int championID, HexCoordinates target) {
         throw new NotImplementedException();
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class SkillValidation{
 
-	public static bool ChampTryUseSkill(Champion champ, Skill skill, Cell target) {
+	public static bool CanChampUseSkill(Champion champ, Skill skill, Cell target) {
         if(skill == null) { Debug.Log("skill is null"); return false; }
 
         return IsValidTarget(champ, skill, target)

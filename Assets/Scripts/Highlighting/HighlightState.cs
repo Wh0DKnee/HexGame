@@ -6,7 +6,7 @@ public abstract class HighlightState {
 
     public CellHighlighter highlighter;
 
-    public abstract void Tick();
+    public virtual void Tick() { }
 
     public virtual void OnStateEnter() {
 

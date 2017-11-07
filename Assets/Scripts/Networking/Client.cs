@@ -43,7 +43,7 @@ public class Client {
     }
 
     public void TellServerMove(int championID, HexCoordinates coordinates) {
-        scsClient.ServiceProxy.RequestMove(championID, coordinates); //make serializable
+        scsClient.ServiceProxy.RequestMove(championID, coordinates);
     }
 
     void OnConnected(object sender, EventArgs e) {
