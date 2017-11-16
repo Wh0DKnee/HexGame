@@ -45,7 +45,7 @@ public class UseSkillState : CellListenerGameState {
             return;
         }
 
-        SelectedChamp.UseSkill(clickedCell); //use skillhandler
+        gameStateController.SkillHandler.HandleSkill(SelectedChamp, SelectedChamp.SelectedSkill, clickedCell.coordinates);
 
         if (HaveAllUsedSkill()) {
             gameStateController.SetState(new EnemyTurnState(gameStateController));

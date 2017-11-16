@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class HPCost : Cost {
 
     public HPCost(int amount) : base(amount) {

@@ -12,7 +12,7 @@ namespace NetworkingCommonLib {
 
         void RequestMove(int championID, HexCoordinates coordinates);
 
-        void RequestSkillUse(int championID, HexCoordinates target);
+        void RequestSkillUse(int championID, Skill skill, HexCoordinates target);
 
         void RegisterPlayer();
 

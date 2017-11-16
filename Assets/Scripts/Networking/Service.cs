@@ -33,8 +33,10 @@ public class Service : ScsService, IServiceProxy {
         }
     }
 
-    public void RequestSkillUse(int championID, HexCoordinates target) {
-        throw new NotImplementedException();
+    public void RequestSkillUse(int championID, Skill skill, HexCoordinates target) {
+        foreach (ServiceClient client in clients.GetAllItems()) {
+            client.ClientProxy.UseSkill(championID, skill, target);
+        }
     }
 
     //No parameter necessary, we can access the callee via the CurrentClient property

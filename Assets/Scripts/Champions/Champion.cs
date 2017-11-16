@@ -82,8 +82,8 @@ public abstract class Champion : MonoBehaviour{
         HexGrid.Instance.MoveChamp(this, coords);
     }
 
-    public void UseSkill(Cell target) {
-        SelectedSkill.Use(this, target);
+    public void UseSkill(Skill skill, Cell target) {
+        skill.Use(this, target);
         HasUsedSkill = true;
     }
 

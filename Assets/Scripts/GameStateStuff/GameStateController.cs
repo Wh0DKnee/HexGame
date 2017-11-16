@@ -29,6 +29,7 @@ public class GameStateController : MonoBehaviour {
 
 	public void Initialize() {
         MoveHandler = new NetworkMoveHandler(); //TODO: dont hardcode this
+        SkillHandler = new NetworkSkillHandler();
 
         if (GameInfo.isLeftSide) {
             SetState(new SelectionState(this));

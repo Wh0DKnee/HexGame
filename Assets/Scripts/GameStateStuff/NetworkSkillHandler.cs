@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class NetworkSkillHandler : ISkillHandler {
 
-    public void HandleSkill(Champion champion, Skill skill, Cell target) {
-        //NetworkSession.instance.TellServerUseSkill(champion.ID, skill, target);
+    public void HandleSkill(Champion champion, Skill skill, HexCoordinates coordinates) {
+        NetworkSession.instance.Client.TellServerUseSkill(champion.ID, skill, coordinates);
     }
 
 }
