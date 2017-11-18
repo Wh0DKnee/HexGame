@@ -6,6 +6,6 @@ using System;
 [Serializable]
 public abstract class AOESkill : Skill {
 
-    public AOESkill(Cost skillCost, TargetType targetType) : base(skillCost, targetType) {}
+    public AOESkill(Cost skillCost, TargetType targetType, int range) : base(skillCost, targetType, range) {}
 
 }

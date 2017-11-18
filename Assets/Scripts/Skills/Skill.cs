@@ -11,9 +11,10 @@ public abstract class Skill{
     public Cost SkillCost { get; set;}
     public TargetType TargetType { get; private set; }
 
-    protected Skill(Cost skillCost, TargetType targetType) {
+    protected Skill(Cost skillCost, TargetType targetType, int range) {
         this.SkillCost = skillCost;
         this.TargetType = targetType;
+        this.Range = range;
     }
 
     public void Use(Champion user, Cell target) {
@@ -22,7 +23,5 @@ public abstract class Skill{
     }
 
     public abstract void ApplyEffect(Champion user, Cell target);
-
-    public abstract HexCoordinates[] GetRangeVectors();
     
 }

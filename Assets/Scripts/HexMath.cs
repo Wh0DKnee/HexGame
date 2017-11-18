@@ -40,10 +40,6 @@ public static class HexMath {
         return HexAdd(hex, HexDirection(direction));
     }
 
-    public static int Distance(HexCoordinates a, HexCoordinates b){
-        return (Mathf.Abs(a.X - b.X) + Mathf.Abs(a.Y - b.Y) + Mathf.Abs(a.Z - b.Z)) / 2;
-    }
-
     // return HexCoordinates closest to the input coordinates
     public static HexCoordinates CubeRound(Vector3 coordinates) {
         int x = Mathf.RoundToInt(coordinates.x);
@@ -65,7 +61,7 @@ public static class HexMath {
     }
 
     public static List<HexCoordinates> DrawLine(HexCoordinates a, HexCoordinates b) {
-        int distance = Distance(a, b);
+        int distance = HexDistance(a, b);
         List<HexCoordinates> result = new List<HexCoordinates>();
         if(distance == 0) {
             return result;

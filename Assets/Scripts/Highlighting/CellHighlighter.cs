@@ -15,4 +15,24 @@ public class CellHighlighter : MonoBehaviour {
     public void UnHighlight(Cell cell) {
         cell.GetComponent<SpriteRenderer>().sprite = defaultSprite;
     }
+
+    public void Highlight(HexCoordinates coords) {
+        Highlight(HexGrid.Instance.GetCell(coords));
+    }
+
+    public void UnHighlight(HexCoordinates coords) {
+        UnHighlight(HexGrid.Instance.GetCell(coords));
+    }
+
+    public void Highlight(List<HexCoordinates> coords) {
+        foreach (HexCoordinates hc in coords) {
+            Highlight(hc);
+        }
+    }
+
+    public void UnHighlight(List<HexCoordinates> coords) {
+        foreach (HexCoordinates hc in coords) {
+            UnHighlight(hc);
+        }
+    }
 }

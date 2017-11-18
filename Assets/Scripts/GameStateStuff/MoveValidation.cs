@@ -4,19 +4,17 @@ using UnityEngine;
 
 public static class MoveValidation{
 
-    //TODO: should this become a performance issue, we might as well precalculate all possible moves at the start
-    //of each turn and store them in a LUP
-    public static bool CanChampMove(Champion champion, Cell target) {
+    public static bool CanChampMove(Champion champion, Cell target, out List<HexCoordinates> path) {
+        path = new List<HexCoordinates>();
         if (target.HasChamp()) { return false; }
 
-        HexCoordinates[] moves = champion.GetMoves();
-        bool reachable = false;
-        foreach (HexCoordinates move in moves) {
-            if (champion.GetCell().coordinates + move == target.coordinates) {
-                reachable = true;
-            }
+        //TODO: we need to use pathfinding as soon as we introduce obstacles.
+        path = HexMath.DrawLine(champion.GetCell().coordinates, target.coordinates);
+        if(path.Count - 1 <= champion.RemainingMovementRange) {
+            return true;
+        } else {
+            return false;
         }
-        return reachable;
     }
 
 }

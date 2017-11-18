@@ -23,6 +23,6 @@ public class BasicChampion : Champion {
     public override void InitializeStats() {
         HP = 20;
         Mana = 6;
-        MaxMovementRange = 2;
+        MaxMovementRange = 3;
     }
 }

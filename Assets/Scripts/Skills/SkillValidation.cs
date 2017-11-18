@@ -22,11 +22,7 @@ public static class SkillValidation{
     }
 
     private static bool IsInRange(Champion champ, Skill skill, Cell target) {
-        HexCoordinates vector = target.coordinates - champ.GetCell().coordinates;
-        if (Array.IndexOf(skill.GetRangeVectors(), vector) > -1) {
-            return true;
-        } else {
-            return false;
-        }
+        return HexMath.HexDistance(target.coordinates, champ.GetCell().coordinates) <= skill.Range;
+        
     }
 }

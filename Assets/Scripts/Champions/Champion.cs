@@ -56,11 +56,10 @@ public abstract class Champion : MonoBehaviour{
     }
 
     public bool IsEnemyChamp { get; set; }
-    public bool HasMoved { get; set; } = false;
     public bool HasUsedSkill { get; set; } = false;
     public bool FinishedTurn {
         get {
-            return HasMoved && HasUsedSkill;
+            return RemainingMovementRange == 0 && HasUsedSkill;
         }
     }
 
@@ -95,7 +94,9 @@ public abstract class Champion : MonoBehaviour{
     }
 
     public virtual void Move(HexCoordinates coords) {
-        HasMoved = true;
+        HexCoordinates movementVector = coords - GetCell().coordinates;
+        RemainingMovementRange -= HexMath.HexLength(movementVector);
+        //instead of next line: moveAnimator.move(this, coords);
         this.gameObject.transform.position = coords.ToWorldPosition();
         HexGrid.Instance.MoveChamp(this, coords);
     }
@@ -109,12 +110,16 @@ public abstract class Champion : MonoBehaviour{
         return SkillValidation.CanChampUseSkill(this, SelectedSkill, target);
     }
 
+    public void SkipMove() {
+        RemainingMovementRange = 0;
+    }
+
     public void SkipUseSkill() {
         HasUsedSkill = true;
     }
 
     public void NewTurnReset() {
-        HasMoved = false;
+        RemainingMovementRange = MaxMovementRange;
         HasUsedSkill = false;
     }
 }
