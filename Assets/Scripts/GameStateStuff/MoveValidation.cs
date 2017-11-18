@@ -17,4 +17,9 @@ public static class MoveValidation{
         }
     }
 
+    public static bool CanChampMove(Champion champion, Cell target) {
+        List<HexCoordinates> path = new List<HexCoordinates>();
+        return CanChampMove(champion, target, out path);
+    }
+
 }

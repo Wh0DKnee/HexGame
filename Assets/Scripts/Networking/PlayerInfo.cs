@@ -9,9 +9,9 @@ namespace NetworkingCommonLib {
         public string nickname;
         //TODO: DONT HARDCODE
         public ChampionPosition[] championPositions = new ChampionPosition[]{
-            new ChampionPosition("BasicChampion", new HexCoordinates(-2, 2, 0)),
-            new ChampionPosition("BasicChampion", new HexCoordinates(-2, 1, 1)),
-            new ChampionPosition("BasicChampion", new HexCoordinates(-1, 2, -1))
+            new ChampionPosition("BasicChampion", new HexCoordinates(-3, 3, 0)),
+            new ChampionPosition("BasicChampion", new HexCoordinates(-3, 2, 1)),
+            new ChampionPosition("BasicChampion", new HexCoordinates(-2, 3, -1))
         };
 
         public PlayerInfo(string nickname) {

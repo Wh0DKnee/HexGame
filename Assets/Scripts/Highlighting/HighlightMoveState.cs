@@ -13,7 +13,17 @@ public class HighlightMoveState : CellListenerHighlightState {
         this.champion = champion;
         path = new List<HexCoordinates>();
         this.moveState = moveState;
-        this.moveState.OnMove += OnMove;
+        this.moveState.OnMoveRequested += OnMoveRequested;
+        ShowPossibleMoves();
+    }
+    
+    private void ShowPossibleMoves() {
+        foreach (Cell cell in HexGrid.Instance.cells) {
+            if(MoveValidation.CanChampMove(champion, cell)) {
+                highlighter.SetDefaultSprite(cell, highlighter.allMoveHighlightSprite);
+            }
+        }
+        highlighter.UnHighlightAll();
     }
 
     public override void CellMouseEnter(Cell cell) {
@@ -26,13 +36,19 @@ public class HighlightMoveState : CellListenerHighlightState {
         UnHighlightPath();
     }
 
-    private void OnMove() {
+    private void OnMoveRequested() {
         UnHighlightPath();
+        HidePossibleMoves();
+    }
+
+    private void HidePossibleMoves() {
+        highlighter.ResetDefaultSprites();
+        highlighter.UnHighlightAll();
     }
 
     public override void UnsubscribeAllEvents() {
         base.UnsubscribeAllEvents();
-        moveState.OnMove -= OnMove;
+        moveState.OnMoveRequested -= OnMoveRequested;
     }
 
     private void HighlightPath() {
