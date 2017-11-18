@@ -26,17 +26,18 @@ public class HighlightStateController : MonoBehaviour {
     }
 
     private void OnGameStateChanged(GameState gameState) {
-        currentState.UnsubscribeAllEvents();
 
         //TODO: find a better solution for this that removes dependecy
         if(gameState.GetType() == typeof(SelectionState)) {
             SetState(new HighlightSelectionState(highlighter));
         } else if(gameState.GetType() == typeof(MoveState)) {
             MoveState moveState = gameState as MoveState;
-            SetState(new HighlightMoveState(highlighter, moveState.SelectedChamp, moveState));
+            SetState(new HighlightMoveState(highlighter, moveState.SelectedChamp));
         } else if(gameState.GetType() == typeof(UseSkillState)) {
             UseSkillState useSkillState = gameState as UseSkillState;
             SetState(new HighlightUseSkillState(highlighter, useSkillState.SelectedChamp));
+        } else {
+            SetState(new HighlightWaitState(highlighter));
         }
     }
 

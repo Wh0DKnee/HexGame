@@ -79,6 +79,7 @@ public abstract class Champion : MonoBehaviour{
     public event Action<Champion> hpChanged;
     public event Action<Champion> manaChanged;
     public event Action selectedSkillChanged;
+    public event Action moved;
 
     public void Selected() {
         if (selected != null) selected(this);
@@ -99,6 +100,8 @@ public abstract class Champion : MonoBehaviour{
         //instead of next line: moveAnimator.move(this, coords);
         this.gameObject.transform.position = coords.ToWorldPosition();
         HexGrid.Instance.MoveChamp(this, coords);
+
+        if(moved != null) { moved(); }
     }
 
     public void UseSkill(Skill skill, Cell target) {

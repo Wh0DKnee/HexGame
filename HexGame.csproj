@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\GameStateStuff\GameStates\EnemyTurnState.cs" />
     <Compile Include="Assets\Scripts\GameStateStuff\GameStates\GameState.cs" />
     <Compile Include="Assets\Scripts\GameStateStuff\GameStates\MoveState.cs" />
+    <Compile Include="Assets\Scripts\GameStateStuff\GameStates\MoveWaitForServerState.cs" />
     <Compile Include="Assets\Scripts\GameStateStuff\GameStates\SelectionState.cs" />
     <Compile Include="Assets\Scripts\GameStateStuff\GameStates\UseSkillState.cs" />
     <Compile Include="Assets\Scripts\GameStateStuff\IMoveHandler.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Scripts\Highlighting\HighlightState.cs" />
     <Compile Include="Assets\Scripts\Highlighting\HighlightStateController.cs" />
     <Compile Include="Assets\Scripts\Highlighting\HighlightUseSkillState.cs" />
+    <Compile Include="Assets\Scripts\Highlighting\HighlightWaitState.cs" />
     <Compile Include="Assets\Scripts\Initializer.cs" />
     <Compile Include="Assets\Scripts\Networking\Client.cs" />
     <Compile Include="Assets\Scripts\Networking\ClientProxyImpl.cs" />

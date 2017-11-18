@@ -16,8 +16,6 @@ public abstract class HighlightState {
 
     }
 
-    public virtual void UnsubscribeAllEvents() { }
-
     public HighlightState(CellHighlighter _highlighter) {
         highlighter = _highlighter;
     }
