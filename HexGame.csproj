@@ -121,10 +121,14 @@
     <Compile Include="Assets\Scripts\Networking\Server.cs" />
     <Compile Include="Assets\Scripts\Networking\Service.cs" />
     <Compile Include="Assets\Scripts\PieceSpawner.cs" />
+    <Compile Include="Assets\Scripts\Skills\AOESkill.cs" />
     <Compile Include="Assets\Scripts\Skills\Cost.cs" />
     <Compile Include="Assets\Scripts\Skills\HPCost.cs" />
+    <Compile Include="Assets\Scripts\Skills\LineSkill.cs" />
     <Compile Include="Assets\Scripts\Skills\ManaCost.cs" />
     <Compile Include="Assets\Scripts\Skills\MeleeAttack.cs" />
+    <Compile Include="Assets\Scripts\Skills\RangedAttack.cs" />
+    <Compile Include="Assets\Scripts\Skills\SingleTargetSkill.cs" />
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillFactory.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillValidation.cs" />

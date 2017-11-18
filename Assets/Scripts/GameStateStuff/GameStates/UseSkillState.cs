@@ -17,6 +17,7 @@ public class UseSkillState : CellListenerGameState {
 
         SkipUseSkillOnEnter();
 
+        //TODO: automatically activate if skill.targettype == self
         if (Input.GetKeyDown(KeyCode.Q)) { SelectedChamp.SelectedSkill = SelectedChamp.Q; }
         if (Input.GetKeyDown(KeyCode.W)) { SelectedChamp.SelectedSkill = SelectedChamp.W; }
         if (Input.GetKeyDown(KeyCode.E)) { SelectedChamp.SelectedSkill = SelectedChamp.E; }
@@ -42,6 +43,7 @@ public class UseSkillState : CellListenerGameState {
 
     public override void CellMouseDown(Cell clickedCell) {
         if (!SelectedChamp.CanUseSkill(clickedCell)) {
+            Debug.Log("Can't use spell on this cell");
             return;
         }
 

@@ -13,10 +13,6 @@ public class BasicChampion : Champion {
         new HexCoordinates(-1,1,0), new HexCoordinates(-1,0,1), new HexCoordinates(0,-1,1)};
     }
 
-    public override HexCoordinates[] GetMoves() {
-        return moves;
-    }
-
     public override void InitializeSkills() {
         Q = SkillFactory.CreateMeleeAttackInstance();
         W = SkillFactory.CreateMeleeAttackInstance();
@@ -27,5 +23,6 @@ public class BasicChampion : Champion {
     public override void InitializeStats() {
         HP = 20;
         Mana = 6;
+        MaxMovementRange = 2;
     }
 }

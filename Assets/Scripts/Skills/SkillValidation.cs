@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public static class SkillValidation{
 
@@ -9,7 +10,7 @@ public static class SkillValidation{
 
         return IsValidTarget(champ, skill, target)
             && HasEnoughResources(champ, skill)
-            && IsInRange(skill, target);
+            && IsInRange(champ, skill, target);
     }
 
     private static bool IsValidTarget(Champion champ, Skill skill, Cell target) {
@@ -20,7 +21,12 @@ public static class SkillValidation{
         return skill.SkillCost.HasUserEnoughResources(champ);
     }
 
-    private static bool IsInRange(Skill skill, Cell target) {
-        return true; //TODO: implement
+    private static bool IsInRange(Champion champ, Skill skill, Cell target) {
+        HexCoordinates vector = target.coordinates - champ.GetCell().coordinates;
+        if (Array.IndexOf(skill.GetRangeVectors(), vector) > -1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

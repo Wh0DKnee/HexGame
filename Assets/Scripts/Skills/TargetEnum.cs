@@ -8,7 +8,7 @@ public enum TargetType {
     enemy,
     ally,
     self,
-    AOE,
+    all,
     empty
 }
 
@@ -22,7 +22,7 @@ static class TargetTypeMethods {
             return targetCell.HasAlliedChamp() && targetCell.champion != user;
         case TargetType.self:
             return targetCell.champion == user;
-        case TargetType.AOE:
+        case TargetType.all:
             return true;
         case TargetType.empty:
             return !targetCell.HasChamp();

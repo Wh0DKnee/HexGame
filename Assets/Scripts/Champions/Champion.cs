@@ -30,12 +30,30 @@ public abstract class Champion : MonoBehaviour{
             if (manaChanged != null) manaChanged(this);
         }
     }
+    private int maxMovementRange;
+    public int MaxMovementRange {
+        get { return maxMovementRange; }
+        set {
+            maxMovementRange = value;
+            RemainingMovementRange = value;
+        }
+    }
+    public int RemainingMovementRange { get; set; }
 
     public Skill Q { get; set; }
     public Skill W { get; set; }
     public Skill E { get; set; }
     public Skill R { get; set; }
-    public Skill SelectedSkill { get; set; }
+    private Skill selectedSkill;
+    public Skill SelectedSkill {
+        get { return selectedSkill; }
+        set {
+            selectedSkill = value;
+            if(selectedSkillChanged != null) {
+                selectedSkillChanged();
+            }
+        }
+    }
 
     public bool IsEnemyChamp { get; set; }
     public bool HasMoved { get; set; } = false;
@@ -46,7 +64,6 @@ public abstract class Champion : MonoBehaviour{
         }
     }
 
-    public abstract HexCoordinates[] GetMoves();
     public abstract void InitializeSkills();
     public abstract void InitializeStats();
 
@@ -62,6 +79,7 @@ public abstract class Champion : MonoBehaviour{
     public event Action<Champion> died;
     public event Action<Champion> hpChanged;
     public event Action<Champion> manaChanged;
+    public event Action selectedSkillChanged;
 
     public void Selected() {
         if (selected != null) selected(this);
@@ -99,11 +117,4 @@ public abstract class Champion : MonoBehaviour{
         HasMoved = false;
         HasUsedSkill = false;
     }
-}
-
-public enum SkillEnum {
-    Q = 0,
-    W,
-    E,
-    R
 }

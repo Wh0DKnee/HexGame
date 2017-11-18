@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+//TODO: make it possible to have line skills with proper highlighting
 [Serializable]
 public abstract class Skill{
 
@@ -15,8 +16,13 @@ public abstract class Skill{
         this.TargetType = targetType;
     }
 
-    public virtual void Use(Champion user, Cell target) {
+    public void Use(Champion user, Cell target) {
         SkillCost.ApplyCost(user);
+        ApplyEffect(user, target);
     }
+
+    public abstract void ApplyEffect(Champion user, Cell target);
+
+    public abstract HexCoordinates[] GetRangeVectors();
     
 }
