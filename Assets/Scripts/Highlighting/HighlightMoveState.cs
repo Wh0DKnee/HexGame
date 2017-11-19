@@ -6,11 +6,11 @@ using UnityEngine;
 public class HighlightMoveState : CellListenerHighlightState {
 
     private Champion champion;
-    private List<HexCoordinates> path;
+    private List<Cell> path;
 
     public HighlightMoveState(CellHighlighter _highlighter, Champion champion) : base(_highlighter) {
         this.champion = champion;
-        path = new List<HexCoordinates>();
+        path = new List<Cell>();
     }
 
     public override void OnStateEnter() {

@@ -58,6 +58,18 @@ public class CellHighlighter : MonoBehaviour {
         UnHighlight(HexGrid.Instance.GetCell(coords));
     }
 
+    public void Highlight(List<Cell> cells) {
+        foreach (Cell cell in cells) {
+            Highlight(cell);
+        }
+    }
+
+    public void UnHighlight(List<Cell> cells) {
+        foreach (Cell cell in cells) {
+            UnHighlight(cell);
+        }
+    }
+
     public void Highlight(List<HexCoordinates> coords) {
         foreach (HexCoordinates hc in coords) {
             Highlight(hc);

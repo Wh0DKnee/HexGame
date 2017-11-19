@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public static class MoveValidation{
 
-    public static bool CanChampMove(Champion champion, Cell target, out List<HexCoordinates> path) {
-        path = new List<HexCoordinates>();
+    public static bool CanChampMove(Champion champion, Cell target, out List<Cell> path) {
+        path = new List<Cell>();
         if (target.HasChamp()) { return false; }
 
         //TODO: we need to use pathfinding as soon as we introduce obstacles.
-        path = HexMath.DrawLine(champion.GetCell().coordinates, target.coordinates);
+        //path = HexMath.DrawLine(champion.GetCell().coordinates, target.coordinates);
+        path = AStarPathfinding.FindPath(champion.GetCell(), target);
         if(path.Count - 1 <= champion.RemainingMovementRange) {
             return true;
         } else {
@@ -18,7 +20,7 @@ public static class MoveValidation{
     }
 
     public static bool CanChampMove(Champion champion, Cell target) {
-        List<HexCoordinates> path = new List<HexCoordinates>();
+        List<Cell> path = new List<Cell>();
         return CanChampMove(champion, target, out path);
     }
 

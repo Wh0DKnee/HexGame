@@ -17,6 +17,7 @@ public class EnemyTurnState : GameState {
     }
 
     private void OnEnemyTurnEnd() {
+        Debug.Log("enemy turn end!!!");
         foreach (Champion ally in HexGrid.Instance.GetAllyChamps()) {
             ally.NewTurnReset();
         }

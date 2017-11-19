@@ -82,6 +82,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AStarPathfinding.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\Champions\BasicChampion.cs" />
     <Compile Include="Assets\Scripts\Champions\Champion.cs" />

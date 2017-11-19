@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//TODO: remove this
 public class Initializer : MonoBehaviour {
+
+    public GameObject button;
 
     //TODO automatically call TellServerReady() when scene is finished loading
     public void ReadyButtonPressed() {
@@ -14,6 +15,7 @@ public class Initializer : MonoBehaviour {
         }
 
         networkSession.Client.TellServerReady();
+        Destroy(button);
     }
 
 

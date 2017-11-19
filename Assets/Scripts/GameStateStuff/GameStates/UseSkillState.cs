@@ -36,6 +36,7 @@ public class UseSkillState : CellListenerGameState {
             //TODO: refactor
             if (HaveAllUsedSkill()) {
                 gameStateController.SetState(new EnemyTurnState(gameStateController));
+                return;
             }
             gameStateController.SetState(new SelectionState(gameStateController));
         }

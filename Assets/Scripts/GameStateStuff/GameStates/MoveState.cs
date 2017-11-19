@@ -24,8 +24,7 @@ public class MoveState : CellListenerGameState {
             return;
         }
 
-        List<HexCoordinates> path;
-        if (MoveValidation.CanChampMove(SelectedChamp, cell, out path)) {
+        if (MoveValidation.CanChampMove(SelectedChamp, cell)) {
             gameStateController.MoveHandler.HandleMove(SelectedChamp, cell.coordinates);
             gameStateController.SetState(new MoveWaitForServerState(gameStateController, SelectedChamp));
         }

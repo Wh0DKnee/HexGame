@@ -75,6 +75,7 @@ public class HexGrid : MonoBehaviour {
         return Contains(cell.coordinates);
     }
 
+    //TODO: cache this
     public Cell GetCell(HexCoordinates coordinates) {
         foreach (Cell cell in cells) {
             if (cell.coordinates == coordinates) {
