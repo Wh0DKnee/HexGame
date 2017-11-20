@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,10 @@ public class MoveWaitForServerState : GameState {
 
     public MoveWaitForServerState(GameStateController gsc, Champion champion) : base(gsc) {
         this.champion = champion;
+    }
+
+    public override void InitializeHighlightState() {
+        stateHighlighter = new EmptyHighlighter(CellHighlighter.instance);
     }
 
     public override void OnStateEnter() {
@@ -24,7 +29,7 @@ public class MoveWaitForServerState : GameState {
         if (champion.RemainingMovementRange > 0) {
             gameStateController.SetState(new MoveState(gameStateController, champion));
         } else {
-            gameStateController.SetState(new UseSkillState(gameStateController, champion));
+            gameStateController.SetState(new SelectSkillState(gameStateController, champion));
         }
     }
 

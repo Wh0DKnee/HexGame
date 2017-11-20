@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class SkillFactory{
 
-	public static MeleeAttack CreateMeleeAttackInstance() {
-        return new MeleeAttack(new ManaCost(5), TargetType.enemy, 1);
+	public static MeleeAttack CreateMeleeAttackInstance(Champion user) {
+        return new MeleeAttack(new ManaCost(5), TargetType.enemy, 1, user);
     }
 }

@@ -26,6 +26,10 @@ public class SelectionState : CellListenerGameState {
         SelectedChamp = selectedChampion;
     }
 
+    public override void InitializeHighlightState() {
+        stateHighlighter = new SelectionStateHighlighter(CellHighlighter.instance);
+    }
+
     public override void CellMouseDown(Cell cell) {
         TrySelectChamp(cell);
     }

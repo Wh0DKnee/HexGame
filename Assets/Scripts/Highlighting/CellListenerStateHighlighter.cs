@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CellListenerHighlightState : HighlightState {
+public abstract class CellListenerStateHighlighter : StateHighlighter {
 
-    public CellListenerHighlightState(CellHighlighter _highlighter) : base(_highlighter) {
+    public CellListenerStateHighlighter(CellHighlighter _highlighter) : base(_highlighter) {
     }
 
     public override void OnStateEnter() {

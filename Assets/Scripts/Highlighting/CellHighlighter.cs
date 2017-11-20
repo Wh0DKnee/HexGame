@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CellHighlighter : MonoBehaviour {
+
+    public static CellHighlighter instance;
+
     public Sprite defaultSprite;
     public Sprite highlightSprite;
     public Sprite allMoveHighlightSprite;
@@ -11,6 +14,15 @@ public class CellHighlighter : MonoBehaviour {
     private Sprite currentHighlightSprite;
 
     private Dictionary<Cell, Sprite> cellsDefaultSprite;
+
+    private void Awake() {
+        if(instance != null) {
+            Debug.LogError("more than one cell highlighter");
+            return;
+        }
+
+        instance = this;
+    }
 
     private void Start() {
         cellsDefaultSprite = new Dictionary<Cell, Sprite>();

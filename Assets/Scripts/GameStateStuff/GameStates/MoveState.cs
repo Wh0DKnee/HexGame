@@ -11,6 +11,10 @@ public class MoveState : CellListenerGameState {
         this.SelectedChamp = selectedChamp;
     }
 
+    public override void InitializeHighlightState() {
+        stateHighlighter = new MoveStateHighlighter(CellHighlighter.instance, SelectedChamp);
+    }
+
     public override void OnStateEnter() {
         base.OnStateEnter();
         if (SelectedChamp.RemainingMovementRange == 0) {
@@ -32,6 +36,6 @@ public class MoveState : CellListenerGameState {
     }
 
     private void SkipMoveState() {
-        gameStateController.SetState(new UseSkillState(gameStateController, SelectedChamp));
+        gameStateController.SetState(new SelectSkillState(gameStateController, SelectedChamp));
     }
 }

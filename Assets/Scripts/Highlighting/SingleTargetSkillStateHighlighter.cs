@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighlightUseSkillState : CellListenerHighlightState {
+public class SingleTargetSkillStateHighlighter : CellListenerStateHighlighter {
 
     private Champion champion;
     private Skill skill;
     private Cell mostRecentCell;
 
-    public HighlightUseSkillState(CellHighlighter _highlighter, Champion champion) : base(_highlighter) {
+    public SingleTargetSkillStateHighlighter(CellHighlighter _highlighter, Champion champion) : base(_highlighter) {
         this.champion = champion;
         skill = champion.SelectedSkill;
         champion.selectedSkillChanged += OnSelectedSkillChanged;

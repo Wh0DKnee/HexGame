@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class HighlightState {
+public abstract class StateHighlighter {
 
     public CellHighlighter highlighter;
 
@@ -16,7 +16,7 @@ public abstract class HighlightState {
 
     }
 
-    public HighlightState(CellHighlighter _highlighter) {
+    public StateHighlighter(CellHighlighter _highlighter) {
         highlighter = _highlighter;
     }
 }

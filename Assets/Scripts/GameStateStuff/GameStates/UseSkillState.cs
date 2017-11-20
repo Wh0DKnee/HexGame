@@ -2,57 +2,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class UseSkillState : CellListenerGameState {
 
-    public Champion SelectedChamp { get; private set; }
+    private Champion selectedChampion;
 
-    public UseSkillState(GameStateController gsc, Champion selectedChamp) : base(gsc) {
-        this.SelectedChamp = selectedChamp;
+    public UseSkillState(GameStateController gsc, Champion champion) : base(gsc) {
+        this.selectedChampion = champion;
     }
 
     public override void Tick() {
-        ReturnToSelectStateOnEscape();
-
         SkipUseSkillOnEnter();
 
-        //TODO: automatically activate if skill.targettype == self
-        if (Input.GetKeyDown(KeyCode.Q)) { SelectedChamp.SelectedSkill = SelectedChamp.Q; }
-        if (Input.GetKeyDown(KeyCode.W)) { SelectedChamp.SelectedSkill = SelectedChamp.W; }
-        if (Input.GetKeyDown(KeyCode.E)) { SelectedChamp.SelectedSkill = SelectedChamp.E; }
-        if (Input.GetKeyDown(KeyCode.R)) { SelectedChamp.SelectedSkill = SelectedChamp.R; }
+        //refactor all of these events into seperate class
+        if (Input.GetKeyDown(KeyCode.Q)) { gameStateController.SetState(new SelectSkillState(gameStateController, selectedChampion, KeyCode.Q)); }
+        if (Input.GetKeyDown(KeyCode.W)) { gameStateController.SetState(new SelectSkillState(gameStateController, selectedChampion, KeyCode.W)); }
+        if (Input.GetKeyDown(KeyCode.E)) { gameStateController.SetState(new SelectSkillState(gameStateController, selectedChampion, KeyCode.E)); }
+        if (Input.GetKeyDown(KeyCode.R)) { gameStateController.SetState(new SelectSkillState(gameStateController, selectedChampion, KeyCode.R)); }
     }
 
-    private void ReturnToSelectStateOnEscape() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+    public override void InitializeHighlightState() {
+        stateHighlighter = selectedChampion.SelectedSkill.GetHighlighter();
+    }
+
+    public override void CellMouseDown(Cell clickedCell) {
+        if (!selectedChampion.CanUseSkill(clickedCell)) {
+            Debug.Log("Can't use spell on this cell");
+            return;
+        }
+
+        gameStateController.SkillHandler.HandleSkill(selectedChampion, selectedChampion.SelectedSkill, clickedCell.coordinates);
+
+        if (HaveAllUsedSkill()) {
+            gameStateController.SetState(new EnemyTurnState(gameStateController));
+        } else {
             gameStateController.SetState(new SelectionState(gameStateController));
         }
     }
 
     private void SkipUseSkillOnEnter() {
         if (Input.GetKeyDown(KeyCode.Return)) {
-            SelectedChamp.SkipUseSkill();
+            selectedChampion.SkipUseSkill();
             //TODO: refactor
             if (HaveAllUsedSkill()) {
                 gameStateController.SetState(new EnemyTurnState(gameStateController));
                 return;
             }
-            gameStateController.SetState(new SelectionState(gameStateController));
-        }
-    }
-
-    public override void CellMouseDown(Cell clickedCell) {
-        if (!SelectedChamp.CanUseSkill(clickedCell)) {
-            Debug.Log("Can't use spell on this cell");
-            return;
-        }
-
-        gameStateController.SkillHandler.HandleSkill(SelectedChamp, SelectedChamp.SelectedSkill, clickedCell.coordinates);
-
-        if (HaveAllUsedSkill()) {
-            gameStateController.SetState(new EnemyTurnState(gameStateController));
-        } else {
             gameStateController.SetState(new SelectionState(gameStateController));
         }
     }

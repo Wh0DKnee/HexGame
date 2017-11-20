@@ -105,7 +105,7 @@ public abstract class Champion : MonoBehaviour{
     }
 
     public void UseSkill(Skill skill, Cell target) {
-        skill.Use(this, target);
+        skill.Use(target);
         HasUsedSkill = true;
     }
 

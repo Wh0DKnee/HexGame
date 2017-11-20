@@ -10,6 +10,10 @@ public class EnemyTurnState : GameState {
     public override void Tick() {
     }
 
+    public override void InitializeHighlightState() {
+        stateHighlighter = new EmptyHighlighter(CellHighlighter.instance);
+    }
+
     public override void OnStateEnter() {
         base.OnStateEnter();
         NetworkSession.instance.Client.TellServerTurnDone();

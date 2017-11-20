@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighlightSelectionState : CellListenerHighlightState {
+public class SelectionStateHighlighter : CellListenerStateHighlighter {
 
-    public HighlightSelectionState(CellHighlighter _highlighter) : base(_highlighter) {
+    public SelectionStateHighlighter(CellHighlighter _highlighter) : base(_highlighter) {
     }
 
     public override void CellMouseEnter(Cell cell) {

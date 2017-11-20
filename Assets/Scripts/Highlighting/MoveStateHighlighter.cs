@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighlightMoveState : CellListenerHighlightState {
+public class MoveStateHighlighter : CellListenerStateHighlighter {
 
     private Champion champion;
     private List<Cell> path;
 
-    public HighlightMoveState(CellHighlighter _highlighter, Champion champion) : base(_highlighter) {
+    public MoveStateHighlighter(CellHighlighter _highlighter, Champion champion) : base(_highlighter) {
         this.champion = champion;
         path = new List<Cell>();
     }
