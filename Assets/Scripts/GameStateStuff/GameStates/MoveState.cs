@@ -29,13 +29,15 @@ public class MoveState : CellListenerGameState {
         }
 
         if (MoveValidation.CanChampMove(SelectedChamp, cell)) {
+            //IMoveHandler moveHandler = MoveHandlerFactory.GetMoveHandler();
             gameStateController.MoveHandler.HandleMove(SelectedChamp, cell.coordinates);
-            gameStateController.SetState(new MoveWaitForServerState(gameStateController, SelectedChamp));
+            StateChangeParams stateChangeParams = new StateChangeParams(gameStateController, SelectedChamp);
+            gameStateController.SetState(gameStateController.MoveHandler.GetNextState(stateChangeParams));
         }
 
     }
 
     private void SkipMoveState() {
-        gameStateController.SetState(new SelectSkillState(gameStateController, SelectedChamp));
+        gameStateController.SetState(new SkillState(gameStateController, SelectedChamp));
     }
 }

@@ -42,9 +42,9 @@ public static class HexMath {
 
     // return HexCoordinates closest to the input coordinates
     public static HexCoordinates CubeRound(Vector3 coordinates) {
-        int x = Mathf.RoundToInt(coordinates.x);
-        int y = Mathf.RoundToInt(coordinates.y);
-        int z = Mathf.RoundToInt(coordinates.z);
+        int x = Mathf.RoundToInt(coordinates.x * HexCoordinates.width);
+        int y = Mathf.RoundToInt(coordinates.y * HexCoordinates.width);
+        int z = Mathf.RoundToInt(coordinates.z * HexCoordinates.width);
 
         float xDiff = Mathf.Abs(x - coordinates.x);
         float yDiff = Mathf.Abs(y - coordinates.y);

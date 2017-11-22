@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UseSkillState : CellListenerGameState {
+/*public class UseSkillState : CellListenerGameState {
 
     private Champion selectedChampion;
 
@@ -22,7 +22,7 @@ public class UseSkillState : CellListenerGameState {
     }
 
     public override void InitializeHighlightState() {
-        stateHighlighter = selectedChampion.SelectedSkill.GetHighlighter();
+        stateHighlighter = selectedChampion.SelectedSkill.GetHighlighter(selectedChampion);
     }
 
     public override void CellMouseDown(Cell clickedCell) {
@@ -59,4 +59,4 @@ public class UseSkillState : CellListenerGameState {
         }
         return true;
     }
-}
+}*/

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISkillHandler {
+public interface ISkillHandler : IStateHandler{
 
     void HandleSkill(Champion champion, Skill skill, HexCoordinates coordinates);
 }

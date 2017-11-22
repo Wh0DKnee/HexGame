@@ -20,7 +20,14 @@ public class SelectionState : CellListenerGameState {
         }
     }
 
-    public SelectionState(GameStateController gsc) : base(gsc) { }
+    public SelectionState(GameStateController gsc) : base(gsc) {}
+
+    public override void OnStateEnter() {
+        base.OnStateEnter();
+        if (HaveAllUsedSkill()) {
+            gameStateController.SetState(new EnemyTurnState(gameStateController));
+        }
+    }
 
     public SelectionState(GameStateController gsc, Champion selectedChampion) : base(gsc) {
         SelectedChamp = selectedChampion;
@@ -41,5 +48,13 @@ public class SelectionState : CellListenerGameState {
                 SelectedChamp = cell.champion;
             }
         }
+    }
+
+    private bool HaveAllUsedSkill() {
+        List<Champion> allies = HexGrid.Instance.GetAllyChamps();
+        foreach (Champion champ in allies) {
+            if (!champ.HasUsedSkill) return false;
+        }
+        return true;
     }
 }

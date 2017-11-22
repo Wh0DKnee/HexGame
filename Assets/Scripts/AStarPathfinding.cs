@@ -50,7 +50,6 @@ namespace Pathfinding {
                     }
 
                     cameFrom[neighbor] = current;
-                    //cameFrom.Add(neighbor, current);
                     gScore[neighbor] = tentativeGScore;
                     fScore[neighbor] = gScore[neighbor] + CostEstimate(neighbor, goal);
                 }

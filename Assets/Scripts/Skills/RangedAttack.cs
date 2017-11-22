@@ -8,13 +8,13 @@ public class RangedAttack : SingleTargetSkill {
 
     private int damage = 10;
 
-    public RangedAttack(Cost skillCost, TargetType targetType, int range, Champion user) : base(skillCost, targetType, range, user) {}
+    public RangedAttack(Cost skillCost, TargetType targetType, int range) : base(skillCost, targetType, range) {}
 
     public override void ApplyEffect(Cell target) {
         target.champion.HP -= damage;
     }
 
-    public override StateHighlighter GetHighlighter() {
+    public override StateHighlighter GetHighlighter(Champion user) {
         throw new NotImplementedException();
     }
 }

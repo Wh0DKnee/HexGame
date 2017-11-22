@@ -5,5 +5,5 @@ using System;
 
 [Serializable]
 public abstract class LineSkill : Skill {
-    public LineSkill(Cost skillCost, TargetType targetType, int range, Champion user) : base(skillCost, targetType, range, user) {}
+    public LineSkill(Cost skillCost, TargetType targetType, int range) : base(skillCost, targetType, range) {}
 }

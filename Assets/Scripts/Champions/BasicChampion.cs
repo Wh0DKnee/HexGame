@@ -14,10 +14,10 @@ public class BasicChampion : Champion {
     }
 
     public override void InitializeSkills() {
-        Q = SkillFactory.CreateMeleeAttackInstance(this);
-        W = SkillFactory.CreateMeleeAttackInstance(this);
-        E = SkillFactory.CreateMeleeAttackInstance(this);
-        R = SkillFactory.CreateMeleeAttackInstance(this);
+        Q = SkillFactory.CreateMeleeAttackInstance();
+        W = SkillFactory.CreateMeleeAttackInstance();
+        E = SkillFactory.CreateMeleeAttackInstance();
+        R = SkillFactory.CreateMeleeAttackInstance();
     }
 
     public override void InitializeStats() {

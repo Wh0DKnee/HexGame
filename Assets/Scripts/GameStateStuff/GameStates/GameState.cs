@@ -14,7 +14,6 @@ public abstract class GameState {
     public virtual void OnStateEnter() {
         InitializeHighlightState();
         stateHighlighter.OnStateEnter();
-
     }
 
     public virtual void OnStateExit() {

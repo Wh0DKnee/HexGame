@@ -28,7 +28,7 @@ public class GameStateController : MonoBehaviour {
     }
 
 	public void Initialize() {
-        MoveHandler = new NetworkMoveHandler(); //TODO: dont hardcode this, pass as arguments instead
+        MoveHandler = new NetworkMoveHandler(); //TODO: dont hardcode this, pass as arguments instead, factory
         SkillHandler = new NetworkSkillHandler();
 
         if (GameInfo.isLeftSide) {

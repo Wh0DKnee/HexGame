@@ -10,7 +10,9 @@ public class HexCoordinates{
     public int X { get; private set; }
     public int Y { get; private set; }
     public int Z { get; private set; }
-    private float size = 1; //height is size * 2, width is sqrt(3)/2 * height
+    public static readonly float size = 1; //height is size * 2, width is sqrt(3)/2 * height
+    public static readonly float height = size * 2;
+    public static readonly float width = (Mathf.Sqrt(3) / 2f) * height;
 
     [JsonConstructor]
     public HexCoordinates(int x, int y, int z) {

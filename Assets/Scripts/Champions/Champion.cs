@@ -48,10 +48,10 @@ public abstract class Champion : MonoBehaviour{
     public Skill SelectedSkill {
         get { return selectedSkill; }
         set {
-            selectedSkill = value;
-            if(selectedSkillChanged != null) {
+            if(value != selectedSkill && selectedSkillChanged != null) {
                 selectedSkillChanged();
             }
+            selectedSkill = value;
         }
     }
 
@@ -80,6 +80,7 @@ public abstract class Champion : MonoBehaviour{
     public event Action<Champion> manaChanged;
     public event Action selectedSkillChanged;
     public event Action moved;
+    public event Action skillUsed;
 
     public void Selected() {
         if (selected != null) selected(this);
@@ -105,8 +106,9 @@ public abstract class Champion : MonoBehaviour{
     }
 
     public void UseSkill(Skill skill, Cell target) {
-        skill.Use(target);
+        skill.Use(this, target);
         HasUsedSkill = true;
+        if(skillUsed != null) { skillUsed(); }
     }
 
     public bool CanUseSkill(Cell target) {
@@ -124,5 +126,6 @@ public abstract class Champion : MonoBehaviour{
     public void NewTurnReset() {
         RemainingMovementRange = MaxMovementRange;
         HasUsedSkill = false;
+        SelectedSkill = null;
     }
 }
