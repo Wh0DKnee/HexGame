@@ -13,8 +13,4 @@ public class MeleeAttack : SingleTargetSkill {
     public override void ApplyEffect(Cell target) {
         target.champion.HP -= damage;
     }
-
-    public override StateHighlighter GetHighlighter(Champion user) {
-        return new SingleTargetSkillStateHighlighter(CellHighlighter.instance, user);
-    }
 }

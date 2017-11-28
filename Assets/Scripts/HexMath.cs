@@ -40,7 +40,13 @@ public static class HexMath {
         return HexAdd(hex, HexDirection(direction));
     }
 
-    // return HexCoordinates closest to the input coordinates
+   public static HexCoordinates WorldPosToHex(Vector3 worldPos) {//TODO: fix
+        float x = (worldPos.x * Mathf.Sqrt(3)/3f - worldPos.z/3f) / HexCoordinates.size;
+        float z = -worldPos.z * 2f/3f / HexCoordinates.size;
+        Debug.Log("X :" + x + " Z: " + z);
+        return CubeRound(new Vector3(x, -x -z, z));
+    }
+
     public static HexCoordinates CubeRound(Vector3 coordinates) {
         int x = Mathf.RoundToInt(coordinates.x * HexCoordinates.width);
         int y = Mathf.RoundToInt(coordinates.y * HexCoordinates.width);
@@ -68,6 +74,21 @@ public static class HexMath {
         }
         for (int i = 0; i <= distance; i++) {
             result.Add(CubeRound(Vector3.Lerp(new Vector3(a.X, a.Y, a.Z), new Vector3(b.X, b.Y, b.Z), 1.0f/distance*i)));
+        }
+        return result;
+    }
+
+    //TODO: more efficient algorithm exists here, if needed: https://www.redblobgames.com/grids/hexagons/#range
+    public static List<HexCoordinates> HexCircle(HexCoordinates origin, int radius) {
+        List<HexCoordinates> result = new List<HexCoordinates>();
+        for (int dx = -radius; dx <= radius; dx++) {
+            for (int dy = -radius; dy <= radius; dy++) {
+                for (int dz = -radius; dz <= radius; dz++) {
+                    if(dx+dy+dz == 0) {
+                        result.Add(origin + new HexCoordinates(dx, dy, dz));
+                    }
+                }
+            }
         }
         return result;
     }

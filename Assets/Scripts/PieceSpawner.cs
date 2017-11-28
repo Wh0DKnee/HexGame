@@ -53,7 +53,7 @@ public class PieceSpawner : MonoBehaviour {
         }
         champ.ID = idCounter;
         idCounter++;
-        HexGrid.Instance.AddPiece(champ, coordinates);
+        HexGrid.Instance.AddChamp(champ, coordinates);
     }
 
     private GameObject ChampionNameToGameObject(string championName) {

@@ -53,7 +53,7 @@ public class HexGrid : MonoBehaviour {
         DestroyImmediate(cellToRemove.gameObject);
     }
 
-    public void AddPiece(Champion champ, HexCoordinates coordinates) {
+    public void AddChamp(Champion champ, HexCoordinates coordinates) {
         Cell cell = GetCell(coordinates);
         if (cell == null) {
             Debug.LogWarning("cant add a piece to a cell that doesnt exist");
@@ -75,7 +75,7 @@ public class HexGrid : MonoBehaviour {
         return Contains(cell.coordinates);
     }
 
-    //TODO: cache this
+    //TODO: cache this!
     public Cell GetCell(HexCoordinates coordinates) {
         foreach (Cell cell in cells) {
             if (cell.coordinates == coordinates) {
@@ -83,6 +83,19 @@ public class HexGrid : MonoBehaviour {
             }
         }
         return null;
+    }
+
+    public List<Cell> GetCells(List<HexCoordinates> coords) {
+        List<Cell> result = new List<Cell>();
+        foreach (HexCoordinates c in coords) {
+            Cell cell = GetCell(c);
+            if(cell == null) {
+                Debug.Log("no cell at: " + c.ToString());
+                continue;
+            }
+            result.Add(cell);
+        }
+        return result;
     }
 
     public Cell ChampionToCell(Champion champ) {

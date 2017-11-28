@@ -23,9 +23,9 @@ public abstract class Skill : IStateHandler{
 
     public abstract void ApplyEffect(Cell target);
 
-    public abstract StateHighlighter GetHighlighter(Champion user);
-
     public virtual GameState GetNextState(StateChangeParams parameters) {
         return new SelectionState(parameters.gameStateController);
     }
+
+    public abstract List<Cell> GetAffectedArea(Cell target);
 }

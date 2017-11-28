@@ -17,7 +17,7 @@ public class BasicChampion : Champion {
         Q = SkillFactory.CreateMeleeAttackInstance();
         W = SkillFactory.CreateMeleeAttackInstance();
         E = SkillFactory.CreateMeleeAttackInstance();
-        R = SkillFactory.CreateMeleeAttackInstance();
+        R = SkillFactory.CreateAOEExampleSkill();
     }
 
     public override void InitializeStats() {

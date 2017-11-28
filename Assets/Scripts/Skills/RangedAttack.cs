@@ -13,8 +13,4 @@ public class RangedAttack : SingleTargetSkill {
     public override void ApplyEffect(Cell target) {
         target.champion.HP -= damage;
     }
-
-    public override StateHighlighter GetHighlighter(Champion user) {
-        throw new NotImplementedException();
-    }
 }

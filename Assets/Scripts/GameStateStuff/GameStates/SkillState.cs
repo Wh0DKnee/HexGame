@@ -18,7 +18,7 @@ public class SkillState : CellListenerGameState {
             return;
         }
 
-        stateHighlighter = selectedChamp.SelectedSkill.GetHighlighter(selectedChamp);
+        stateHighlighter = new SkillStateHighlighter(CellHighlighter.instance, selectedChamp, selectedChamp.SelectedSkill);
     }
 
     public override void Tick() {

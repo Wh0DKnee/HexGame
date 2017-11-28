@@ -107,7 +107,6 @@
     <Compile Include="Assets\Scripts\HexCoordinates.cs" />
     <Compile Include="Assets\Scripts\HexGrid.cs" />
     <Compile Include="Assets\Scripts\HexMath.cs" />
-    <Compile Include="Assets\Scripts\Highlighting\AOESkillStateHighlighter.cs" />
     <Compile Include="Assets\Scripts\Highlighting\CellHighlighter.cs" />
     <Compile Include="Assets\Scripts\Highlighting\CellListenerStateHighlighter.cs" />
     <Compile Include="Assets\Scripts\Highlighting\ChampionHighlighter.cs" />
@@ -115,7 +114,7 @@
     <Compile Include="Assets\Scripts\Highlighting\HighlightStateController.cs" />
     <Compile Include="Assets\Scripts\Highlighting\MoveStateHighlighter.cs" />
     <Compile Include="Assets\Scripts\Highlighting\SelectionStateHighlighter.cs" />
-    <Compile Include="Assets\Scripts\Highlighting\SingleTargetSkillStateHighlighter.cs" />
+    <Compile Include="Assets\Scripts\Highlighting\SkillStateHighlighter.cs" />
     <Compile Include="Assets\Scripts\Highlighting\StateHighlighter.cs" />
     <Compile Include="Assets\Scripts\Initializer.cs" />
     <Compile Include="Assets\Scripts\Networking\Client.cs" />
@@ -128,6 +127,7 @@
     <Compile Include="Assets\Scripts\Networking\Server.cs" />
     <Compile Include="Assets\Scripts\Networking\Service.cs" />
     <Compile Include="Assets\Scripts\PieceSpawner.cs" />
+    <Compile Include="Assets\Scripts\Skills\AOEExampleSkill.cs" />
     <Compile Include="Assets\Scripts\Skills\AOESkill.cs" />
     <Compile Include="Assets\Scripts\Skills\Cost.cs" />
     <Compile Include="Assets\Scripts\Skills\HPCost.cs" />
@@ -140,6 +140,7 @@
     <Compile Include="Assets\Scripts\Skills\SkillFactory.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillValidation.cs" />
     <Compile Include="Assets\Scripts\Skills\TargetEnum.cs" />
+    <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\Scripts\Utility\ApplicationSettings.cs" />
     <Compile Include="Assets\Scripts\Utility\GameStateControllerInitializer.cs" />
     <Compile Include="Assets\Scripts\Utility\MouseEvents.cs" />

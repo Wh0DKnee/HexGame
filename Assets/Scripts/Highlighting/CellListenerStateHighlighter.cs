@@ -24,13 +24,17 @@ public abstract class CellListenerStateHighlighter : StateHighlighter {
         }
     }
 
-    private void ManuallyTriggerMouseEnterEvent() {
-        //TODO: fix calculation
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    private void ManuallyTriggerMouseEnterEvent() { //TODO: fix calculation
+        Vector3 mousePosFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane);
+        Vector3 mousePosNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
+        Vector3 mousePosF = Camera.main.ScreenToWorldPoint(mousePosFar);
+        Vector3 mousePosN = Camera.main.ScreenToWorldPoint(mousePosNear);
         RaycastHit hit;
         HexCoordinates coords = null;
-        if(Physics.Raycast(mousePos, Camera.main.transform.forward, out hit)) {
+        if(Physics.Raycast(mousePosN, mousePosF - mousePosN, out hit, 500f)) {
             coords = HexMath.CubeRound(hit.point);
+        } else {
+            return;
         }
 
         Cell cell = HexGrid.Instance.GetCell(coords);
