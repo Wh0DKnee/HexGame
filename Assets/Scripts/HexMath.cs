@@ -40,11 +40,13 @@ public static class HexMath {
         return HexAdd(hex, HexDirection(direction));
     }
 
-   public static HexCoordinates WorldPosToHex(Vector3 worldPos) {//TODO: fix
-        float x = (worldPos.x * Mathf.Sqrt(3)/3f - worldPos.z/3f) / HexCoordinates.size;
-        float z = -worldPos.z * 2f/3f / HexCoordinates.size;
-        Debug.Log("X :" + x + " Z: " + z);
-        return CubeRound(new Vector3(x, -x -z, z));
+   public static HexCoordinates WorldPosToHex(Vector3 worldPos) {
+        //TODO: figure out why this shit works
+        float x = worldPos.x / HexCoordinates.width;
+        float z = worldPos.z / (HexCoordinates.height * 3f/4f);
+        float q = (x * Mathf.Sqrt(3f)/3f - -z/3f) / HexCoordinates.size;
+        float r = z * 2f/3f / HexCoordinates.size;
+        return CubeRound(new Vector3(q, -q + r, -r));
     }
 
     public static HexCoordinates CubeRound(Vector3 coordinates) {

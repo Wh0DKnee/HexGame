@@ -15,8 +15,8 @@ public class SkillStateHighlighter : CellListenerStateHighlighter {
     }
 
     public override void OnStateEnter() {
-        base.OnStateEnter();
         currentArea = new List<Cell>();
+        base.OnStateEnter();
     }
 
     public override void OnStateExit() {
@@ -29,6 +29,7 @@ public class SkillStateHighlighter : CellListenerStateHighlighter {
             currentArea = skill.GetAffectedArea(cell);
             highlighter.Highlight(currentArea);
         }
+
     }
 
     public override void CellMouseExit(Cell cell) {

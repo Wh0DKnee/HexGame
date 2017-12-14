@@ -48,9 +48,6 @@ public abstract class Champion : MonoBehaviour{
     public Skill SelectedSkill {
         get { return selectedSkill; }
         set {
-            if(value != selectedSkill && selectedSkillChanged != null) {
-                selectedSkillChanged();
-            }
             selectedSkill = value;
         }
     }
@@ -71,6 +68,21 @@ public abstract class Champion : MonoBehaviour{
         InitializeStats();
     }
 
+    public Skill GetSkill(SkillEnum skillEnum) {
+        switch (skillEnum) {
+            case SkillEnum.Q:
+                return Q; break;
+            case SkillEnum.W:
+                return W; break;
+            case SkillEnum.E:
+                return E; break;
+            case SkillEnum.R:
+                return R; break;
+            default:
+                return null; break;
+        }
+    }
+
     #region events
     //TODO: maybe put events in their own class like ChampionEvents and make this class have a member of that type
     public event Action<Champion> selected;
@@ -78,7 +90,6 @@ public abstract class Champion : MonoBehaviour{
     public event Action<Champion> died;
     public event Action<Champion> hpChanged;
     public event Action<Champion> manaChanged;
-    public event Action selectedSkillChanged;
     public event Action moved;
     public event Action skillUsed;
 
@@ -98,8 +109,7 @@ public abstract class Champion : MonoBehaviour{
     public virtual void Move(HexCoordinates coords) {
         HexCoordinates movementVector = coords - GetCell().coordinates;
         RemainingMovementRange -= HexMath.HexLength(movementVector);
-        //instead of next line: moveAnimator.move(this, coords);
-        this.gameObject.transform.position = coords.ToWorldPosition();
+        MoveAnimator.instance.Move(this, coords);
         HexGrid.Instance.MoveChamp(this, coords);
 
         if(moved != null) { moved(); }
@@ -128,4 +138,11 @@ public abstract class Champion : MonoBehaviour{
         HasUsedSkill = false;
         SelectedSkill = null;
     }
+}
+
+public enum SkillEnum {
+    Q,
+    W,
+    E,
+    R
 }

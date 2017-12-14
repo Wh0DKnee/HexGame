@@ -9,8 +9,6 @@ public static class MoveValidation{
         path = new List<Cell>();
         if (target.HasChamp()) { return false; }
 
-        //TODO: we need to use pathfinding as soon as we introduce obstacles.
-        //path = HexMath.DrawLine(champion.GetCell().coordinates, target.coordinates);
         path = AStarPathfinding.FindPath(champion.GetCell(), target);
         if(path.Count - 1 <= champion.RemainingMovementRange) {
             return true;

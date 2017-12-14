@@ -13,7 +13,7 @@ public abstract class CellListenerStateHighlighter : StateHighlighter {
             cell.mouseEnter += CellMouseEnter;
             cell.mouseExit += CellMouseExit;
         }
-        //ManuallyTriggerMouseEnterEvent();
+        ManuallyTriggerMouseEnterEvent();
     }
 
     public override void OnStateExit() {
@@ -24,15 +24,19 @@ public abstract class CellListenerStateHighlighter : StateHighlighter {
         }
     }
 
-    private void ManuallyTriggerMouseEnterEvent() { //TODO: fix calculation
+    private void ManuallyTriggerMouseEnterEvent() {
+        Plane plane = new Plane(Vector3.up, Vector3.zero); //TODO: just take 3 points from the grid instead, so that its not hardcoded
+
         Vector3 mousePosFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane);
-        Vector3 mousePosNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
+        Vector3 mousePosNear =new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
         Vector3 mousePosF = Camera.main.ScreenToWorldPoint(mousePosFar);
         Vector3 mousePosN = Camera.main.ScreenToWorldPoint(mousePosNear);
-        RaycastHit hit;
+
         HexCoordinates coords = null;
-        if(Physics.Raycast(mousePosN, mousePosF - mousePosN, out hit, 500f)) {
-            coords = HexMath.CubeRound(hit.point);
+        float distance;
+        Ray ray = new Ray(mousePosN, mousePosF - mousePosN);
+        if (plane.Raycast(ray, out distance)) {
+            coords = HexMath.WorldPosToHex(ray.GetPoint(distance));
         } else {
             return;
         }
