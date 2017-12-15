@@ -21,14 +21,26 @@ public class SkillState : CellListenerGameState {
         stateHighlighter = new SkillStateHighlighter(CellHighlighter.instance, selectedChamp, selectedChamp.SelectedSkill);
     }
 
+    public override void OnStateEnter() {
+        base.OnStateEnter();
+        InputHandler.instance.skillSelected += OnSkillSelected;
+    }
+
+    public override void OnStateExit() {
+        base.OnStateExit();
+        InputHandler.instance.skillSelected -= OnSkillSelected;
+    }
+
+    private void OnSkillSelected(SkillEnum skillEnum) {
+        Skill skill = selectedChamp.GetSkill(skillEnum);
+        selectedChamp.SelectedSkill = skill;
+        gameStateController.SetState(new SkillState(gameStateController, selectedChamp));
+    }
+
     public override void Tick() {
+        //TODO: move these events into InputHandler I think
         ReturnToSelectStateOnEscape();
         SkipUseSkillOnEnter();
-
-        if (Input.GetKeyDown(KeyCode.Q)) { selectedChamp.SelectedSkill = selectedChamp.Q; gameStateController.SetState(new SkillState(gameStateController, selectedChamp)); }
-        if (Input.GetKeyDown(KeyCode.W)) { selectedChamp.SelectedSkill = selectedChamp.W; gameStateController.SetState(new SkillState(gameStateController, selectedChamp)); }
-        if (Input.GetKeyDown(KeyCode.E)) { selectedChamp.SelectedSkill = selectedChamp.E; gameStateController.SetState(new SkillState(gameStateController, selectedChamp)); }
-        if (Input.GetKeyDown(KeyCode.R)) { selectedChamp.SelectedSkill = selectedChamp.R; gameStateController.SetState(new SkillState(gameStateController, selectedChamp)); }
     }
 
     public override void CellMouseDown(Cell clickedCell) {

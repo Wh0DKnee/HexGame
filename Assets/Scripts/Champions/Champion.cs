@@ -68,18 +68,19 @@ public abstract class Champion : MonoBehaviour{
         InitializeStats();
     }
 
+    //TODO: do we need this and the enum? is there a better solution?
     public Skill GetSkill(SkillEnum skillEnum) {
         switch (skillEnum) {
             case SkillEnum.Q:
-                return Q; break;
+                return Q;
             case SkillEnum.W:
-                return W; break;
+                return W;
             case SkillEnum.E:
-                return E; break;
+                return E;
             case SkillEnum.R:
-                return R; break;
+                return R;
             default:
-                return null; break;
+                return null;
         }
     }
 

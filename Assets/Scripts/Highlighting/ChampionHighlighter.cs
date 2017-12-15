@@ -17,7 +17,6 @@ public class ChampionHighlighter : MonoBehaviour {
     public void SubscribeToChamps () {
         List<Champion> alliedChamps = HexGrid.Instance.GetAllyChamps();
         foreach (Champion champ in alliedChamps) {
-            print(champ.ToString());
             champ.selected += ChampSelected;
             champ.unselected += ChampUnselected;
         }

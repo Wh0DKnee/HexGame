@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\Champions\BasicChampion.cs" />
     <Compile Include="Assets\Scripts\Champions\Champion.cs" />
+    <Compile Include="Assets\Scripts\Champions\ChampionStats.cs" />
     <Compile Include="Assets\Scripts\Champions\MoveAnimator.cs" />
     <Compile Include="Assets\Scripts\GameBoardLoader.cs" />
     <Compile Include="Assets\Scripts\GameInfo.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\GameStateStuff\IStateHandler.cs" />
     <Compile Include="Assets\Scripts\GameStateStuff\MoveValidation.cs" />
     <Compile Include="Assets\Scripts\GameStateStuff\NetworkMoveHandler.cs" />
+    <Compile Include="Assets\Scripts\GameStateStuff\NetworkSkillHandler.cs" />
     <Compile Include="Assets\Scripts\HexCoordinates.cs" />
     <Compile Include="Assets\Scripts\HexGrid.cs" />
     <Compile Include="Assets\Scripts\HexMath.cs" />
@@ -113,7 +115,6 @@
     <Compile Include="Assets\Scripts\Highlighting\EmptyHighlighter.cs" />
     <Compile Include="Assets\Scripts\Highlighting\HighlightStateController.cs" />
     <Compile Include="Assets\Scripts\Highlighting\MoveStateHighlighter.cs" />
-    <Compile Include="Assets\Scripts\Highlighting\NetworkSkillHandler.cs" />
     <Compile Include="Assets\Scripts\Highlighting\SelectionStateHighlighter.cs" />
     <Compile Include="Assets\Scripts\Highlighting\SkillStateHighlighter.cs" />
     <Compile Include="Assets\Scripts\Highlighting\StateHighlighter.cs" />

@@ -45,8 +45,12 @@ public class PieceSpawner : MonoBehaviour {
     }
 
     public void InstantiateChampion(string championName, HexCoordinates coordinates, bool isEnemy) {
-        GameObject go = (GameObject)Instantiate(ChampionNameToGameObject(championName), pieceContainer);
+        print("instantiating champ");
+        GameObject champGO = ChampionNameToGameObject(championName);
+        print(champGO.name);
+        GameObject go = Instantiate(ChampionNameToGameObject(championName), pieceContainer);
         Champion champ = go.GetComponent<Champion>();
+        print(go.transform.parent.name);
         champ.IsEnemyChamp = isEnemy;
         if (isEnemy) {
             go.GetComponent<MeshRenderer>().material.color = Color.red; //for testing

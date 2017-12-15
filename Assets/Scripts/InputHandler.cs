@@ -5,6 +5,16 @@ using System;
 
 public class InputHandler : MonoBehaviour {
 
+    public static InputHandler instance;
+
+    private void Awake() {
+        if(instance != null) {
+            Debug.LogError("more than one input handler");
+            return;
+        }
+        instance = this;
+    }
+
     public event Action<SkillEnum> skillSelected;
 
 	public void QButtonPressed() {
@@ -24,6 +34,7 @@ public class InputHandler : MonoBehaviour {
     }
 
     private void Update() {
+        //TODO: swap for custom keybinds eventually
         if (Input.GetKeyDown(KeyCode.Q)) { RaiseEventSkillSelected(SkillEnum.Q); }
         if (Input.GetKeyDown(KeyCode.W)) { RaiseEventSkillSelected(SkillEnum.W); }
         if (Input.GetKeyDown(KeyCode.E)) { RaiseEventSkillSelected(SkillEnum.E); }

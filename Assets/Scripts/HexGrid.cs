@@ -40,7 +40,6 @@ public class HexGrid : MonoBehaviour {
         cell.coordinates = coordinates;
         cell.transform.position = coordinates.ToWorldPosition();
         cells.Add(cell);
-        print(cell.ToString());
     }
 
     public void RemoveCell(HexCoordinates coordinates) {
