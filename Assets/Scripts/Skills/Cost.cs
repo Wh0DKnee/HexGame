@@ -12,7 +12,7 @@ public abstract class Cost{
         this.amount = amount;
     }
 
-    public abstract void ApplyCost(Champion user);
+    public abstract void ApplyCost(ChampionStats userStats);
 
     public abstract bool HasUserEnoughResources(Champion user);
 }

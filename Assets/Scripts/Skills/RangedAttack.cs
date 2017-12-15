@@ -8,9 +8,9 @@ public class RangedAttack : SingleTargetSkill {
 
     private int damage = 10;
 
-    public RangedAttack(Cost skillCost, TargetType targetType, int range) : base(skillCost, targetType, range) {}
+    public RangedAttack(ChampionStats userStats, Cost skillCost, TargetType targetType, int range) : base(userStats, skillCost, targetType, range) {}
 
     public override void ApplyEffect(Cell target) {
-        target.champion.HP -= damage;
+        target.champion.Stats.HP -= damage;
     }
 }

@@ -26,7 +26,7 @@ public class MoveWaitForServerState : GameState {
     }
 
     private void OnMoved() {
-        if (champion.RemainingMovementRange > 0) {
+        if (champion.Stats.RemainingMovementRange > 0) {
             gameStateController.SetState(new MoveState(gameStateController, champion));
         } else {
             gameStateController.SetState(new SkillState(gameStateController, champion));

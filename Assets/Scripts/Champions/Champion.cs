@@ -5,40 +5,16 @@ using System;
 
 public abstract class Champion : MonoBehaviour{
 
-    public int ID { get; set; } //ID, consistent and unique across clients
+    public ChampionStats Stats { get; set; }
 
-    //refactor to ChampionStats class
-    private int hp;
-    public int HP {
-        get { return hp; }
-        set {
-            if (value <= 0) {
-                hp = 0;
-                if (died != null) died(this);
-                Destroy(this.gameObject);
-            } else {
-                hp = value;
-            }
-            if (hpChanged != null) hpChanged(this);
-        }
+    private void Awake() {
+        Stats = new ChampionStats();
+        Stats.died += OnDied;
     }
-    private int mana;
-    public int Mana {
-        get { return mana; }
-        set {
-            mana = value;
-            if (manaChanged != null) manaChanged(this);
-        }
+
+    private void OnDestroy() {
+        Stats.died -= OnDied;
     }
-    private int maxMovementRange;
-    public int MaxMovementRange {
-        get { return maxMovementRange; }
-        set {
-            maxMovementRange = value;
-            RemainingMovementRange = value;
-        }
-    }
-    public int RemainingMovementRange { get; set; }
 
     public Skill Q { get; set; }
     public Skill W { get; set; }
@@ -56,7 +32,7 @@ public abstract class Champion : MonoBehaviour{
     public bool HasUsedSkill { get; set; } = false;
     public bool FinishedTurn {
         get {
-            return RemainingMovementRange == 0 && HasUsedSkill;
+            return Stats.RemainingMovementRange == 0 && HasUsedSkill;
         }
     }
 
@@ -88,9 +64,6 @@ public abstract class Champion : MonoBehaviour{
     //TODO: maybe put events in their own class like ChampionEvents and make this class have a member of that type
     public event Action<Champion> selected;
     public event Action<Champion> unselected;
-    public event Action<Champion> died;
-    public event Action<Champion> hpChanged;
-    public event Action<Champion> manaChanged;
     public event Action moved;
     public event Action skillUsed;
 
@@ -104,12 +77,12 @@ public abstract class Champion : MonoBehaviour{
     #endregion
 
     public Cell GetCell() {
-        return HexGrid.Instance.ChampionToCell(this);
+        return HexGrid.Instance.GetCell(Stats.Coordinates);
     }
 
     public virtual void Move(HexCoordinates coords) {
         HexCoordinates movementVector = coords - GetCell().coordinates;
-        RemainingMovementRange -= HexMath.HexLength(movementVector);
+        Stats.RemainingMovementRange -= HexMath.HexLength(movementVector);
         MoveAnimator.instance.Move(this, coords);
         HexGrid.Instance.MoveChamp(this, coords);
 
@@ -117,7 +90,7 @@ public abstract class Champion : MonoBehaviour{
     }
 
     public void UseSkill(Skill skill, Cell target) {
-        skill.Use(this, target);
+        skill.Use(target);
         HasUsedSkill = true;
         if(skillUsed != null) { skillUsed(); }
     }
@@ -127,7 +100,7 @@ public abstract class Champion : MonoBehaviour{
     }
 
     public void SkipMove() {
-        RemainingMovementRange = 0;
+        Stats.RemainingMovementRange = 0;
     }
 
     public void SkipUseSkill() {
@@ -135,9 +108,13 @@ public abstract class Champion : MonoBehaviour{
     }
 
     public void NewTurnReset() {
-        RemainingMovementRange = MaxMovementRange;
+        Stats.RemainingMovementRange = Stats.MaxMovementRange;
         HasUsedSkill = false;
         SelectedSkill = null;
+    }
+
+    void OnDied() {
+        Destroy(this.gameObject);
     }
 }
 

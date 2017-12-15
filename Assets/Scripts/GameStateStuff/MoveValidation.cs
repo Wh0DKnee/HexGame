@@ -10,7 +10,7 @@ public static class MoveValidation{
         if (target.HasChamp()) { return false; }
 
         path = AStarPathfinding.FindPath(champion.GetCell(), target);
-        if(path.Count - 1 <= champion.RemainingMovementRange) {
+        if(path.Count - 1 <= champion.Stats.RemainingMovementRange) {
             return true;
         } else {
             return false;

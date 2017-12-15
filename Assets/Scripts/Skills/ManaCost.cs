@@ -9,11 +9,11 @@ public class ManaCost : Cost {
     public ManaCost(int amount) : base(amount) {
     }
 
-    public override void ApplyCost(Champion user) {
-        user.Mana -= amount;
+    public override void ApplyCost(ChampionStats userStats) {
+        userStats.Mana -= amount;
     }
 
     public override bool HasUserEnoughResources(Champion user) {
-        return user.Mana >= amount;
+        return user.Stats.Mana >= amount;
     }
 }

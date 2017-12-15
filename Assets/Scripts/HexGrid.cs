@@ -62,8 +62,13 @@ public class HexGrid : MonoBehaviour {
             Debug.LogWarning("this cell already has a piece");
             return;
         }
-        cell.champion = champ;
+        SetCellChampionReferences(cell, champ);
         champ.transform.position = cell.coordinates.ToWorldPosition();
+    }
+
+    private void SetCellChampionReferences(Cell cell, Champion champion) {
+        cell.champion = champion;
+        champion.Stats.Coordinates = cell.coordinates;
     }
 
     public bool Contains(HexCoordinates coordinates) {
@@ -121,7 +126,7 @@ public class HexGrid : MonoBehaviour {
     }
 
     public Champion GetChamp(int championID) {
-        Champion result = GetChamps().Where(x => x.ID == championID).ToList()[0];
+        Champion result = GetChamps().Where(x => x.Stats.ID == championID).ToList()[0];
         if(result == null) { Debug.LogError("champ with that ID could not be found"); }
         return result;
     }
@@ -131,8 +136,7 @@ public class HexGrid : MonoBehaviour {
         if (startCell != null) {
             startCell.champion = null;
         }
-
-        GetCell(coords).champion = champ;
+        SetCellChampionReferences(GetCell(coords), champ);
     }
 
     public List<Champion> GetChamps() {

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ISkillHandler : IStateHandler{
 
-    void HandleSkill(Champion champion, Skill skill, HexCoordinates coordinates);
+    void HandleSkill(Skill skill, HexCoordinates coordinates);
 }

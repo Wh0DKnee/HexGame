@@ -17,7 +17,7 @@ public class MoveState : CellListenerGameState {
 
     public override void OnStateEnter() {
         base.OnStateEnter();
-        if (SelectedChamp.RemainingMovementRange == 0) {
+        if (SelectedChamp.Stats.RemainingMovementRange == 0) {
             SkipMoveState();
         }
     }

@@ -6,15 +6,15 @@ using UnityEngine;
 public class BasicChampion : Champion {
 
     public override void InitializeSkills() {
-        Q = SkillFactory.CreateMeleeAttackInstance();
-        W = SkillFactory.CreateMeleeAttackInstance();
-        E = SkillFactory.CreateMeleeAttackInstance();
-        R = SkillFactory.CreateAOEExampleSkill();
+        Q = SkillFactory.CreateMeleeAttackInstance(Stats);
+        W = SkillFactory.CreateMeleeAttackInstance(Stats);
+        E = SkillFactory.CreateMeleeAttackInstance(Stats);
+        R = SkillFactory.CreateAOEExampleSkill(Stats);
     }
 
     public override void InitializeStats() {
-        HP = 20;
-        Mana = 6;
-        MaxMovementRange = 3;
+        Stats.HP = 20;
+        Stats.Mana = 6;
+        Stats.MaxMovementRange = 3;
     }
 }

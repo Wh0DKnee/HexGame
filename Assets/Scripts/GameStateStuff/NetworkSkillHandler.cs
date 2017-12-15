@@ -9,8 +9,8 @@ public class NetworkSkillHandler : ISkillHandler {
         return new SkillWaitForServerState(parameters.gameStateController, parameters.champion);
     }
 
-    public void HandleSkill(Champion champion, Skill skill, HexCoordinates coordinates) {
-        NetworkSession.instance.Client.TellServerUseSkill(champion.ID, skill, coordinates);
+    public void HandleSkill(Skill skill, HexCoordinates coordinates) {
+        NetworkSession.instance.Client.TellServerUseSkill(skill, coordinates);
     }
 
 }

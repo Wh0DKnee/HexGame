@@ -55,7 +55,7 @@ public class PieceSpawner : MonoBehaviour {
         if (isEnemy) {
             go.GetComponent<MeshRenderer>().material.color = Color.red; //for testing
         }
-        champ.ID = idCounter;
+        champ.Stats.ID = idCounter;
         idCounter++;
         HexGrid.Instance.AddChamp(champ, coordinates);
     }

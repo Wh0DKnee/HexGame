@@ -54,7 +54,7 @@ public class SkillState : CellListenerGameState {
             return;
         }
 
-        gameStateController.SkillHandler.HandleSkill(selectedChamp, selectedChamp.SelectedSkill, clickedCell.coordinates);
+        gameStateController.SkillHandler.HandleSkill(selectedChamp.SelectedSkill, clickedCell.coordinates);
         StateChangeParams stateChangeParams = new StateChangeParams(gameStateController, selectedChamp);
         gameStateController.SetState(gameStateController.SkillHandler.GetNextState(stateChangeParams));
     }

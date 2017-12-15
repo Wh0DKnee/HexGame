@@ -8,7 +8,7 @@ public abstract class AOESkill : Skill {
 
     public int Radius { get; private set; }
 
-    public AOESkill(Cost skillCost, TargetType targetType, int range, int radius) : base(skillCost, targetType, range) {
+    public AOESkill(ChampionStats userStats, Cost skillCost, TargetType targetType, int range, int radius) : base(userStats, skillCost, targetType, range) {
         Radius = radius;
     }
 
