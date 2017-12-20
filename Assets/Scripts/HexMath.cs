@@ -94,4 +94,10 @@ public static class HexMath {
         }
         return result;
     }
+
+    public static bool AreInStraightLine(HexCoordinates a, HexCoordinates b) {
+        return a.X == b.X ||
+                a.Y == b.Y ||
+                a.Z == b.Z;
+    }
 }

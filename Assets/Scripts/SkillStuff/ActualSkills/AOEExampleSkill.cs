@@ -11,11 +11,11 @@ public class AOEExampleSkill : AOESkill {
     public AOEExampleSkill(ChampionStats userStats, Cost skillCost, TargetType targetType, int range, int radius) : base(userStats, skillCost, targetType, range, radius) {}
 
     public override void ApplyEffect(Cell target) {
-        List<Cell> targetCells = GetAffectedArea(target);
-        foreach (Cell cell in targetCells) {
-            if(cell.champion != null) {
-                cell.champion.Stats.HP -= damage;
-            }
+        List<Cell> targetArea = GetAffectedArea(target);
+        List<Champion> affectedChamps = GetAffectedChampions(targetArea, TargetType.enemy);
+
+        foreach (Champion champ in affectedChamps) {
+            champ.Stats.HP -= damage;
         }
     }
 }

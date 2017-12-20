@@ -18,11 +18,16 @@ public class EnemyTurnState : GameState {
         base.OnStateEnter();
         NetworkSession.instance.Client.TellServerTurnDone();
         NetworkSession.instance.Client.ClientProxy.EnemyTurnEnd += OnEnemyTurnEnd;
+
+        foreach (Champion enemy in HexGrid.Instance.GetAllyChamps()) {
+            enemy.NewTurnReset();                                               // currently we do this locally for enemies and for allies
+                                                                                // it would probably be cleaner to network this instead.
+        }
     }
 
     private void OnEnemyTurnEnd() {
         Debug.Log("enemy turn end!!!");
-        foreach (Champion ally in HexGrid.Instance.GetAllyChamps()) {
+        foreach (Champion ally in HexGrid.Instance.GetAllyChamps()) {           // see above
             ally.NewTurnReset();
         }
         gameStateController.SetState(new SelectionState(gameStateController));

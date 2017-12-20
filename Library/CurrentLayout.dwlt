@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 521}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -107,10 +107,10 @@ MonoBehaviour:
     y: 30
     width: 1858
     height: 987
-  m_MinSize: {x: 711, y: 471}
-  m_MaxSize: {x: 18008, y: 14021}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 102
+  controlID: 9
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,10 +131,10 @@ MonoBehaviour:
     y: 0
     width: 1044
     height: 987
-  m_MinSize: {x: 200, y: 321}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 342}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 79
+  controlID: 119
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -153,8 +153,8 @@ MonoBehaviour:
     y: 0
     width: 1044
     height: 520
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 14}
@@ -207,10 +207,10 @@ MonoBehaviour:
     y: 0
     width: 377
     height: 987
-  m_MinSize: {x: 234, y: 471}
-  m_MaxSize: {x: 10004, y: 14021}
+  m_MinSize: {x: 234, y: 492}
+  m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 45
+  controlID: 10
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -229,8 +229,8 @@ MonoBehaviour:
     y: 0
     width: 377
     height: 407
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -279,8 +279,8 @@ MonoBehaviour:
     y: 0
     width: 437
     height: 987
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -516,9 +516,9 @@ MonoBehaviour:
     height: 386
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: fa280000
     m_LastClickedID: 0
-    m_ExpandedIDs: 221efeff2a1ffeff4020feff4620feffda32feffe233fefff834fefffe34feff9646feff9c47feffb248feffb848feff805ffeff8660feff9c61feffa261feff5278feff4679feff5c7afeff627afeff709afeff769bfeff909cfeff9a9cfeff7ac5feff70c6feff8ac7feff94c7feffcae9feffbeeafeffd8ebfeffe2ebfeff7003ffff6604ffff7c05ffff8205ffff367bffff387cffff5e7dffff747dffffce8bffff9c93ffff9c94ffffb295ffffb895fffff69effff4aa7ffff4ca8ffff62a9ffff68a9ffff30b8ffff1cbcffffc6c4ffffc8c5ffffcac6ffffdac6ffff8cd1ffffe2dbffff06e4ffff02e5ffff18e6ffff1ee6ffffdaefffff82f6ffff6ef7ffff84f8ffff8af8ffff1afcffff00000000
+    m_ExpandedIDs: deacffffd4adffffeaaefffff0aefffffac2fffff0c3ffff0ac5ffff14c5ffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -579,7 +579,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Skills
+    - Assets/Scripts/SkillStuff/ActualSkills
   m_ViewMode: 0
   m_StartGridSize: 48
   m_LastFolders: []
@@ -590,7 +590,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 222c0000
     m_LastClickedID: 11298
-    m_ExpandedIDs: 000000009a260000a2260000a4260000ba260000be260000c2260000c8260000cc260000d0260000d4260000e2260000e8260000ee260000f6260000f8260000582800005a2800005c2800005e28000060280000622800006428000066280000682800006a2800006c2800006e28000070280000722800007428000076280000782800007a2800007c2800007e28000080280000822800008428000086280000882800008a2800008c2800008e28000090280000922800009428000096280000982800009a2800009c280000
+    m_ExpandedIDs: 000000009c260000a4260000bc260000c0260000c4260000ca260000ce260000d2260000d6260000e4260000ea260000f0260000f8260000fa2600005a2800005c2800005e28000060280000622800006428000066280000682800006a2800006c2800006e28000070280000722800007428000076280000782800007a2800007c2800007e28000080280000822800008428000086280000882800008a2800008c2800008e28000090280000922800009428000096280000982800009a2800009c2800009e280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -615,21 +615,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 647}
+    scrollPos: {x: 0, y: 655}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a260000a2260000ba260000be260000c2260000c8260000cc260000d0260000d4260000e2260000e8260000ee260000f6260000f8260000582800005a2800005c2800005e28000060280000622800006428000066280000682800006a2800006c2800006e28000070280000722800007428000076280000782800007a2800007c2800007e28000080280000822800008428000086280000882800008a2800008c2800008e28000090280000922800009428000096280000982800009a2800009c280000
+    m_ExpandedIDs: 000000009c260000a4260000bc260000c0260000c4260000ca260000ce260000d2260000d6260000e4260000ea260000f0260000f8260000fa2600005a2800005c2800005e28000060280000622800006428000066280000682800006a2800006c2800006e28000070280000722800007428000076280000782800007a2800007c2800007e28000080280000822800008428000086280000882800008a2800008c2800008e28000090280000922800009428000096280000982800009a2800009c2800009e280000f6280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: AOEExampleSkill
-      m_OriginalName: AOEExampleSkill
+      m_Name: SkillShotExample
+      m_OriginalName: SkillShotExample
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 1788
+      m_UserData: 10490
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0

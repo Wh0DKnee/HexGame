@@ -126,7 +126,7 @@ public class HexGrid : MonoBehaviour {
     }
 
     public Champion GetChamp(int championID) {
-        Champion result = GetChamps().Where(x => x.Stats.ID == championID).ToList()[0];
+        Champion result = GetAllChamps().Where(x => x.Stats.ID == championID).ToList()[0];
         if(result == null) { Debug.LogError("champ with that ID could not be found"); }
         return result;
     }
@@ -139,7 +139,7 @@ public class HexGrid : MonoBehaviour {
         SetCellChampionReferences(GetCell(coords), champ);
     }
 
-    public List<Champion> GetChamps() {
+    public List<Champion> GetAllChamps() {
         List<Champion> champs = new List<Champion>();
         foreach (Cell c in cells) {
             if(c.champion != null) {
@@ -150,6 +150,6 @@ public class HexGrid : MonoBehaviour {
     }
 
     public List<Champion> GetAllyChamps() {
-        return GetChamps().Where(x => !x.IsEnemyChamp).ToList();
+        return GetAllChamps().Where(x => !x.IsEnemyChamp).ToList();
     }
 }

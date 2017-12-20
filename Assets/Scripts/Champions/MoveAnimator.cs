@@ -29,6 +29,7 @@ public class MoveAnimator : MonoBehaviour {
     }
 
     private IEnumerator AnimateMove(Champion champion, Cell cell) {
+        champion.transform.forward = cell.transform.position - champion.transform.position;
         float progress = 0f;
         Vector3 startPos = champion.transform.position;
         Vector3 targetPos = cell.coordinates.ToWorldPosition();
