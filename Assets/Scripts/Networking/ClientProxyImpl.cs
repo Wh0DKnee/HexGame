@@ -21,8 +21,8 @@ public class ClientProxyImpl : IClientProxy {
         UnityMainThreadDispatcher.Instance().Enqueue(() => HexGrid.Instance.GetChamp(championID).Move(coordinates));
     }
 
-    public void UseSkill(Skill skill, HexCoordinates targetCellCoordinates) {
-        UnityMainThreadDispatcher.Instance().Enqueue(() => HexGrid.Instance.GetChamp(skill.userStats.ID).UseSkill(skill, HexGrid.Instance.GetCell(targetCellCoordinates)));
+    public void UseSkill(int userID, SkillEnum skillEnum, HexCoordinates targetCellCoordinates) {
+        UnityMainThreadDispatcher.Instance().Enqueue(() => HexGrid.Instance.GetChamp(userID).UseSkill(skillEnum, HexGrid.Instance.GetCell(targetCellCoordinates)));
     }
 
     public void ChangeScene(string sceneName) {

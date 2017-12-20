@@ -18,4 +18,8 @@ public class AOEExampleSkill : AOESkill {
             champ.Stats.HP -= damage;
         }
     }
+
+    public override SkillEnum GetSkillEnum() {
+        return SkillEnum.R;
+    }
 }

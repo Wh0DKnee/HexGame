@@ -12,4 +12,8 @@ public class SingleTargetAllyHeal : SingleTargetSkill {
     public override void ApplyEffect(Cell target) {
         target.champion.Stats.HP += healAmount;
     }
+
+    public override SkillEnum GetSkillEnum() {
+        return SkillEnum.W;
+    }
 }

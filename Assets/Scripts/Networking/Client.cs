@@ -46,8 +46,8 @@ public class Client {
         scsClient.ServiceProxy.RequestMove(championID, coordinates);
     }
 
-    public void TellServerUseSkill(Skill skill, HexCoordinates coordinates) {
-        scsClient.ServiceProxy.RequestSkillUse(skill, coordinates);
+    public void TellServerUseSkill(int userID, SkillEnum skillEnum, HexCoordinates coordinates) {
+        scsClient.ServiceProxy.RequestSkillUse(userID, skillEnum, coordinates);
     }
 
     void OnConnected(object sender, EventArgs e) {

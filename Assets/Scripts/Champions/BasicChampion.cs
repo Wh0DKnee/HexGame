@@ -7,7 +7,7 @@ public class BasicChampion : Champion {
 
     public override void InitializeSkills() {
         Q = SkillFactory.CreateMeleeAttackInstance(Stats);
-        W = SkillFactory.CreateMeleeAttackInstance(Stats);
+        W = SkillFactory.CreateSingleTargetAllyHeal(Stats);
         E = SkillFactory.CreateSkillShotExample(Stats);
         R = SkillFactory.CreateAOEExampleSkill(Stats);
     }

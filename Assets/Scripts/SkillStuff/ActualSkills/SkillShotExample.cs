@@ -18,6 +18,9 @@ public class SkillShotExample : SkillShot {
         foreach (Champion champ in affectedChamps) {
             champ.Stats.HP -= 20;
         }
+    }
 
+    public override SkillEnum GetSkillEnum() {
+        return SkillEnum.E;
     }
 }

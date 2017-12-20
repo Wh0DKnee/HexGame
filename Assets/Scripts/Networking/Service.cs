@@ -33,9 +33,9 @@ public class Service : ScsService, IServiceProxy {
         }
     }
 
-    public void RequestSkillUse(Skill skill, HexCoordinates target) {
+    public void RequestSkillUse(int userID, SkillEnum skillEnum, HexCoordinates target) {
         foreach (ServiceClient client in clients.GetAllItems()) {
-            client.ClientProxy.UseSkill(skill, target);
+            client.ClientProxy.UseSkill(userID, skillEnum, target);
         }
     }
 

@@ -18,6 +18,9 @@ public abstract class Skill : IStateHandler{
         this.userStats = userStats;
     }
 
+    //maybe pass this in constructor instead
+    public abstract SkillEnum GetSkillEnum();
+
     public void Use(Cell target) {
         SkillCost.ApplyCost(userStats);
         ApplyEffect(target);

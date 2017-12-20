@@ -5,10 +5,6 @@ using System;
 
 public abstract class Champion : MonoBehaviour{
 
-    private void Update() {
-        Debug.Log(Stats.Mana);
-    }
-
     public ChampionStats Stats { get; set; }
     public ChampionUI championUI;
 
@@ -45,9 +41,9 @@ public abstract class Champion : MonoBehaviour{
     public abstract void InitializeStats();
 
     private void Start() {
+        championUI.Subscribe();
         InitializeSkills();
         InitializeStats();
-        championUI.Subscribe();
     }
 
     //TODO: do we need this and the enum? is there a better solution?
@@ -62,6 +58,7 @@ public abstract class Champion : MonoBehaviour{
             case SkillEnum.R:
                 return R;
             default:
+                Debug.LogError("you tried to use skill: " + skillEnum.ToString() + "which does not exist");
                 return null;
         }
     }
@@ -95,8 +92,8 @@ public abstract class Champion : MonoBehaviour{
         if(moved != null) { moved(); }
     }
 
-    public void UseSkill(Skill skill, Cell target) {
-        skill.Use(target);
+    public void UseSkill(SkillEnum skillEnum, Cell target) {
+        GetSkill(skillEnum).Use(target);
         HasUsedSkill = true;
         if(skillUsed != null) { skillUsed(); }
     }

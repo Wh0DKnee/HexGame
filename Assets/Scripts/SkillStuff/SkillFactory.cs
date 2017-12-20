@@ -15,4 +15,8 @@ public static class SkillFactory{
     public static SkillShotExample CreateSkillShotExample(ChampionStats championStats) {
         return new SkillShotExample(championStats, new ManaCost(2), TargetType.all, 4);
     }
+
+    public static SingleTargetAllyHeal CreateSingleTargetAllyHeal(ChampionStats championStats) {
+        return new SingleTargetAllyHeal(championStats, new ManaCost(1), TargetType.ally, 4);
+    }
 }
