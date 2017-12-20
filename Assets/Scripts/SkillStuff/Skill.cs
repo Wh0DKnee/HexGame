@@ -34,7 +34,7 @@ public abstract class Skill : IStateHandler{
     delegate bool FulfillsCriteria(Champion champ);
 
     // TODO: should we store the affectedType as a member? currently, we are only storing the TargetType (i.e. which
-    // type of cell the skill can be used one, but not which type of cell it affects.
+    // type of cell the skill can be used one, but not which type of cell it affects. Only relevant for AOE spells
     public List<Champion> GetAffectedChampions(List<Cell> area, TargetType affectedType) {
         List<Champion> res = new List<Champion>();
 

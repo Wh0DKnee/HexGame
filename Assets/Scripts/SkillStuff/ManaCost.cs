@@ -10,6 +10,7 @@ public class ManaCost : Cost {
     }
 
     public override void ApplyCost(ChampionStats userStats) {
+        Debug.Log("apply cost called, cost: " + amount);
         userStats.Mana -= amount;
     }
 

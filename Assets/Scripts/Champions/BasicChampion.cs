@@ -14,7 +14,7 @@ public class BasicChampion : Champion {
 
     public override void InitializeStats() {
         Stats.HP = 20;
-        Stats.Mana = 6;
+        Stats.Mana = 100;
         Stats.MaxMovementRange = 3;
     }
 }

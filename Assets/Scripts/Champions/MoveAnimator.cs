@@ -35,7 +35,6 @@ public class MoveAnimator : MonoBehaviour {
         Vector3 targetPos = cell.coordinates.ToWorldPosition();
         champion.transform.forward = targetPos - startPos;
         while(progress < 1f) {
-            print(progress);
             champion.transform.position = Vector3.Lerp(startPos, targetPos, progress);
             progress += Time.deltaTime / (1f/speed);
             yield return null;

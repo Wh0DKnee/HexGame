@@ -17,6 +17,7 @@ public class ChampionStats {
             } else {
                 hp = value;
             }
+            if(hpChanged != null) { hpChanged(hp); }
         }
     }
     private int mana;
@@ -24,6 +25,9 @@ public class ChampionStats {
         get { return mana; }
         set {
             mana = value;
+            Debug.Log("setting mana");
+            Debug.Log("is manaChanged null? " + (manaChanged == null));
+            if(manaChanged != null) { manaChanged(mana); }
         }
     }
     private int maxMovementRange;
@@ -43,5 +47,11 @@ public class ChampionStats {
 
     [field: NonSerialized]
     public event Action died;
+
+    [field: NonSerialized]
+    public event Action<int> hpChanged;
+
+    [field: NonSerialized]
+    public event Action<int> manaChanged;
 
 }

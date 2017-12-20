@@ -9,10 +9,10 @@ public static class SkillFactory{
     }
 
     public static AOEExampleSkill CreateAOEExampleSkill(ChampionStats championStats) {
-        return new AOEExampleSkill(championStats, new ManaCost(0), TargetType.all, 5, 1);
+        return new AOEExampleSkill(championStats, new ManaCost(1), TargetType.all, 5, 1);
     }
 
     public static SkillShotExample CreateSkillShotExample(ChampionStats championStats) {
-        return new SkillShotExample(championStats, new ManaCost(0), TargetType.all, 4);
+        return new SkillShotExample(championStats, new ManaCost(2), TargetType.all, 4);
     }
 }

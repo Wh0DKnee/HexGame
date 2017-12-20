@@ -5,7 +5,12 @@ using System;
 
 public abstract class Champion : MonoBehaviour{
 
+    private void Update() {
+        Debug.Log(Stats.Mana);
+    }
+
     public ChampionStats Stats { get; set; }
+    public ChampionUI championUI;
 
     private void Awake() {
         Stats = new ChampionStats();
@@ -42,6 +47,7 @@ public abstract class Champion : MonoBehaviour{
     private void Start() {
         InitializeSkills();
         InitializeStats();
+        championUI.Subscribe();
     }
 
     //TODO: do we need this and the enum? is there a better solution?
