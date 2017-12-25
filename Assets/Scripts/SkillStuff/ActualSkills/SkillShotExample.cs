@@ -19,8 +19,4 @@ public class SkillShotExample : SkillShot {
             champ.Stats.HP -= 20;
         }
     }
-
-    public override SkillEnum GetSkillEnum() {
-        return SkillEnum.E;
-    }
 }

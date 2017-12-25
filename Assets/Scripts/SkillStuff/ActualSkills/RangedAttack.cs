@@ -13,8 +13,4 @@ public class RangedAttack : SingleTargetSkill {
     public override void ApplyEffect(Cell target) {
         target.champion.Stats.HP -= damage;
     }
-
-    public override SkillEnum GetSkillEnum() {
-        return SkillEnum.Q;
-    }
 }

@@ -17,10 +17,14 @@ public abstract class Champion : MonoBehaviour{
         Stats.died -= OnDied;
     }
 
-    public Skill Q { get; set; }
-    public Skill W { get; set; }
-    public Skill E { get; set; }
-    public Skill R { get; set; }
+    private Skill q;
+    public Skill Q { get { return q; } set { q = value; q.SkillEnum = SkillEnum.Q; } }
+    private Skill w;
+    public Skill W { get { return w; } set { w = value; w.SkillEnum = SkillEnum.W; } }
+    private Skill e;
+    public Skill E { get { return e; } set { e = value; e.SkillEnum = SkillEnum.E; } }
+    private Skill r;
+    public Skill R { get { return r; } set { r = value; r.SkillEnum = SkillEnum.R; } }
     private Skill selectedSkill;
     public Skill SelectedSkill {
         get { return selectedSkill; }

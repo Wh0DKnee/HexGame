@@ -10,6 +10,7 @@ public abstract class Skill : IStateHandler{
     public Cost SkillCost { get; set;}
     public TargetType TargetType { get; private set; }
     public ChampionStats userStats;
+    public SkillEnum SkillEnum { get; set; }
 
     protected Skill(ChampionStats userStats, Cost skillCost, TargetType targetType, int range) {
         this.SkillCost = skillCost;
@@ -17,9 +18,6 @@ public abstract class Skill : IStateHandler{
         this.Range = range;
         this.userStats = userStats;
     }
-
-    //maybe pass this in constructor instead
-    public abstract SkillEnum GetSkillEnum();
 
     public void Use(Cell target) {
         SkillCost.ApplyCost(userStats);

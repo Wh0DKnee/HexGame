@@ -10,7 +10,7 @@ public class NetworkSkillHandler : ISkillHandler {
     }
 
     public void HandleSkill(Skill skill, HexCoordinates coordinates) {
-        NetworkSession.instance.Client.TellServerUseSkill(skill.userStats.ID, skill.GetSkillEnum(), coordinates);
+        NetworkSession.instance.Client.TellServerUseSkill(skill.userStats.ID, skill.SkillEnum, coordinates);
     }
 
 }
