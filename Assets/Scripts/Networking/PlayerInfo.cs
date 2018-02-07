@@ -7,7 +7,7 @@ namespace NetworkingCommonLib {
     [System.Serializable]
     public class PlayerInfo {
         public string nickname;
-        //TODO: DONT HARDCODE
+        //TODO: don't hardcode, load from player's setup
         public ChampionPosition[] championPositions = new ChampionPosition[]{
             new ChampionPosition("BasicChampion", new HexCoordinates(-3, 3, 0)),
             new ChampionPosition("BasicChampion", new HexCoordinates(-3, 2, 1)),

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: delete later, just for trying out stuff real quick
 public class Test : MonoBehaviour {
 
     private Plane plane;
